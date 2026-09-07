@@ -12,6 +12,7 @@ import { renderHistory } from './ui/history.js';
 import { renderSettings } from './ui/settings.js';
 import { renderAbout } from './ui/about.js';
 import { maybeShowDisclaimer } from './ui/disclaimer.js';
+import { followVisualViewport } from './core/viewport.js';
 
 const appEl = document.getElementById('app');
 const barEl = document.getElementById('appbar');
@@ -133,5 +134,7 @@ window.addEventListener('hashchange', route);
 
 // type="module" は defer 相当なので、この時点で DOM は構築済み
 applyTheme();
+// 画面に貼り付く要素を「見えている範囲」に追従させる（ピンチ拡大・ソフトキーボード対策）
+followVisualViewport(document.getElementById('sheet-root'), document.getElementById('toast-root'));
 route();
 maybeShowDisclaimer();

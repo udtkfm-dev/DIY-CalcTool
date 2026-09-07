@@ -16,6 +16,7 @@ import { backButton } from './icons.js';
 import { ERROR_MESSAGES, MAX_ABS } from '../core/errors.js';
 import { createScene, refitLabels } from '../shapes/engine.js';
 import { showToast } from './toast.js';
+import { useDeviceKeyboard } from '../core/input.js';
 
 const KEYS = ['w', 'h', 'x', 'y'];
 
@@ -133,6 +134,7 @@ function h(tag, props = {}, children = []) {
     if (k === 'class') node.className = props[k];
     else if (k === 'text') node.textContent = props[k];
     else if (k.startsWith('on')) node.addEventListener(k.slice(2).toLowerCase(), props[k]);
+    else if (k === 'dataset') Object.assign(node.dataset, props[k]);
     else node.setAttribute(k, props[k]);
   }
   for (const c of [].concat(children)) if (c) node.appendChild(c);
@@ -141,6 +143,8 @@ function h(tag, props = {}, children = []) {
 
 export function renderCompoundView(appEl, barEl, def, st) {
   const settings = getSettings();
+  // スマホは端末のキーボードで直接打つ（calcView.js と同じ判定）
+  const useKeyboard = useDeviceKeyboard(settings);
   let idleTimer = null;
   let lastItem = null;
 
@@ -276,6 +280,13 @@ export function renderCompoundView(appEl, barEl, def, st) {
   }
 
   function renderList(evalResult) {
+    // この画面は図形の増減があるため一覧を作り直す。端末キーボードで打っている最中は
+    // 打っていた欄が消えるので、作り直したあとに同じ欄へフォーカスとカーソルを戻す。
+    const active = document.activeElement;
+    const typing = useKeyboard && active && active.classList && active.classList.contains('field-row__input')
+      ? { index: active.dataset.shapeIndex, key: active.dataset.fieldKey, start: active.selectionStart, end: active.selectionEnd }
+      : null;
+
     listBody.innerHTML = '';
     st.shapes.forEach((shape, index) => {
       const r = evalResult.results[index];
@@ -308,6 +319,20 @@ export function renderCompoundView(appEl, barEl, def, st) {
       card.appendChild(body);
       listBody.appendChild(card);
     });
+
+    if (typing) {
+      const back = listBody.querySelector(
+        `.field-row__input[data-shape-index="${typing.index}"][data-field-key="${typing.key}"]`
+      );
+      if (back) {
+        back.focus();
+        try {
+          back.setSelectionRange(typing.start, typing.end);
+        } catch (e) {
+          /* 選択範囲を扱えない環境ではカーソル位置の復元だけあきらめる */
+        }
+      }
+    }
   }
 
   function fieldRow(shape, index, key, r) {
@@ -316,14 +341,48 @@ export function renderCompoundView(appEl, barEl, def, st) {
     const text = raw === '' ? '—' : formatRawForDisplay(raw);
     const row = h('div', { class: 'field-row' + (raw === '' ? ' is-empty' : '') + (st.focus && st.focus.index === index && st.focus.key === key ? ' is-focus' : '') });
 
-    const tap = h('button', {
-      class: 'field-row__tap', type: 'button', 'aria-label': `${f.label} を入力`,
-      onclick: () => openField(index, key)
-    }, [
-      h('span', { class: 'field-row__label', text: f.label }),
-      h('span', { class: 'field-row__value', text: text === '—' ? '—' : text + unitLabel(f.quantity, shape.units[key]) })
-    ]);
-    row.appendChild(tap);
+    if (useKeyboard) {
+      // スマホは端末のキーボードで直接打つ（拡大中でも入力欄が見える位置に来る）
+      const input = h('input', {
+        class: 'field-row__value field-row__input',
+        type: 'text',
+        inputmode: allowsNegative(key) ? 'text' : 'decimal',
+        enterkeyhint: 'next',
+        autocomplete: 'off',
+        placeholder: '—',
+        'aria-label': `図形${index + 1}: ${f.label}`,
+        dataset: { shapeIndex: String(index), fieldKey: key }
+      });
+      input.value = raw;
+      input.addEventListener('focus', () => {
+        st.focus = { index, key };
+      });
+      input.addEventListener('blur', () => {
+        if (st.focus && st.focus.index === index && st.focus.key === key) st.focus = null;
+      });
+      input.addEventListener('input', () => setRaw(index, key, input.value));
+      input.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        const next = nextField(index, key);
+        const el = listBody.querySelector(
+          `.field-row__input[data-shape-index="${next.index}"][data-field-key="${next.key}"]`
+        );
+        if (el) el.focus();
+        else input.blur();
+      });
+      row.appendChild(h('span', { class: 'field-row__label', text: f.label }));
+      row.appendChild(input);
+    } else {
+      const tap = h('button', {
+        class: 'field-row__tap', type: 'button', 'aria-label': `${f.label} を入力`,
+        onclick: () => openField(index, key)
+      }, [
+        h('span', { class: 'field-row__label', text: f.label }),
+        h('span', { class: 'field-row__value', text: text === '—' ? '—' : text + unitLabel(f.quantity, shape.units[key]) })
+      ]);
+      row.appendChild(tap);
+    }
 
     row.appendChild(makeUnitChip(f.quantity, shape.units[key], (u) => changeUnit(index, key, u)));
     row.appendChild(h('button', {

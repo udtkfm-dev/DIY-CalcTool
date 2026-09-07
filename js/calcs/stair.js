@@ -42,10 +42,10 @@ export const stairMain = {
   shapeMap: { a: 'L', b: 'H', c: 'slant', angA: 'angle' },
 
   fields: [
-    lenField('H', '階高', '床から床までの高さ'),
+    lenField('H', '階高'),
     numField('n', '段数', '階段の段の数'),
-    lenField('R', '蹴上げ', '1段あたりの高さ'),
-    lenField('T', '踏面', '1段あたりの奥行き'),
+    lenField('R', '蹴上げ'),
+    lenField('T', '踏面'),
     lenField('L', '全長（水平距離）', '階段の水平方向の長さ'),
     { key: 'angle', label: '角度', quantity: 'angle', defaultUnit: 'deg', min: 0, max: 90, exclusiveMin: true, optional: true, rangeMessage: '角度は0°より大きく90°より小さい値にしてください', help: '階段の傾斜角' },
     lenField('slant', '斜距離', '階段の踏面に沿った斜めの長さ')
@@ -225,7 +225,7 @@ export const stairRule = {
 
   fields: [
     lenField('R', '蹴上げ R', '1段の高さ'),
-    lenField('T', '踏面 T', '1段の奥行き（踏み板の有効な奥行き）'),
+    lenField('T', '踏面 T'),
     lenField('walk', '2R + T の値', '歩幅の式。550〜650mm がよく目安として使われます')
   ],
 

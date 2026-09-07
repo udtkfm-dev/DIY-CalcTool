@@ -80,6 +80,19 @@ export function renderSettings(appEl, barEl) {
       ))
     ]));
 
+    body.appendChild(section('数値の入力方法', [
+      field(null, chipRow(
+        [
+          { label: '自動', value: 'auto' },
+          { label: '端末のキーボード', value: 'keyboard' },
+          { label: 'アプリの電卓', value: 'keypad' }
+        ],
+        s.numberInput,
+        (v) => { saveSettings({ numberInput: v }); render(); }
+      ))
+    ], '「自動」はスマホ・タブレットでは端末のキーボード、パソコンではアプリの電卓を使います。'
+      + '画面を拡大して使うときは端末のキーボードのほうが確実です。新しく開く計算画面から反映されます'));
+
     body.appendChild(section('既定の単位', [
       field('長さ', chipRow(
         unitList('length').map((u) => ({ label: u.label, value: u.id })),

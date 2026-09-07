@@ -16,6 +16,8 @@ export const DEFAULT_SETTINGS = {
   defaultAreaUnit: 'mm2',
   defaultAngleUnit: 'deg',
   theme: 'system',
+  // 数値の入力方法: 'auto'（タッチ端末は端末のキーボード）/ 'keyboard' / 'keypad'
+  numberInput: 'auto',
   agreedDisclaimer: false,
   adFree: false
 };

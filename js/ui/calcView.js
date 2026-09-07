@@ -8,7 +8,10 @@ import { solve, makeStepContext } from '../core/solver.js';
 import { formatValue, formatRawForDisplay, parseNumber, toRawString } from '../core/format.js';
 import { toBase, fromBase, unitLabel, unitList, hasPicker } from '../core/units.js';
 import { getSettings, saveHistory, isFavorite, toggleFavorite, available as storeAvailable } from '../core/store.js';
+import { termFor, explain } from '../calcs/glossary.js';
+import { useDeviceKeyboard } from '../core/input.js';
 import { openNumpad, update as updateNumpad, closeNumpad, isOpen as numpadOpen } from './numpad.js';
+import { createUnitChips } from './unitPicker.js';
 import { showToast } from './toast.js';
 import { refitLabels } from '../shapes/engine.js';
 import { backButton } from './icons.js';
@@ -101,6 +104,36 @@ function h(tag, props = {}, children = []) {
   return node;
 }
 
+/**
+ * 「入力項目の説明」カードに出す行を組み立てる。
+ * 用語集(glossary.js)の定義と、その欄固有の help（目安値・使い方）を1行にまとめる。
+ *
+ * 方針:
+ * - 専門用語を1つも含まない計算では空配列を返し、カードごと出さない。
+ *   「幅=横方向の長さ」のような自明な説明で画面を埋めないため。
+ * - 説明文が同一になる欄（材料1〜3の熱伝導率など）は、見出しを「・」でつないで1行に畳む。
+ * @param {object} def CalcDef
+ * @returns {{label:string, text:string}[]}
+ */
+function buildTermRows(def) {
+  if (!def.fields.some((f) => termFor(f.label))) return [];
+  const rows = [];
+  const byText = new Map();
+  for (const f of def.fields) {
+    const text = explain(f.label, f.help);
+    if (!text) continue;
+    const hit = byText.get(text);
+    if (hit) {
+      hit.labels.push(f.label);
+      continue;
+    }
+    const row = { labels: [f.label], text };
+    byText.set(text, row);
+    rows.push(row);
+  }
+  return rows.map((r) => ({ label: r.labels.join('・'), text: r.text }));
+}
+
 /** 計算ごとの画面状態（セッション内で保持する） */
 export function createState(def) {
   const settings = getSettings();
@@ -177,6 +210,14 @@ function defaultUnitFor(quantity, fallback, settings) {
  */
 export function renderCalcView(appEl, barEl, def, st) {
   const settings = getSettings();
+  // スマホは端末のキーボードで直接打つ（拡大中でもブラウザが入力欄を見える位置へ送るため）。
+  // PCはアプリ内テンキーのまま。設定で固定もできる。
+  const useKeyboard = useDeviceKeyboard(settings);
+  /** fieldKey → 入力行のDOM。行は作り直さず中身だけ更新する */
+  const rows = new Map();
+  /** どの欄にも紐づかないエラー（「あと2つ入力すると計算できます」等） */
+  const formError = h('div', { class: 'field-error' });
+  formError.hidden = true;
 
   /* ---------- ヘッダ ---------- */
   barEl.innerHTML = '';
@@ -236,6 +277,18 @@ export function renderCalcView(appEl, barEl, def, st) {
   const stepsBody = h('div', { class: 'card__body' });
   stepsCard.appendChild(stepsBody);
 
+  // 入力項目の説明。専門用語を含む計算だけに出す（buildTermRows が空なら丸ごと省く）
+  const termRows = buildTermRows(def);
+  const termsCard = h('div', { class: 'card' }, [
+    h('div', { class: 'card__head' }, [h('span', { text: '入力項目の説明' })])
+  ]);
+  const termsBody = h('dl', { class: 'card__body terms' });
+  for (const row of termRows) {
+    termsBody.appendChild(h('dt', { class: 'terms__name', text: row.label }));
+    termsBody.appendChild(h('dd', { class: 'terms__desc', text: row.text }));
+  }
+  termsCard.appendChild(termsBody);
+
   const notesCard = h('div', { class: 'card' }, [
     h('div', { class: 'card__head' }, [h('span', { text: '注意書き' })])
   ]);
@@ -248,6 +301,7 @@ export function renderCalcView(appEl, barEl, def, st) {
   colRight.appendChild(resultCard);
   colRight.appendChild(formulaCard);
   colRight.appendChild(stepsCard);
+  if (termRows.length) colRight.appendChild(termsCard);
   colRight.appendChild(notesCard);
 
   if (!storeAvailable()) {
@@ -463,75 +517,207 @@ export function renderCalcView(appEl, barEl, def, st) {
     });
   }
 
-  function renderInputs(res, badField) {
-    inputBody.innerHTML = '';
+  /**
+   * 入力欄の行を1度だけ作る。
+   * 以後は updateRow() で中身だけ書き換える——端末キーボードで打っている最中に
+   * <input> を作り直すと、フォーカスもカーソル位置も失われるため。
+   */
+  function buildRow(f) {
+    // 端末キーボードのときは、長いラベルに押されて入力欄が潰れないよう
+    // ラベル側を縮む・折り返す扱いにする（--edit）
+    const label = h('span', {
+      class: 'field-row__label' + (useKeyboard ? ' field-row__label--edit' : ''),
+      text: f.label
+    });
+    const badge = h('span', { class: 'field-row__badge', text: '算出' });
+    badge.hidden = true;
+    const row = h('div', { class: 'field-row' });
+    let valueEl = null;
+    let input = null;
 
-    for (const f of def.fields) {
-      const v = valueOfField(f.key, res);
-      const row = h('div', {
-        class:
-          'field-row' +
-          (v.state === 'derived' ? ' is-derived' : '') +
-          (v.state === 'empty' ? ' is-empty' : '') +
-          (st.focusKey === f.key ? ' is-focus' : '')
+    if (useKeyboard) {
+      const last = def.fields[def.fields.length - 1].key === f.key;
+      input = h('input', {
+        class: 'field-row__value field-row__input',
+        type: 'text',
+        // decimal のテンキーには符号キーが無い端末がある。負値を許す欄は text にして
+        // 通常のキーボードを出す（座標のように「−」を打つ欄があるため）
+        inputmode: allowsNegative(f) ? 'text' : 'decimal',
+        enterkeyhint: last ? 'done' : 'next',
+        autocomplete: 'off',
+        placeholder: '—',
+        'aria-label': f.label
       });
-
-      const tap = h('button', {
-        class: 'field-row__tap',
-        type: 'button',
-        'aria-label': `${f.label} を入力`,
-        onclick: () => openField(f.key)
-      }, [
-        h('span', { class: 'field-row__label', text: f.label }),
-        h('span', { class: 'field-row__value', text: v.text })
-      ]);
-      if (v.state === 'derived') tap.appendChild(h('span', { class: 'field-row__badge', text: '算出' }));
-      row.appendChild(tap);
-
-      row.appendChild(makeUnitChip(f.quantity, st.units[f.key], (u) => {
-        changeFieldUnit(f.key, u);
-      }));
-
+      input.addEventListener('focus', () => {
+        st.focusKey = f.key;
+        // 算出値が出ている欄は空にしてから打たせる（打った数字が算出値の後ろに続かないように）
+        if (st.raws[f.key] === '') input.value = '';
+        recompute();
+      });
+      input.addEventListener('blur', () => {
+        if (st.focusKey === f.key) st.focusKey = null;
+        recompute(); // 打たなかった場合は算出値の表示に戻る
+      });
+      input.addEventListener('input', () => setRaw(f.key, input.value));
+      input.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        const nextNode = rows.get(nextFieldKey(f.key));
+        if (nextNode && nextNode.input) nextNode.input.focus();
+        else input.blur();
+      });
+      row.appendChild(label);
+      row.appendChild(input);
+      row.appendChild(badge);
+    } else {
+      valueEl = h('span', { class: 'field-row__value' });
       row.appendChild(
         h('button', {
-          class: 'field-row__clear',
+          class: 'field-row__tap',
           type: 'button',
-          'aria-label': `${f.label} をクリア`,
-          text: '✕',
-          onclick: () => clearField(f.key)
+          'aria-label': `${f.label} を入力`,
+          onclick: () => openField(f.key)
+        }, [label, valueEl, badge])
+      );
+    }
+
+    // 単位。PCはチップを押すたびに次の単位へ送る（従来どおり）。
+    // 端末キーボードのときはテンキー内の単位一覧が出せないので、
+    // チップを押したら行の下に一覧を開く（7種類ある長さを送り送りで探させないため）。
+    // チップは作り直さないので、現在の単位は押された時点で読む（作成時の値で固定しない）。
+    const pickable = useKeyboard && hasPicker(f.quantity);
+    const unitBox = pickable ? h('div', { class: 'field-units' }) : null;
+    if (unitBox) unitBox.hidden = true;
+    const chip = pickable
+      ? h('button', {
+          class: 'field-row__unit',
+          type: 'button',
+          'aria-expanded': 'false',
+          text: unitLabel(f.quantity, st.units[f.key]) || st.units[f.key],
+          onclick: () => toggleUnits(f)
         })
-      );
+      : makeUnitChip(f.quantity, () => st.units[f.key], (u) => changeFieldUnit(f.key, u));
+    row.appendChild(chip);
+    row.appendChild(
+      h('button', {
+        class: 'field-row__clear',
+        type: 'button',
+        'aria-label': `${f.label} をクリア`,
+        text: '✕',
+        onclick: () => clearField(f.key)
+      })
+    );
 
-      inputBody.appendChild(row);
-
-      if (res.error && res.error.field === f.key) {
-        inputBody.appendChild(h('div', { class: 'field-error', text: res.error.message }));
-      }
-      if (badField === f.key) {
-        inputBody.appendChild(h('div', { class: 'field-error', text: '数字として読み取れません' }));
-      }
-    }
-
-    if (res.error && !res.error.field) {
-      inputBody.appendChild(
-        h('div', { class: 'field-error' + (res.error.isInfo ? ' is-info' : ''), text: res.error.message })
-      );
-    }
+    const error = h('div', { class: 'field-error' });
+    error.hidden = true;
+    return { row, valueEl, input, badge, chip, unitBox, error };
   }
 
-  /** 単位チップ。押すごとに次の単位へ切り替え、値は換算して引き継ぐ */
+  /** 端末キーボードのときの単位一覧。開いているのは常に1つだけにする */
+  function toggleUnits(f) {
+    const node = rows.get(f.key);
+    if (!node || !node.unitBox) return;
+    const open = node.unitBox.hidden;
+    for (const other of rows.values()) {
+      if (!other.unitBox) continue;
+      other.unitBox.hidden = true;
+      other.chip.setAttribute('aria-expanded', 'false');
+    }
+    if (!open) return;
+    node.unitBox.innerHTML = '';
+    node.unitBox.appendChild(
+      createUnitChips(f.quantity, st.units[f.key], (u) => {
+        changeFieldUnit(f.key, u);
+        node.unitBox.hidden = true;
+        node.chip.setAttribute('aria-expanded', 'false');
+      })
+    );
+    node.unitBox.hidden = false;
+    node.chip.setAttribute('aria-expanded', 'true');
+  }
+
+  function updateRow(f, res, badField) {
+    const node = rows.get(f.key);
+    if (!node) return;
+    const v = valueOfField(f.key, res);
+
+    node.row.className =
+      'field-row' +
+      (v.state === 'derived' ? ' is-derived' : '') +
+      (v.state === 'empty' ? ' is-empty' : '') +
+      (st.focusKey === f.key ? ' is-focus' : '');
+    node.badge.hidden = v.state !== 'derived';
+
+    if (node.input) {
+      // 打鍵中の欄には触れない（カーソルが末尾へ飛ぶため）。
+      // 入力済みの欄は生文字列をそのまま見せる（桁区切りを入れると編集しづらい）。
+      if (document.activeElement !== node.input) {
+        const shown = st.raws[f.key] !== '' ? st.raws[f.key] : v.state === 'derived' ? v.text : '';
+        if (node.input.value !== shown) node.input.value = shown;
+      }
+    } else {
+      node.valueEl.textContent = v.text;
+    }
+
+    const unitText = unitLabel(f.quantity, st.units[f.key]) || '—';
+    node.chip.textContent = unitText;
+    if (node.chip.tagName === 'BUTTON') {
+      node.chip.setAttribute(
+        'aria-label',
+        (node.unitBox ? '単位を選ぶ（現在: ' : '単位を切り替える（現在: ') + unitText + '）'
+      );
+    }
+
+    const message = res.error && res.error.field === f.key
+      ? res.error.message
+      : badField === f.key
+        ? '数字として読み取れません'
+        : '';
+    node.error.textContent = message;
+    node.error.hidden = !message;
+  }
+
+  function renderInputs(res, badField) {
+    if (!rows.size) {
+      for (const f of def.fields) {
+        const node = buildRow(f);
+        rows.set(f.key, node);
+        inputBody.appendChild(node.row);
+        if (node.unitBox) inputBody.appendChild(node.unitBox);
+        inputBody.appendChild(node.error);
+      }
+      inputBody.appendChild(formError);
+    }
+
+    for (const f of def.fields) updateRow(f, res, badField);
+
+    const whole = res.error && !res.error.field ? res.error.message : '';
+    formError.textContent = whole;
+    formError.className = 'field-error' + (res.error && res.error.isInfo ? ' is-info' : '');
+    formError.hidden = !whole;
+  }
+
+  /**
+   * 単位チップ。押すごとに次の単位へ切り替え、値は換算して引き継ぐ。
+   * @param {string} quantity
+   * @param {Function|string} current 現在の単位。関数なら押された時点で読む
+   *   （チップを作り直さない入力欄では、作成時の値で固定すると切り替えが1回で止まる）
+   * @param {Function} onChange
+   */
   function makeUnitChip(quantity, current, onChange) {
+    const unitNow = () => (typeof current === 'function' ? current() : current);
     if (!hasPicker(quantity)) {
-      return h('span', { class: 'field-row__unit', text: unitLabel(quantity, current) || '—' });
+      return h('span', { class: 'field-row__unit', text: unitLabel(quantity, unitNow()) || '—' });
     }
     return h('button', {
       class: 'field-row__unit',
       type: 'button',
-      'aria-label': '単位を切り替える（現在: ' + (unitLabel(quantity, current) || current) + '）',
-      text: unitLabel(quantity, current) || current,
+      'aria-label': '単位を切り替える（現在: ' + (unitLabel(quantity, unitNow()) || unitNow()) + '）',
+      text: unitLabel(quantity, unitNow()) || unitNow(),
       onclick: () => {
+        const now = unitNow();
         const list = unitList(quantity);
-        const i = list.findIndex((u) => u.id === current);
+        const i = list.findIndex((u) => u.id === now);
         onChange(list[(i + 1) % list.length].id);
       }
     });
@@ -700,6 +886,17 @@ export function renderCalcView(appEl, barEl, def, st) {
   function openField(key) {
     const f = def.fields.find((x) => x.key === key);
     if (!f) return;
+
+    // 端末キーボードのときはシートを出さず、その欄にカーソルを入れる
+    // （図の寸法ラベルをタップしたときもここへ来る）
+    if (useKeyboard) {
+      const node = rows.get(key);
+      if (!node || !node.input) return;
+      node.row.scrollIntoView({ block: 'center' });
+      node.input.focus();
+      return;
+    }
+
     st.focusKey = key;
 
     const idx = def.fields.findIndex((x) => x.key === key);
@@ -707,7 +904,8 @@ export function renderCalcView(appEl, barEl, def, st) {
     openNumpad({
       fieldKey: key,
       title: f.label,
-      help: f.help || '',
+      // 欄固有の help が無い専門用語は、用語集の定義で代替する
+      help: f.help || (termFor(f.label) ? termFor(f.label).desc : ''),
       index: idx,
       count: def.fields.length,
       // テンキーの中に同じ図を出し、いま入れている寸法を光らせる

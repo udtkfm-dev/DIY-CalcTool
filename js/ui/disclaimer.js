@@ -24,7 +24,7 @@ export function maybeShowDisclaimer() {
 
   const backdrop = h('div', { class: 'sheet-backdrop' });
   const sheet = h('div', {
-    class: 'sheet',
+    class: 'sheet sheet--center',
     role: 'dialog',
     'aria-modal': 'true',
     'aria-label': 'はじめにお読みください'

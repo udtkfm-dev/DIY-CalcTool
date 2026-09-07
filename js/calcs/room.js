@@ -22,7 +22,7 @@ export const roomWall = {
   shape: 'wallStrip',
 
   fields: [
-    lenField('perimeter', '周長', '部屋をぐるっと回った長さ'),
+    lenField('perimeter', '周長'),
     lenField('height', '天井高'),
     areaField('openings', '開口部の合計面積（任意）', 'ドア・窓など塗らない部分の合計'),
     areaField('area', '壁面積')

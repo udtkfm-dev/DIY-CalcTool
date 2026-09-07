@@ -41,7 +41,7 @@ export const roofSlope = {
   fields: [
     angleField('angle', '角度', '水平からの傾き'),
     { key: 'percent', label: '勾配 %', quantity: 'percent', defaultUnit: 'percent', optional: true },
-    { key: 'sun', label: '勾配「寸」', quantity: 'number', defaultUnit: 'number', optional: true, help: '10寸に対する高さ' },
+    { key: 'sun', label: '勾配「寸」', quantity: 'number', defaultUnit: 'number', optional: true },
     { key: 'areaFactor', label: '面積の割増係数', quantity: 'number', defaultUnit: 'number', optional: true, help: '水平投影面積に掛けると屋根の実面積になる' }
   ],
 

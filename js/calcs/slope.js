@@ -119,7 +119,7 @@ export const slopeConvert = {
     { key: 'angle', label: '角度', quantity: 'angle', defaultUnit: 'deg', min: 0, max: 90, exclusiveMin: true, optional: true, rangeMessage: ANGLE_RANGE_MSG, help: '水平からの傾き' },
     { key: 'percent', label: '勾配 %', quantity: 'percent', defaultUnit: 'percent', optional: true, help: '高さ÷水平距離×100' },
     { key: 'ratio', label: '勾配比（1:n の n）', quantity: 'number', defaultUnit: 'number', optional: true, exclusiveMin: false, help: '数字が大きいほど緩い勾配' },
-    { key: 'sun', label: '勾配「寸」', quantity: 'number', defaultUnit: 'number', optional: true, help: '10寸に対する高さ（例: 5寸勾配）' }
+    { key: 'sun', label: '勾配「寸」', quantity: 'number', defaultUnit: 'number', optional: true }
   ],
 
   solvers: slopeSolvers,

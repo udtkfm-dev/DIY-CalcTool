@@ -423,8 +423,11 @@
 .shape .note{ fill:var(--text-sub); font-size:9px; }
 
 .shape .dim{ cursor:pointer; }
+/* 寸法ラベルの下地は半透明にして、下を通る寸法線・図形が透けて見えるようにする。
+   完全に透明にすると数字が線と重なって読めなくなるため、文字が読める濃さを残す。 */
 .shape .dim .pill{
-  fill:var(--surface); stroke:var(--text-sub); stroke-width:1;
+  fill:var(--surface); fill-opacity:.66;
+  stroke:var(--text-sub); stroke-width:1;
 }
 .shape .dim .pill-txt{
   fill:var(--text); font-size:13px; font-weight:700;
@@ -438,7 +441,7 @@
 /* 結果ラベル（入力できない値）。入力できるラベルと取り違えないよう、
    枠を持たない小さな注記として描く */
 .shape .dim.is-readonly{ cursor:default; }
-.shape .dim.is-readonly .pill{ fill:var(--surface-2); stroke:none; }
+.shape .dim.is-readonly .pill{ fill:var(--surface-2); fill-opacity:.66; stroke:none; }
 .shape .dim.is-readonly .pill-txt{ fill:var(--text-sub); font-weight:400; font-size:12px; }
 .shape .dim.is-focus .pill{ stroke:var(--accent); stroke-width:2.4; }
 .shape .dim:focus-visible .pill{ stroke:var(--accent); stroke-width:2.4; }
@@ -485,6 +488,25 @@
 }
 .field-row.is-derived .field-row__value{ color:var(--accent); }
 .field-row.is-empty .field-row__value{ color:var(--text-sub); font-weight:400; }
+/* 端末のキーボードで直接打つ欄（スマホ既定）。見た目は上の値表示と同じに保つ */
+/* ラベルが長い欄（「開口部の合計面積（任意）」など）では、ラベルを折り返して
+   入力欄の幅を先に確保する。逆にすると入力欄が数px まで潰れて打てない */
+.field-row__label--edit{ flex:1 1 auto; min-width:3.4em; }
+.field-row__input{
+  flex:0 1 8em; min-width:4.5em; min-height:var(--tap);
+  border:0; padding:0; background:transparent;
+  border-radius:0;            /* iOS の既定の角丸・影を消す */
+  -webkit-appearance:none; appearance:none;
+  font-variant-numeric:tabular-nums;
+}
+.field-row__input::placeholder{ color:var(--text-sub); font-weight:400; opacity:1; }
+/* 端末キーボードのときの単位一覧（単位チップを押すと行の下に開く） */
+.field-units{
+  padding:0 var(--sp-3) var(--sp-2);
+  border-bottom:1px solid var(--line);
+}
+.field-row__input:focus{ outline:none; }
+.field-row.is-focus{ background:var(--surface-2); }
 .field-row__badge{
   flex:0 0 auto;
   font-size:11px; font-weight:700; color:var(--accent);
@@ -606,7 +628,18 @@
 .notes{ font-size:var(--fs-label); color:var(--text-sub); }
 .notes li{ margin-bottom:var(--sp-1); }
 
+/* 入力項目の説明（専門用語の意味と、その欄固有の目安） */
+.terms{ font-size:var(--fs-label); }
+.terms__name{ font-weight:700; }
+.terms__desc{ margin:2px 0 var(--sp-3); color:var(--text-sub); }
+.terms__desc:last-child{ margin-bottom:0; }
+
 /* ---------- テンキー（ボトムシート） ---------- */
+/* シートの入れ物。viewport.js が「見えている範囲」に合わせて位置と大きさを書き換える
+   （ピンチ拡大中でもシートが視野の外に出ないようにするため）。
+   箱自体はクリックを通し、シートと背景だけが受け取る。 */
+#sheet-root{ pointer-events:none; }
+#sheet-root > *{ pointer-events:auto; }
 .sheet-backdrop{
   position:fixed; inset:0; z-index:40;
   background:rgba(20,24,31,.28);
@@ -624,12 +657,29 @@
   /* 画面より高くならないよう天井を切る。これが無いと bottom:0 固定のまま上へ伸び、
      はみ出した図・項目名・入力値が画面外に出たまま到達不能になる
      （fixed 要素なのでページをスクロールしても出てこない）。
-     dvh はURLバーの伸縮に追従する。非対応環境は直前の vh で動く */
-  max-height:calc(100vh - 16px);
-  max-height:calc(100dvh - 16px);
+     天井は % で切る: #sheet-root が「見えている範囲」に縮められている場合は
+     その高さが基準になり、そうでない場合はビューポートの高さが基準になる
+     （dvh だと拡大中に箱より高くなり、はみ出したぶんが視野の外へ出る） */
+  max-height:calc(100% - 16px);
   display:flex; flex-direction:column;
 }
 @keyframes sheet-up{ from{ transform:translateY(100%) } to{ transform:translateY(0) } }
+
+/* 画面中央に置くダイアログ（初回の同意など）。
+   下端に貼り付くボトムシートだと、スマホで拡大しているときに視野の外に出やすいため、
+   「読んでから押す」種類のものは中央に出す。 */
+.sheet--center{
+  top:0; left:0; right:0; bottom:0;
+  margin:auto;
+  width:min(520px, calc(100% - 2 * var(--sp-4)));
+  max-width:none;
+  height:fit-content;
+  max-height:calc(100% - 2 * var(--sp-4));
+  border-radius:var(--r-l);
+  padding:var(--sp-4);
+  animation:dialog-in .16s ease-out;
+}
+@keyframes dialog-in{ from{ opacity:0; transform:translateY(8px) } to{ opacity:1; transform:none } }
 
 /* 下に引っぱって閉じられることを示すつまみ */
 .sheet__grip{
@@ -678,7 +728,8 @@
 .sheet__figure .dim{ pointer-events:none; }
 /* いま入れている寸法は塗りつぶして、ひと目で分かるようにする */
 .sheet__figure .dim.is-focus .pill{
-  fill:var(--accent); stroke:var(--accent); stroke-width:2;
+  /* 白抜き文字を載せるので、ここだけは半透明にしない */
+  fill:var(--accent); fill-opacity:1; stroke:var(--accent); stroke-width:2;
 }
 .sheet__figure .dim.is-focus .pill-txt{ fill:#fff; font-weight:700; }
 .sheet__figure .dim.is-empty .pill{ animation:none; }
@@ -833,6 +884,8 @@
   position:fixed; left:0; right:0; bottom:0; z-index:60;
   display:flex; flex-direction:column; align-items:center; gap:var(--sp-2);
   padding:var(--sp-4); pointer-events:none;
+  /* viewport.js が高さを与えたときも下端に寄せる（拡大中・キーボード表示中の追従用） */
+  justify-content:flex-end;
 }
 .toast{
   pointer-events:auto;
@@ -845,6 +898,20 @@
   animation:sheet-up .16s ease-out;
 }
 .toast__action{ font-weight:700; color:var(--accent); }
+
+/* ---------- タッチ端末の押した手応え ----------
+   タッチ端末では :hover が効かず、base.css で tap-highlight も消しているため、
+   押しても何も変わらない当たり判定がある。主要なタップ対象に :active を足す
+   （拡大して使っているときほど、押せたかどうかの手応えが要る）。 */
+@media (hover: none){
+  .cat:active, .list-item:active, .row:active, .quick__item:active,
+  .chip:active, .appbar__btn:active,
+  .field-row__unit:active, .field-row__clear:active, .suggest-chip:active{
+    background:var(--surface-2);
+  }
+  .field-row__tap:active{ background:var(--surface-2); }
+  .btn:active{ filter:brightness(.94); }
+}
 
 /* ---------- 画面幅に応じたカテゴリ列数 ---------- */
 @media (min-width:520px){

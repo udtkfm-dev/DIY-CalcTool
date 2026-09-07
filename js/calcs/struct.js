@@ -411,7 +411,7 @@ export const structReaction = {
   shapeMap: { L: 'L', W: 'P' },
 
   fields: [
-    lenField('L', 'スパン L', '支点間の距離'),
+    lenField('L', 'スパン L'),
     forceField('P', '荷重 P', '1kgあたり約9.8N'),
     lenField('a', '左支点からの距離 a', '荷重がかかる位置')
   ],
