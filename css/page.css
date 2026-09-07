@@ -1,0 +1,380 @@
+/* page.css — 検索エンジン向けの静的な解説ページ（calc/ と category/ 配下）専用
+ *
+ * アプリ本体（base.css / components.css）は appbar 固定・全画面前提のレイアウトなので、
+ * 読み物として自然に読める別のレイアウトをここに持つ。色は tokens.css を共有するため、
+ * ダークテーマの切り替えはアプリと同じ挙動になる。
+ * このファイルはアプリ側からは読み込まれない（Service Worker のキャッシュ対象外）。 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--bg);
+}
+
+body.doc {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.doc a {
+  color: var(--accent);
+}
+
+.doc :focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- ヘッダ / フッタ ---------- */
+
+.doc__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-4);
+  height: var(--appbar-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.doc a.doc__brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.doc__barlink {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.doc__main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--sp-5) var(--sp-4) 64px;
+}
+
+.doc__foot {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  padding: var(--sp-5) var(--sp-4);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.doc__foot p {
+  max-width: 760px;
+  margin: 0 auto var(--sp-2);
+}
+
+.doc__note {
+  line-height: 1.7;
+}
+
+/* ---------- 見出し ---------- */
+
+.doc h1 {
+  font-size: 26px;
+  line-height: 1.4;
+  margin: var(--sp-2) 0 var(--sp-3);
+}
+
+.doc h2 {
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 40px 0 var(--sp-3);
+  padding-bottom: var(--sp-2);
+  border-bottom: 2px solid var(--line);
+}
+
+.doc h2 a {
+  text-decoration: none;
+}
+
+.doc h3 {
+  font-size: 16px;
+  margin: var(--sp-5) 0 var(--sp-2);
+}
+
+.doc p {
+  margin: 0 0 var(--sp-4);
+}
+
+.doc__lead {
+  font-size: 17px;
+  color: var(--text-sub);
+}
+
+.doc__kw {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.doc__count {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-sub);
+}
+
+/* ---------- パンくず ---------- */
+
+.crumb {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: var(--sp-3);
+}
+
+.crumb a {
+  text-decoration: none;
+}
+
+.crumb__sep {
+  margin: 0 var(--sp-2);
+  opacity: 0.6;
+}
+
+/* ---------- 行動ボタン ---------- */
+
+.doc__cta {
+  margin: var(--sp-5) 0 var(--sp-5);
+}
+
+/* `.doc a` より詳細度を上げる（型セレクタを足さないと文字色が青のままになる） */
+.doc a.doc__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 0 var(--sp-5);
+  border-radius: var(--r-m);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-1);
+}
+
+.doc a.doc__btn:hover {
+  filter: brightness(1.06);
+}
+
+/* ---------- 一覧・表 ---------- */
+
+.doc__list,
+.doc__combos,
+.doc__links,
+.doc__cats,
+.doc__steps {
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.doc__steps {
+  counter-reset: step;
+}
+
+.doc__steps li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: var(--sp-2);
+}
+
+.doc__steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-weak);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+.doc__list li {
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__list--note li {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.doc__unit {
+  margin-left: var(--sp-3);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.doc__scroll {
+  overflow-x: auto;
+  margin-bottom: var(--sp-4);
+}
+
+.doc__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.doc__table th,
+.doc__table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--sp-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__table thead th {
+  background: var(--surface-2);
+  font-size: 13px;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.doc__table tbody th {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+/* 分かっている値 → 求まる値 */
+
+.doc__combos li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  margin-bottom: var(--sp-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  font-size: 15px;
+}
+
+.combo__arrow {
+  color: var(--text-sub);
+}
+
+.combo__out {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 関連リンク */
+
+.doc__links li {
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__links a {
+  display: block;
+  padding: var(--sp-3) 0;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.doc__links a:hover strong {
+  text-decoration: underline;
+}
+
+.doc__links strong {
+  display: block;
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.doc__links span {
+  display: block;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.doc__cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.doc__cats a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.doc__cats span {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.doc__toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+.doc__toc a {
+  padding: 4px var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.doc__more {
+  font-size: 14px;
+}
+
+.doc__sec {
+  margin-bottom: var(--sp-5);
+}
+
+/* 手書きの解説を差し込んだ部分（docs/seo-copy/<id>.html） */
+.doc__copy {
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-4);
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--r-s) var(--r-s) 0;
+}
+
+.doc__copy > :last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

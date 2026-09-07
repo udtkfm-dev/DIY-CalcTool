@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://udtkfm-dev.github.io/DIY-CalcTool/sitemap.xml

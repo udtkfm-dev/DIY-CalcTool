@@ -3,7 +3,7 @@
 // ルート: #/ , #/c/<calcId>[?h=<historyId>] , #/cat/<catId> , #/search?q= ,
 //        #/history , #/settings , #/about
 
-import { getCalc } from './calcs/index.js';
+import { getCalc, categoryName } from './calcs/index.js';
 import { getSettings, getHistory } from './core/store.js';
 import { renderHome, renderCategory, renderSearch, renderNotYet } from './ui/home.js';
 import { renderCalcView, createState, restoreInputs } from './ui/calcView.js';
@@ -36,6 +36,31 @@ function parseHash() {
   return { parts, query };
 }
 
+/* ---------- ページのタイトル・説明 ----------
+ *
+ * ハッシュより後ろは URL として区別されないので、これは検索順位そのものには
+ * 効かない。目的は「ブラウザのタブ・履歴・ブックマーク・共有時に、今どの計算を
+ * 見ているかが分かること」。検索エンジン向けの実体のあるページは
+ * calc/<計算ID>/ に別途あり、scripts/build-seo.mjs が生成している。
+ *
+ * canonical は常にトップのままにする（各画面で書き換えると、クローラが
+ * 素の URL を読んだときの状態と食い違うため）。 */
+
+const SITE_TITLE = 'DIY計算ツール';
+const HOME_TITLE = document.title;
+const descEl = document.querySelector('meta[name="description"]');
+const HOME_DESC = descEl ? descEl.getAttribute('content') : '';
+
+function setPageMeta(title, description) {
+  document.title = title || HOME_TITLE;
+  const desc = description || HOME_DESC;
+  if (descEl) descEl.setAttribute('content', desc);
+  const ogT = document.querySelector('meta[property="og:title"]');
+  if (ogT) ogT.setAttribute('content', title || HOME_TITLE);
+  const ogD = document.querySelector('meta[property="og:description"]');
+  if (ogD) ogD.setAttribute('content', desc);
+}
+
 function applyTheme() {
   const theme = getSettings().theme;
   if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
@@ -56,6 +81,7 @@ function route() {
   const { parts, query } = parseHash();
 
   if (parts.length === 0) {
+    setPageMeta(null, null);
     renderHome(appEl, barEl);
     return;
   }
@@ -63,9 +89,15 @@ function route() {
   if (parts[0] === 'c' && parts[1]) {
     const def = getCalc(decodeURIComponent(parts[1]));
     if (!def) {
+      setPageMeta(`見つかりません | ${SITE_TITLE}`, null);
       renderNotYet(appEl, barEl, 'この計算は未実装です');
       return;
     }
+
+    setPageMeta(
+      `${def.title}の計算 | ${SITE_TITLE}`,
+      `${def.title}｜${def.subtitle}。分かっている寸法を入れると残りの値が自動で求まります。`
+    );
 
     // area.compound は「任意個数の長方形を追加・穴として合成する」ため、
     // calcView.js の固定フィールド集合の前提と合わず専用画面を使う
@@ -103,30 +135,42 @@ function route() {
   }
 
   if (parts[0] === 'cat' && parts[1]) {
-    renderCategory(appEl, barEl, decodeURIComponent(parts[1]));
+    const catId = decodeURIComponent(parts[1]);
+    const name = categoryName(catId);
+    setPageMeta(
+      name ? `${name}の計算 | ${SITE_TITLE}` : null,
+      name ? `${name}に関する計算の一覧。分かっている寸法を入れると残りの値が自動で求まります。` : null
+    );
+    renderCategory(appEl, barEl, catId);
     return;
   }
 
   if (parts[0] === 'search') {
-    renderSearch(appEl, barEl, query.q || '');
+    const q = query.q || '';
+    setPageMeta(q ? `「${q}」の検索結果 | ${SITE_TITLE}` : null, null);
+    renderSearch(appEl, barEl, q);
     return;
   }
 
   if (parts[0] === 'history') {
+    setPageMeta(`計算の履歴 | ${SITE_TITLE}`, null);
     renderHistory(appEl, barEl);
     return;
   }
 
   if (parts[0] === 'settings') {
+    setPageMeta(`設定 | ${SITE_TITLE}`, null);
     renderSettings(appEl, barEl);
     return;
   }
 
   if (parts[0] === 'about') {
+    setPageMeta(`このアプリについて | ${SITE_TITLE}`, null);
     renderAbout(appEl, barEl);
     return;
   }
 
+  setPageMeta(`見つかりません | ${SITE_TITLE}`, null);
   renderNotYet(appEl, barEl, '見つかりません');
 }
 

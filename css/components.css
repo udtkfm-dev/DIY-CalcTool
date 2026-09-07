@@ -931,3 +931,22 @@
   .col-left, .col-right{ min-width:0; }
   .shape{ height:340px; max-height:340px; }
 }
+
+/* ---------- 静的サイトフッタ（index.html 内・main.js は触らない） ----------
+   JavaScript無しでも calc/ 配下の解説ページへ辿れる入口。
+   .app の下余白（140px）の下に置かれるため、区切り線を入れて独立して見せる。 */
+.sitefoot{
+  border-top:1px solid var(--line);
+  background:var(--surface);
+  padding:var(--sp-4) var(--sp-3);
+  font-size:12px; color:var(--text-sub);
+  text-align:center;
+}
+.sitefoot nav{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:var(--sp-2) var(--sp-3);
+  margin-bottom:var(--sp-2);
+}
+.sitefoot a{ color:var(--text-sub); text-decoration:none; }
+.sitefoot a:hover{ color:var(--accent); text-decoration:underline; }
+.sitefoot p{ margin:0; max-width:640px; margin-inline:auto; line-height:1.6; }
