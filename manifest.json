@@ -1,0 +1,15 @@
+{
+  "name": "DIY計算ツール",
+  "short_name": "DIY計算ツール",
+  "description": "DIY・木工・建築・外構向けの計算アプリ。図の寸法をタップして数字を入れると、残りの値が自動で出ます。",
+  "start_url": "./#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f8",
+  "theme_color": "#0b6bcb",
+  "lang": "ja",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

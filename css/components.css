@@ -1,0 +1,866 @@
+/* components.css — 各UI部品 */
+
+/* ---------- レイアウト ---------- */
+.appbar{
+  position:sticky; top:0; z-index:20;
+  height:var(--appbar-h);
+  display:flex; align-items:center; gap:var(--sp-2);
+  padding:0 var(--sp-2);
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+}
+.appbar__title{
+  flex:1 1 auto; min-width:0;
+  font-size:16px; font-weight:700;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.appbar__btn{
+  flex:0 0 auto;
+  min-width:var(--tap); height:var(--tap);
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:var(--r-m); color:var(--text-sub);
+  font-size:14px;
+}
+.appbar__btn:hover{ background:var(--surface-2); }
+.appbar__btn[aria-pressed="true"]{ color:var(--accent); }
+
+/* お気に入り: 星だけでは用途が伝わらないので、右にラベルを添えた枠つきボタンにする */
+.appbar__btn--fav{
+  min-width:0; height:var(--tap);
+  padding:0 12px; gap:5px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:13px; font-weight:700;
+}
+.appbar__btn--fav .fav__star{ font-size:16px; line-height:1; }
+.appbar__btn--fav .fav__label{ white-space:nowrap; }
+.appbar__btn--fav[aria-pressed="true"]{
+  border-color:var(--accent);
+  background:var(--accent-weak);
+}
+
+/* 戻る: 現場で手袋のまま押せるよう、アクセント色の塗りつぶしピルにする。
+   ヘッダの他のボタン（お気に入り・設定）より明確に目立たせる */
+.appbar__btn--back{
+  min-width:0; height:var(--tap);
+  padding:0 15px 0 11px; gap:3px;
+  background:var(--accent); color:#fff;
+  border-radius:999px;
+  font-size:15px; font-weight:700;
+  box-shadow:var(--shadow-1);
+}
+.appbar__btn--back:hover{ background:var(--accent); filter:brightness(1.08); }
+.appbar__btn--back:active{ filter:brightness(.92); }
+.appbar__btn--back .back__chev{
+  display:inline-flex; margin-right:1px;
+}
+/* ブランド: 角丸のマーク＋ワードマーク。ホームの見出しを兼ねるので、
+   一覧のカード群より一段強い存在感を持たせる */
+.appbar__brand{
+  display:flex; align-items:center; gap:9px;
+  padding-left:var(--sp-1);
+}
+.appbar__brand .brand__mark{
+  flex:0 0 auto;
+  width:30px; height:30px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:9px;
+  background:linear-gradient(145deg, var(--accent), color-mix(in srgb, var(--accent) 62%, #7c3aed));
+  color:#fff;
+  box-shadow:var(--shadow-1);
+}
+.appbar__brand .brand__mark svg{ width:19px; height:19px; }
+.appbar__brand .brand__word{
+  display:inline-flex; align-items:baseline; gap:2px;
+  min-width:0;
+  font-size:17px; line-height:1;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.appbar__brand em{
+  font-style:normal; font-weight:800;
+  letter-spacing:.06em;
+  color:var(--accent);
+}
+.appbar__brand .brand__word2{
+  font-weight:700; letter-spacing:.02em;
+  color:var(--text);
+}
+
+/* color-mix 非対応ブラウザでもマークが無地で成立するようにしておく */
+@supports not (background: color-mix(in srgb, red 50%, blue)){
+  .appbar__brand .brand__mark{ background:var(--accent); }
+}
+
+.app{
+  max-width:1200px; margin:0 auto;
+  padding:var(--sp-4) var(--sp-3) 140px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-m);
+  margin-bottom:var(--sp-4);
+  overflow:hidden;
+}
+.card__head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--sp-2);
+  padding:var(--sp-3) var(--sp-4);
+  border-bottom:1px solid var(--line);
+  font-size:var(--fs-label); font-weight:700; color:var(--text-sub);
+}
+.card__body{ padding:var(--sp-3) var(--sp-4); }
+
+.section-title{
+  font-size:var(--fs-label); font-weight:700; color:var(--text-sub);
+  margin:var(--sp-5) var(--sp-1) var(--sp-2);
+}
+.section-title:first-child{ margin-top:0; }
+
+/* ---------- ホーム ---------- */
+.app--home{ max-width:900px; }
+
+.search{
+  display:flex; align-items:center; gap:var(--sp-3);
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m); padding:0 var(--sp-3);
+  /* 枠線1pxぶん内側が縮むので、中の input が --tap を確保できるよう2px足す */
+  height:calc(var(--tap) + 2px);
+  transition:border-color .12s ease;
+}
+.search:focus-within{ border-color:var(--accent); }
+.search__icon{ display:inline-flex; color:var(--text-sub); flex:0 0 auto; }
+.search input{
+  flex:1; min-width:0; border:0; background:transparent; outline:none;
+  height:100%; font-size:16px;
+}
+.search input::placeholder{ color:var(--text-sub); opacity:.75; }
+
+/* クイックリンク: 主役は下のカテゴリなので、あくまで小さく添える */
+.quick{
+  display:flex; gap:var(--sp-2);
+  overflow-x:auto; overflow-y:hidden;
+  margin-top:var(--sp-3);
+  padding-bottom:2px;
+  scrollbar-width:none;
+}
+.quick::-webkit-scrollbar{ display:none; }
+.quick__item{
+  flex:0 0 auto;
+  height:var(--tap); padding:0 13px;
+  display:inline-flex; align-items:center; gap:6px;
+  background:transparent; border:1px solid var(--line);
+  border-radius:999px;
+  font-size:13px; color:var(--text-sub); white-space:nowrap;
+  text-decoration:none;
+  transition:color .12s ease, border-color .12s ease;
+}
+.quick__item:hover{ color:var(--accent); border-color:var(--accent); }
+.quick__icon{ display:inline-flex; color:var(--accent); opacity:.9; }
+
+.hint{
+  margin:var(--sp-4) 2px 0;
+  font-size:12.5px; line-height:1.6; color:var(--text-sub);
+}
+
+/* セクション見出し */
+.sec{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:var(--sp-3);
+  margin:var(--sp-5) 2px var(--sp-2);
+}
+.sec__label{
+  font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--text-sub);
+}
+.sec__n{
+  font-size:11px; color:var(--text-sub); opacity:.75;
+  font-variant-numeric:tabular-nums;
+}
+
+/* カテゴリ: 分野の絵をタイル全面の下絵にし、その上に分野名を大きく重ねる */
+.cat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.cat{
+  --cat:var(--accent);
+  position:relative; overflow:hidden;
+  min-height:92px;
+  display:flex; align-items:center; justify-content:center;
+  padding:10px 8px;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m);
+  text-decoration:none;
+  color:var(--cat);              /* currentColor = そのカテゴリの色 */
+  transition:border-color .12s ease;
+}
+.cat:hover{ border-color:var(--cat); }
+/* タイル全体の淡い下敷き（color-mix は iOS Safari 16.2 未満で効かないため使わない） */
+.cat::before{
+  content:''; position:absolute; inset:0;
+  background:currentColor; opacity:.07;
+}
+:root[data-theme="dark"] .cat::before{ opacity:.13; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .cat::before{ opacity:.13; }
+}
+
+/* カテゴリ色。tokens.css の --c-<name> を要素単位の --cat に流し込む。
+   data-color はカテゴリタイル（.cat）と計算一覧の行（.row）の両方が出力する */
+[data-color="blue"]{ --cat:var(--c-blue); }
+[data-color="violet"]{ --cat:var(--c-violet); }
+[data-color="indigo"]{ --cat:var(--c-indigo); }
+[data-color="teal"]{ --cat:var(--c-teal); }
+[data-color="cyan"]{ --cat:var(--c-cyan); }
+[data-color="green"]{ --cat:var(--c-green); }
+[data-color="emerald"]{ --cat:var(--c-emerald); }
+[data-color="amber"]{ --cat:var(--c-amber); }
+[data-color="orange"]{ --cat:var(--c-orange); }
+[data-color="yellow"]{ --cat:var(--c-yellow); }
+[data-color="gold"]{ --cat:var(--c-gold); }
+[data-color="red"]{ --cat:var(--c-red); }
+[data-color="pink"]{ --cat:var(--c-pink); }
+[data-color="slate"]{ --cat:var(--c-slate); }
+[data-color="steel"]{ --cat:var(--c-steel); }
+
+/* 下絵。タイルいっぱいに広げ、文字の背後に薄く敷く */
+.cat__icon{
+  position:absolute; inset:7px;
+  display:flex; align-items:center; justify-content:center;
+  opacity:.3; pointer-events:none;
+}
+.cat__icon svg{ width:100%; height:100%; stroke-width:1.25; }
+:root[data-theme="dark"] .cat__icon{ opacity:.36; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .cat__icon{ opacity:.36; }
+}
+.cat__icon--emoji{ font-size:44px; line-height:1; }
+
+/* 分野名。下絵の線と重なっても読めるよう、地色のにじみを回す */
+.cat__name{
+  position:relative; z-index:1;
+  font-size:14.5px; font-weight:800; line-height:1.28;
+  text-align:center; color:var(--text);
+  text-shadow:
+    0 0 3px var(--surface), 0 0 3px var(--surface),
+    0 0 7px var(--surface), 0 0 7px var(--surface);
+}
+.cat__n{
+  position:absolute; z-index:1; top:7px; right:9px;
+  font-size:10.5px; font-weight:700; color:var(--text-sub); opacity:.8;
+  font-variant-numeric:tabular-nums;
+}
+
+/* 行リスト: 1件ずつ浮かせず、1枚の面をヘアラインで区切る */
+.rows{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m); overflow:hidden;
+}
+.row{
+  display:flex; align-items:center; gap:10px;
+  min-height:var(--tap); padding:7px var(--sp-3) 7px 10px;
+  border-bottom:1px solid var(--line);
+  text-decoration:none; color:inherit;
+  transition:background-color .1s ease;
+}
+.row:last-child{ border-bottom:0; }
+.row:hover{ background:var(--surface-2); }
+/* その計算が描く図のアイコン。分野の色で塗って一覧の中の手がかりにする */
+.row__icon{
+  position:relative; flex:0 0 auto;
+  width:30px; height:30px;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:var(--cat, var(--accent));
+}
+/* 淡い下敷き。負の z-index にすると .rows の地に隠れるため、
+   下敷きを先に置き、SVG 側を position:relative で上に載せる */
+.row__icon::before{
+  content:''; position:absolute; inset:0;
+  border-radius:8px; background:currentColor; opacity:.11;
+}
+.row__icon svg{ position:relative; }
+:root[data-theme="dark"] .row__icon::before{ opacity:.2; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .row__icon::before{ opacity:.2; }
+}
+.row__main{ flex:1; min-width:0; }
+.row__title{ font-size:14px; font-weight:700; line-height:1.3; }
+.row__sub{
+  font-size:11.5px; color:var(--text-sub); margin-top:1px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.row__chev{ flex:0 0 auto; display:inline-flex; color:var(--text-sub); opacity:.45; }
+.row--more{ padding-left:var(--sp-4); }
+.row--more .row__title{ font-weight:400; color:var(--text-sub); font-size:13px; }
+
+.chips{
+  display:flex; gap:var(--sp-2);
+  overflow-x:auto; padding:var(--sp-1) 0 var(--sp-2);
+}
+.chip{
+  flex:0 0 auto;
+  min-height:var(--tap); min-width:var(--tap);
+  justify-content:center; padding:0 var(--sp-4);
+  display:inline-flex; align-items:center;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:999px; font-size:14px; white-space:nowrap;
+  text-decoration:none; color:inherit;
+}
+.chip[aria-pressed="true"], .chip.is-active{
+  background:var(--accent-weak); border-color:var(--accent); color:var(--accent);
+  font-weight:700;
+}
+.chip--sub{ background:#fdecea; border-color:var(--error); color:var(--error); font-weight:700; }
+
+/* ---------- 複合図形（area.compound） ---------- */
+.compound-shape{ margin-bottom:var(--sp-3); }
+.compound-shape__head{
+  display:flex; align-items:center; gap:var(--sp-2);
+  padding:var(--sp-2) var(--sp-3);
+  border-bottom:1px solid var(--line);
+}
+.compound-shape__title{ flex:1; font-weight:700; font-size:var(--fs-label); color:var(--text-sub); }
+.list-item{
+  display:flex; align-items:center; gap:var(--sp-3);
+  width:100%; min-height:var(--tap);
+  padding:var(--sp-3) var(--sp-4);
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r-m); margin-bottom:var(--sp-2);
+  text-align:left; text-decoration:none; color:inherit;
+  transition:border-color .1s ease;
+}
+.list-item:hover{ border-color:var(--accent); }
+.list-item__main{ flex:1; min-width:0; }
+.list-item__title{ font-weight:700; }
+.list-item__sub{ font-size:var(--fs-label); color:var(--text-sub); }
+.list-item__chev{ color:var(--text-sub); }
+
+.settings-field{ margin-bottom:var(--sp-4); }
+.settings-field:last-child{ margin-bottom:0; }
+.settings-field__label{
+  font-size:var(--fs-label); color:var(--text-sub); margin-bottom:var(--sp-2);
+}
+
+.history-item{ align-items:center; gap:var(--sp-2); }
+.history-item__link{
+  flex:1; min-width:0;
+  display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2);
+  text-decoration:none; color:inherit; min-height:var(--tap);
+}
+
+.empty a{
+  display:inline-flex; align-items:center; min-height:var(--tap);
+}
+.empty{
+  padding:var(--sp-5) var(--sp-4);
+  color:var(--text-sub); font-size:var(--fs-label);
+  text-align:center;
+}
+
+/* ---------- 広告枠 ---------- */
+.ad-slot{
+  position:relative;
+  margin-top:var(--sp-5);
+  display:flex; align-items:center;
+  border:1px dashed var(--line); border-radius:var(--r-m);
+  color:var(--text-sub); font-size:12px;
+  overflow:hidden;
+}
+/* ダミー表示。本物の広告と取り違えないよう「サンプル表示」を必ず出す */
+.ad--dummy{
+  gap:var(--sp-3);
+  padding:var(--sp-3) var(--sp-4);
+  background:var(--surface);
+}
+.ad__badge{
+  position:absolute; top:6px; right:8px;
+  font-size:10px; font-weight:700; letter-spacing:.04em;
+  color:var(--text-sub);
+  background:var(--surface-2); border-radius:999px;
+  padding:2px 7px;
+}
+.ad__body{ flex:1; min-width:0; padding-right:72px; }
+.ad__title{ font-size:14px; font-weight:700; color:var(--text); margin-bottom:3px; }
+.ad__text{ font-size:12px; line-height:1.5; color:var(--text-sub); }
+
+/* ---------- 図形 ---------- */
+.shape-wrap{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--r-m);
+  margin-bottom:var(--sp-4);
+  padding:var(--sp-2);
+}
+.shape{
+  display:block; width:100%;
+  /* 220 は viewBox の高さ。これを下回ると SVG 全体が縮み、寸法ラベルのタップ領域が
+     48px を割る（460px 高の端末で実測 45.8px だった） */
+  height:42vh; max-height:280px; min-height:220px;
+  touch-action:manipulation;
+}
+
+/* 狭い画面では図を画面幅いっぱいに描く。
+   SVG は幅に合わせて拡縮するので、左右の余白（.app 12px + .shape-wrap 8px + 枠 1px）を
+   残したままだと 320px 端末で倍率 0.87 まで落ち、寸法ラベルのタップ領域が
+   48px を割る（実測 27.9px）。全幅にすると倍率が 1.0 以上になり、
+   engine.js の PILL_H がそのまま CSSピクセルの下限として効く */
+@media (max-width:400px){
+  .shape-wrap{
+    margin-left:calc(-1 * var(--sp-3));
+    margin-right:calc(-1 * var(--sp-3));
+    padding-left:0; padding-right:0;
+    border-left:0; border-right:0;
+    border-radius:0;
+  }
+}
+.shape .body{
+  fill:var(--accent-weak); stroke:var(--text); stroke-width:2;
+  stroke-linejoin:round;
+}
+.shape .aux{ stroke:var(--line); stroke-width:1; fill:none; }
+.shape .dimline{ stroke:var(--text-sub); stroke-width:1.2; fill:none; }
+.shape .arrow{ fill:var(--text-sub); }
+.shape .arc{ stroke:var(--text-sub); stroke-width:1.2; fill:none; }
+.shape .vertex{ fill:var(--text-sub); font-size:11px; font-weight:700; }
+.shape .note{ fill:var(--text-sub); font-size:9px; }
+
+.shape .dim{ cursor:pointer; }
+.shape .dim .pill{
+  fill:var(--surface); stroke:var(--text-sub); stroke-width:1;
+}
+.shape .dim .pill-txt{
+  fill:var(--text); font-size:13px; font-weight:700;
+  text-anchor:middle; dominant-baseline:central;
+}
+.shape .dim.is-input .pill{ stroke:var(--text); stroke-width:1.6; }
+.shape .dim.is-derived .pill{ stroke:var(--accent); stroke-dasharray:4 3; }
+.shape .dim.is-derived .pill-txt{ fill:var(--accent); }
+.shape .dim.is-empty .pill{ stroke:var(--line); stroke-dasharray:2 3; animation:pulse 1.8s ease-in-out infinite; }
+.shape .dim.is-empty .pill-txt{ fill:var(--text-sub); font-weight:400; }
+/* 結果ラベル（入力できない値）。入力できるラベルと取り違えないよう、
+   枠を持たない小さな注記として描く */
+.shape .dim.is-readonly{ cursor:default; }
+.shape .dim.is-readonly .pill{ fill:var(--surface-2); stroke:none; }
+.shape .dim.is-readonly .pill-txt{ fill:var(--text-sub); font-weight:400; font-size:12px; }
+.shape .dim.is-focus .pill{ stroke:var(--accent); stroke-width:2.4; }
+.shape .dim:focus-visible .pill{ stroke:var(--accent); stroke-width:2.4; }
+
+/* 複合図形（area.compound）の「穴」長方形。追加分と区別できるよう破線・白抜きにする */
+.shape .body-sub{ fill:var(--surface); stroke:var(--error); stroke-dasharray:5 3; }
+
+/* タンクの液面より下。中身が入っている範囲を示す */
+.shape .liquid{ fill:var(--accent); fill-opacity:.22; stroke:var(--accent); stroke-width:1.4; }
+
+/* 説明図（diagrams.js）の塗り分け */
+.shape .body-alt{ fill:var(--surface-2); stroke:var(--text); stroke-width:2; stroke-linejoin:round; }
+.shape .body-weld{ fill:var(--warn); fill-opacity:.35; stroke:var(--warn); stroke-width:1.6; }
+.shape .body-insul{ fill:var(--accent); fill-opacity:.18; stroke:var(--text); stroke-width:2; }
+/* 未入力のあいだの当たり（形だけ薄く見せる） */
+.shape .body-ghost{ fill:var(--surface-2); stroke:var(--line); stroke-width:1.6; stroke-dasharray:5 3; }
+.shape .pt-focus{ fill:var(--accent); stroke:var(--accent); }
+
+@keyframes pulse{ 0%,100%{ opacity:1 } 50%{ opacity:.45 } }
+
+/* ---------- 入力欄リスト ---------- */
+.field-row{
+  display:flex; align-items:center; gap:var(--sp-2);
+  width:100%; min-height:var(--tap);
+  padding:var(--sp-2) var(--sp-3);
+  border-bottom:1px solid var(--line);
+  background:transparent; text-align:left;
+}
+.field-row:last-child{ border-bottom:0; }
+.field-row.is-derived{ background:var(--accent-weak); }
+.field-row.is-focus{ box-shadow:inset 3px 0 0 var(--accent); }
+.field-row__tap{
+  flex:1; min-width:0;
+  display:flex; align-items:center; gap:var(--sp-2);
+  min-height:var(--tap); background:transparent; text-align:left;
+}
+.field-row__label{
+  flex:0 0 auto; min-width:4.5em;
+  font-size:var(--fs-label); color:var(--text-sub);
+}
+.field-row__value{
+  flex:1; text-align:right; font-size:20px; font-weight:700;
+  white-space:nowrap; overflow-x:auto;
+}
+.field-row.is-derived .field-row__value{ color:var(--accent); }
+.field-row.is-empty .field-row__value{ color:var(--text-sub); font-weight:400; }
+.field-row__badge{
+  flex:0 0 auto;
+  font-size:11px; font-weight:700; color:var(--accent);
+  background:var(--surface); border:1px solid var(--accent);
+  border-radius:999px; padding:1px 6px;
+}
+.field-row__unit{
+  flex:0 0 auto; min-width:52px; height:var(--tap);
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); border-radius:999px;
+  font-size:13px; color:var(--text-sub); background:var(--surface);
+}
+.field-row__clear{
+  flex:0 0 auto; width:var(--tap); height:var(--tap);
+  display:inline-flex; align-items:center; justify-content:center;
+  color:var(--text-sub); border-radius:50%;
+}
+.field-row__clear:hover{ background:var(--surface-2); }
+
+/* 狭い画面では、48pxのタップ領域（単位・クリア）を確保したぶん数値の表示幅が痩せる。
+   行の左右余白とラベルの最小幅を詰めて、桁数の多い値ができるだけ見えるようにする */
+@media (max-width:400px){
+  .field-row{ padding-left:var(--sp-2); padding-right:var(--sp-2); }
+  .field-row__label{ min-width:3.4em; }
+}
+
+.field-error{
+  padding:var(--sp-2) var(--sp-3);
+  font-size:var(--fs-label);
+  color:var(--error); background:var(--error-weak);
+}
+.field-error.is-info{ color:var(--info); background:var(--info-weak); }
+
+/* ---------- 結果 ---------- */
+.result-lead{
+  font-size:var(--fs-label); color:var(--text-sub);
+  padding:0 0 var(--sp-3);
+}
+.result-primary{
+  /* 「m² で見る」等のサジェストが付くと1行に収まらない幅がある。
+     押せる大きさを保ったまま折り返させる */
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap;
+  gap:var(--sp-2) var(--sp-3); padding:var(--sp-2) 0; width:100%; text-align:left;
+}
+.result-primary__label{ flex:0 0 auto; font-size:var(--fs-label); color:var(--text-sub); }
+.result-primary__value{
+  flex:1; text-align:right;
+  font-size:var(--fs-num); font-weight:700;
+  white-space:nowrap; overflow-x:auto;
+  /* タップでコピーするボタン。指で押せる高さを確保する */
+  min-height:var(--tap);
+  display:flex; align-items:center; justify-content:flex-end;
+}
+.result-grid{
+  /* minmax(0,…) が要る。1fr のままだとセルの min-content（単位48+値48）で
+     列が広がり、狭い画面でカードから溢れる */
+  display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:var(--sp-2);
+  margin-top:var(--sp-3);
+}
+.result-cell{
+  display:flex; flex-direction:column; gap:2px;
+  padding:var(--sp-2) var(--sp-3);
+  background:var(--surface-2); border-radius:var(--r-s);
+  text-align:left; min-height:var(--tap);
+  justify-content:center;
+}
+.result-cell__label{ font-size:12px; color:var(--text-sub); }
+.result-cell__row{
+  display:flex; align-items:center; gap:var(--sp-2);
+  justify-content:space-between; flex-wrap:wrap;
+}
+.result-cell__value{
+  flex:1; text-align:left; font-weight:700;
+  white-space:nowrap; overflow-x:auto;
+  /* 値が短くても指で押せる大きさを保つ（「50%」等で幅43pxまで痩せていた） */
+  min-height:var(--tap); min-width:var(--tap);
+  display:flex; align-items:center;
+}
+.result-cell .field-row__unit{ min-width:48px; height:var(--tap); font-size:12px; }
+.result-actions{
+  display:flex; gap:var(--sp-2); flex-wrap:wrap;
+  margin-top:var(--sp-3);
+}
+.btn{
+  min-height:var(--tap); padding:0 var(--sp-4);
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); border-radius:var(--r-m);
+  background:var(--surface); font-size:14px; font-weight:700;
+}
+.btn--primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.btn--ghost{ border-color:transparent; color:var(--accent); }
+.is-stale{ opacity:.45; }
+
+.suggest-chip{
+  margin-left:var(--sp-2); font-size:12px; color:var(--accent);
+  border:1px solid var(--accent); border-radius:999px; padding:0 10px;
+  flex:0 0 auto; min-height:var(--tap);
+  display:inline-flex; align-items:center;
+}
+
+/* ---------- 式・計算過程 ---------- */
+.formula{
+  font-family:var(--font-mono); font-size:14px;
+  overflow-x:auto; white-space:nowrap;
+}
+.formula__name{
+  font-family:var(--font); font-weight:700;
+  margin-right:var(--sp-3);
+}
+.steps{ display:flex; flex-direction:column; gap:var(--sp-3); }
+.step{
+  font-family:var(--font-mono); font-size:13px; line-height:1.7;
+  overflow-x:auto; white-space:nowrap;
+}
+.step__no{ font-weight:700; color:var(--accent); margin-right:var(--sp-1); }
+.step__line{ padding-left:1.6em; }
+
+.notes{ font-size:var(--fs-label); color:var(--text-sub); }
+.notes li{ margin-bottom:var(--sp-1); }
+
+/* ---------- テンキー（ボトムシート） ---------- */
+.sheet-backdrop{
+  position:fixed; inset:0; z-index:40;
+  background:rgba(20,24,31,.28);
+}
+.sheet{
+  position:fixed; left:0; right:0; bottom:0; z-index:41;
+  /* 広い画面では画面幅いっぱいに広げず、片手で届く幅に収めて中央へ寄せる
+     （margin:auto で寄せるのは、せり上がりアニメの translateY と競合させないため） */
+  margin:0 auto; max-width:520px;
+  background:var(--surface);
+  border-top-left-radius:var(--r-l); border-top-right-radius:var(--r-l);
+  box-shadow:var(--shadow-2);
+  padding:var(--sp-3) var(--sp-3) max(var(--sp-3), env(safe-area-inset-bottom));
+  animation:sheet-up .16s ease-out;
+  /* 画面より高くならないよう天井を切る。これが無いと bottom:0 固定のまま上へ伸び、
+     はみ出した図・項目名・入力値が画面外に出たまま到達不能になる
+     （fixed 要素なのでページをスクロールしても出てこない）。
+     dvh はURLバーの伸縮に追従する。非対応環境は直前の vh で動く */
+  max-height:calc(100vh - 16px);
+  max-height:calc(100dvh - 16px);
+  display:flex; flex-direction:column;
+}
+@keyframes sheet-up{ from{ transform:translateY(100%) } to{ transform:translateY(0) } }
+
+/* 下に引っぱって閉じられることを示すつまみ */
+.sheet__grip{
+  flex:0 0 auto;
+  width:40px; height:4px; margin:0 auto 8px;
+  border-radius:999px; background:var(--line);
+}
+
+/* キーパッドより上の部分。高さが足りないときは、まず図が縮み、それでも足りなければ
+   ここがスクロールして不足を吸収する。キーパッドと完了ボタンは flex:0 0 auto の
+   まま残るので、どんなに低い画面でも必ず押せる位置にある */
+.sheet__top{
+  flex:1 1 auto; min-height:0;
+  overflow-y:auto; overscroll-behavior:contain;
+  display:flex; flex-direction:column;
+}
+/* 図だけが縮む。他は縮めると読めなくなるので実寸を保つ */
+.sheet__top > *{ flex:0 0 auto; }
+
+/* シート内のミニ図。いま入れている寸法が光るので「どこの寸法か」が分かる */
+.sheet__figure{
+  /* 縦フレックスにしないと、箱だけ縮んで中の SVG が実寸のまま切り取られる
+     （max-height:100% は親の高さが auto のとき効かない） */
+  flex:0 1 auto; min-height:0; overflow:hidden;
+  display:flex; flex-direction:column;
+  background:var(--surface-2);
+  border-radius:var(--r-m);
+  padding:2px;
+  margin-bottom:10px;
+}
+.sheet__figure .shape{
+  flex:0 1 auto;
+  height:clamp(112px, 23vh, 180px);
+  min-height:0; max-height:100%;
+}
+/* SVGは縦横比を保って縮むので、そのままだと文字が小さくなりすぎる。
+   ミニ図の中だけ文字・線を一回り大きくして、離れていても読めるようにする */
+.sheet__figure .pill-txt{ font-size:15px; }
+.sheet__figure .dimline, .sheet__figure .arc{ stroke-width:1.5; }
+.sheet__figure .vertex{ font-size:12px; }
+/* 縮尺の誤認防止の注記（REQUIREMENTS 6-1「常に表示」）はミニ図でも消さない。
+   縮小されると読めなくなるので、こちらも一回り大きくする */
+.sheet__figure .note{ font-size:11px; }
+/* シート内では図をタップして別の欄へ飛ばない（誤操作防止）。
+   欄の移動は「前へ / 次へ」キーで行う */
+.sheet__figure .dim{ pointer-events:none; }
+/* いま入れている寸法は塗りつぶして、ひと目で分かるようにする */
+.sheet__figure .dim.is-focus .pill{
+  fill:var(--accent); stroke:var(--accent); stroke-width:2;
+}
+.sheet__figure .dim.is-focus .pill-txt{ fill:#fff; font-weight:700; }
+.sheet__figure .dim.is-empty .pill{ animation:none; }
+
+.sheet__head{
+  display:flex; align-items:flex-start; gap:var(--sp-2);
+  margin-bottom:8px;
+}
+.sheet__titles{ flex:1; min-width:0; }
+.sheet__title{ font-size:19px; font-weight:800; line-height:1.25; }
+.sheet__help{
+  font-size:12.5px; color:var(--text-sub); line-height:1.45;
+  margin-top:2px;
+}
+.sheet__step{
+  flex:0 0 auto; margin-top:3px;
+  font-size:12px; font-weight:700; color:var(--text-sub);
+  font-variant-numeric:tabular-nums;
+  background:var(--surface-2); border-radius:999px;
+  padding:3px 9px;
+}
+.sheet__close{
+  flex:0 0 auto;
+  width:var(--tap); height:var(--tap); margin:-8px -8px 0 0;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%; color:var(--text-sub); font-size:20px;
+}
+.sheet__close:hover{ background:var(--surface-2); }
+
+/* 値。数字を大きく、単位を右に添える。
+   低い画面で .sheet__top がスクロールしたときは上端に貼り付いて、
+   打っている数字が画面外へ出ないようにする（top:0 なので通常時の位置は変わらない） */
+.sheet__valuerow{
+  display:flex; align-items:baseline; gap:10px;
+  padding:8px var(--sp-3);
+  background:var(--surface-2); border:2px solid var(--accent);
+  border-radius:var(--r-m);
+  margin-bottom:8px;
+  position:sticky; top:0; z-index:1;
+}
+.sheet__value{
+  flex:1; min-width:0;
+  font-size:38px; font-weight:800; line-height:1.15; text-align:right;
+  white-space:nowrap; overflow-x:auto;
+  touch-action:pan-x;
+  font-variant-numeric:tabular-nums;
+}
+.sheet__value.is-empty{ color:var(--text-sub); opacity:.45; }
+.sheet__unit{
+  flex:0 0 auto; font-size:17px; font-weight:700; color:var(--text-sub);
+}
+.sheet__note, .sheet__hint{
+  font-size:12px; color:var(--text-sub); line-height:1.5;
+  margin-bottom:6px;
+}
+.sheet__hint{ color:var(--info); font-weight:700; }
+
+.keypad{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--sp-2);
+}
+.keypad button{
+  min-height:clamp(50px, 7.4vh, 62px);
+  display:inline-flex; align-items:center; justify-content:center; gap:1px;
+  background:var(--surface-2); border:1px solid transparent;
+  border-radius:var(--r-m);
+  font-size:26px; font-weight:700;
+  color:var(--text);
+  -webkit-tap-highlight-color:transparent;
+}
+.keypad button:active{ background:var(--accent); color:#fff; }
+.keypad .k-fn{ font-size:15px; font-weight:700; }
+/* ⌫ と C は記号だけだと伝わりにくいので、下に短い言葉を添える */
+.keypad .k-back, .keypad .k-clear{ flex-direction:column; gap:0; }
+.keypad .k-glyph{ font-size:19px; line-height:1.1; }
+.keypad .k-sub{ font-size:10.5px; font-weight:700; opacity:.72; }
+/* 欄の移動は数字と取り違えないよう、色と枠で系統を分ける */
+.keypad .k-prev, .keypad .k-next{
+  background:var(--accent-weak); color:var(--accent);
+  border-color:var(--accent);
+}
+.keypad .k-prev svg, .keypad .k-next svg{ display:block; }
+
+.sheet__done{
+  width:100%; min-height:52px; margin-top:8px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--accent); color:#fff;
+  border-radius:var(--r-m);
+  font-size:17px; font-weight:800;
+}
+.sheet__done:active{ filter:brightness(.92); }
+
+/* 単位チップ列。シートの中では横スクロールバーを出さず、指で押せる大きさにする。
+   .chip は設定画面・複合図形エディタでも使う共通クラスなので、必ず .sheet 配下に限定する */
+.sheet .chips{
+  padding:0 0 8px;
+  overflow-x:auto; scrollbar-width:none;
+}
+.sheet .chips::-webkit-scrollbar{ display:none; }
+.sheet .chip{ min-height:var(--tap); font-size:15px; padding:0 16px; }
+
+/* 背の低い端末（iPhone SE 等）では図とキーを詰めて、シート全体を収める。
+   キーの高さは詰めても 48px（REQUIREMENTS 11章のタップ最小）を下回らせない */
+@media (max-height:700px){
+  .sheet__figure .shape{ height:clamp(96px, 19vh, 130px); }
+  .sheet__title{ font-size:17px; }
+  .sheet__value{ font-size:32px; }
+  .keypad button{ min-height:48px; font-size:23px; }
+  .sheet__done{ min-height:48px; }
+}
+
+/* 縦の短い端末（320×568 の iPhone SE、URLバー表示中の Android など）。
+   この高さではミニ図に 50px 未満しか割けず、潰れた図は手がかりにならないので消す。
+   図が無くても項目名・ステップ表示・結果の即時反映で「どこを入れているか」は追える */
+/* この高さ以下では .sheet__top がスクロールし得る。単位チップ列が途中で切れるのが
+   「途切れ」ではなく「スクロールできる領域」に見えるよう、区切り線を入れる */
+@media (max-height:620px){
+  .sheet__top{
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px; margin-bottom:6px;
+  }
+}
+
+@media (max-height:600px) and (orientation:portrait){
+  .sheet__figure{ display:none; }
+  .sheet__title{ font-size:16px; }
+  .sheet__value{ font-size:28px; }
+}
+
+/* 横持ち。縦に積むと 4段キーだけで画面が埋まるため、左に入力対象・右にキーを置く。
+   こうすると図を残したまま、値もキーも完了ボタンも同時に画面へ収まる */
+@media (max-height:480px) and (orientation:landscape){
+  .sheet{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(220px,48%);
+    grid-template-areas:"top pad" "top done";
+    grid-template-rows:1fr auto;
+    column-gap:var(--sp-3);
+  }
+  .sheet__grip{ display:none; }
+  .sheet__top{ grid-area:top; }
+  .keypad{ grid-area:pad; }
+  .sheet__done{ grid-area:done; margin-top:var(--sp-2); }
+  .sheet__figure .shape{ height:clamp(80px, 26vh, 120px); }
+  .sheet__value{ font-size:28px; }
+  .keypad button{ min-height:48px; font-size:22px; }
+}
+
+/* ---------- トースト ---------- */
+.toast-root{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  display:flex; flex-direction:column; align-items:center; gap:var(--sp-2);
+  padding:var(--sp-4); pointer-events:none;
+}
+.toast{
+  pointer-events:auto;
+  max-width:520px;
+  display:flex; align-items:center; gap:var(--sp-3);
+  padding:var(--sp-3) var(--sp-4);
+  background:var(--text); color:var(--bg);
+  border-radius:var(--r-m); box-shadow:var(--shadow-2);
+  font-size:14px;
+  animation:sheet-up .16s ease-out;
+}
+.toast__action{ font-weight:700; color:var(--accent); }
+
+/* ---------- 画面幅に応じたカテゴリ列数 ---------- */
+@media (min-width:520px){
+  .cat-grid{ grid-template-columns:repeat(4,1fr); }
+}
+@media (min-width:760px){
+  .cat-grid{ grid-template-columns:repeat(6,1fr); }
+}
+
+/* ---------- 2カラム（PC/タブレット） ---------- */
+@media (min-width:900px){
+  .app.two-col{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:var(--sp-5); align-items:start;
+  }
+  .col-left, .col-right{ min-width:0; }
+  .shape{ height:340px; max-height:340px; }
+}

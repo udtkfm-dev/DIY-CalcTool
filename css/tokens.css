@@ -1,0 +1,72 @@
+/* tokens.css — デザイントークン（色 / 余白 / 文字 / 影） */
+
+:root{
+  --bg:#f5f6f8; --surface:#fff; --surface-2:#eef1f5;
+  --text:#14181f; --text-sub:#5b6472; --line:#d8dde5;
+  --accent:#0b6bcb;          /* 算出値・主要アクション */
+  --accent-weak:#e7f0fb;
+  --warn:#b54708; --error:#c02626; --info:#0b6bcb; --ok:#0f7b41;
+  --error-weak:#fdeaea; --info-weak:#e7f0fb;
+  --r-s:8px; --r-m:14px; --r-l:20px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px;
+  --fs-num:28px; --fs-body:15px; --fs-label:13px;
+  --tap:48px;                /* 最小タップ高 */
+
+  /* カテゴリの識別色。分野を系統でまとめて割り当てる（配色は index.js の CATEGORIES.color）。
+     色そのものに意味を持たせるのではなく、一覧の中で「隣と違う」ことを一目で分かるようにするのが目的。 */
+  --c-blue:#2563eb;    /* 基本の寸法・幾何 */
+  --c-violet:#7c3aed;  /* 建築の構成要素 */
+  --c-indigo:#4338ca;  /* 位置・測量 */
+  --c-teal:#0d9488;    /* 割付・配置 */
+  --c-cyan:#0891b2;    /* 水まわり */
+  --c-green:#16a34a;   /* 植栽・庭 */
+  --c-emerald:#047857; /* 数量・お金 */
+  --c-amber:#b45309;   /* 木 */
+  --c-orange:#d97706;  /* 電気 */
+  --c-yellow:#a16207;  /* 土 */
+  --c-gold:#ca8a04;    /* 光 */
+  --c-red:#dc2626;     /* 熱 */
+  --c-pink:#db2777;    /* 仕上げ */
+  --c-slate:#64748b;   /* コンクリート */
+  --c-steel:#475569;   /* 金属 */
+
+  --shadow-1:0 1px 2px rgba(20,24,31,.08);
+  --shadow-2:0 6px 24px rgba(20,24,31,.16);
+  --appbar-h:56px;            /* 48px のボタンを収めるため（--tap + 上下4px） */
+  --font:system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  --font-mono:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+}
+
+/* ダークテーマ: OS設定と手動指定の両方に対応する */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151a; --surface:#1b1f27; --surface-2:#232833;
+    --text:#eef1f5; --text-sub:#a3adbb; --line:#333b47;
+    --accent:#5aa9ff; --accent-weak:#17293d;
+    --warn:#e59a4b; --error:#ff7b7b; --info:#5aa9ff; --ok:#4cc07f;
+    --error-weak:#3a2020; --info-weak:#17293d;
+    /* 暗い面の上では中間色が沈むため、明度を上げた変種に差し替える */
+    --c-blue:#60a5fa; --c-violet:#a78bfa; --c-indigo:#818cf8;
+    --c-teal:#2dd4bf; --c-cyan:#22d3ee; --c-green:#4ade80; --c-emerald:#34d399;
+    --c-amber:#f59e0b; --c-orange:#fb923c; --c-yellow:#d4a017; --c-gold:#eab308;
+    --c-red:#f87171; --c-pink:#f472b6; --c-slate:#94a3b8; --c-steel:#a3aebf;
+    --shadow-1:0 1px 2px rgba(0,0,0,.5);
+    --shadow-2:0 6px 24px rgba(0,0,0,.6);
+  }
+}
+
+:root[data-theme="dark"]{
+  --bg:#12151a; --surface:#1b1f27; --surface-2:#232833;
+  --text:#eef1f5; --text-sub:#a3adbb; --line:#333b47;
+  --accent:#5aa9ff; --accent-weak:#17293d;
+  --warn:#e59a4b; --error:#ff7b7b; --info:#5aa9ff; --ok:#4cc07f;
+  --error-weak:#3a2020; --info-weak:#17293d;
+  /* 明るいOSでテーマだけダークにした場合もここを通る。カテゴリ色の明度変種は
+     prefers-color-scheme 側と必ず対で持つこと（片方だけだと暗い面に沈む） */
+  --c-blue:#60a5fa; --c-violet:#a78bfa; --c-indigo:#818cf8;
+  --c-teal:#2dd4bf; --c-cyan:#22d3ee; --c-green:#4ade80; --c-emerald:#34d399;
+  --c-amber:#f59e0b; --c-orange:#fb923c; --c-yellow:#d4a017; --c-gold:#eab308;
+  --c-red:#f87171; --c-pink:#f472b6; --c-slate:#94a3b8; --c-steel:#a3aebf;
+  --shadow-1:0 1px 2px rgba(0,0,0,.5);
+  --shadow-2:0 6px 24px rgba(0,0,0,.6);
+}
