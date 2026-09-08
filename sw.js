@@ -8,7 +8,7 @@
 // https://<user>.github.io/<リポジトリ名>/ というサブパスで公開しても
 // そのまま動く（絶対パスだと 404 になり cache.addAll() が丸ごと失敗する）。
 
-const CACHE_NAME = 'diycalc-v24';
+const CACHE_NAME = 'diycalc-v25';
 
 const ASSETS = [
   './',
@@ -114,12 +114,17 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  // network-first: オンライン時は常に最新を配信し、取得できたぶんはキャッシュを
+  // 更新しておく。オフライン時のみキャッシュへフォールバックする。
+  // （旧cache-firstだと、デプロイ後の最初の表示が「新SWが裏で有効化されるまで」
+  //   古いCSS/JSのまま出てしまい、再読み込みしないと更新が反映されなかった）
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request)
-        .then((res) => res)
-        .catch(() => cached);
-    })
+    fetch(event.request)
+      .then((res) => {
+        const resClone = res.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
+        return res;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
