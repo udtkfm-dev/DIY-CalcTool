@@ -638,7 +638,7 @@
 /* シートの入れ物。viewport.js が「見えている範囲」に合わせて位置と大きさを書き換える
    （ピンチ拡大中でもシートが視野の外に出ないようにするため）。
    箱自体はクリックを通し、シートと背景だけが受け取る。 */
-#sheet-root{ pointer-events:none; }
+#sheet-root{ pointer-events:none; position:fixed; inset:0; z-index:40; }
 #sheet-root > *{ pointer-events:auto; }
 .sheet-backdrop{
   position:fixed; inset:0; z-index:40;
