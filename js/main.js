@@ -196,3 +196,18 @@ applyTheme();
 followVisualViewport(document.getElementById('sheet-root'), document.getElementById('toast-root'));
 route();
 maybeShowDisclaimer();
+
+/* Gmail・LINEなどアプリ内ブラウザ（Android WebView）向けの回避策。
+ * 静的HTML（#site-intro）の幅を基準にズーム倍率を決めた後、JSが#appに
+ * ボタン等を描画しても再計算されず、ボタンが縮小表示のままになることがある
+ * （手動リロードすると直る＝再計算のタイミングの問題）。
+ * viewport の content を書き換えて再計算を強制する。 */
+window.addEventListener('load', () => {
+  const vp = document.querySelector('meta[name="viewport"]');
+  if (!vp) return;
+  const original = vp.getAttribute('content');
+  requestAnimationFrame(() => {
+    vp.setAttribute('content', `${original}, shrink-to-fit=no`);
+    requestAnimationFrame(() => vp.setAttribute('content', original));
+  });
+});
