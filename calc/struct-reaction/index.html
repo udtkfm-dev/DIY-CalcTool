@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>単純梁の反力の計算｜構造・強度｜DIY計算ツール</title>
+<meta name="description" content="単純梁の反力を無料で計算。荷重の位置から、左右の支点にかかる力と最大曲げモーメントを計算。スパン L・荷重 P・左支点からの距離 aを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-reaction/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="単純梁の反力の計算｜構造・強度｜DIY計算ツール">
+<meta property="og:description" content="単純梁の反力を無料で計算。荷重の位置から、左右の支点にかかる力と最大曲げモーメントを計算。スパン L・荷重 P・左支点からの距離 aを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-reaction/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "構造・強度",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/struct/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "単純梁の反力",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-reaction/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-reaction/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-reaction/",
+   "name": "単純梁の反力の計算",
+   "description": "単純梁の反力を無料で計算。荷重の位置から、左右の支点にかかる力と最大曲げモーメントを計算。スパン L・荷重 P・左支点からの距離 aを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "単純梁の反力, 単純梁の反力 計算, 反力, 反力 計算, 支点, 支点 計算, 集中荷重, 集中荷重 計算, 梁, 梁 計算, モーメント, モーメント 計算, RA, RA 計算, RB, RB 計算, 構造・強度",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "単純梁の反力は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "スパン L・荷重 P・左支点からの距離 aを入力すると左の反力・右の反力・最大曲げモーメントが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "単純梁の反力で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "スパン Lは mm / cm / m / inch / ft / 尺 / 寸、荷重 Pは N / kN / kgf から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "単純梁の反力以外の構造・強度の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。構造・強度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/struct/">構造・強度</a><span class="crumb__sep">›</span><span aria-current="page">単純梁の反力</span></nav>
+<h1>単純梁の反力の計算</h1>
+<p class="doc__lead">荷重の位置から、左右の支点にかかる力と最大曲げモーメントを計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/struct.reaction">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="梁と荷重の図" focusable="false"><g class="layer-body"><polygon class="body" points="48,112.26 274,112.26 274,124.69 48,124.69"/><polygon class="arrow" points="161,113.26 157.6,106.76 164.4,106.76"/><polygon class="body" points="48,124.69 34,145.685 62,145.685"/><polygon class="body" points="274,124.69 260,145.685 288,145.685"/></g><g class="layer-aux"><line class="dimline" x1="161" y1="52.59" x2="161" y2="112.26"/><line class="body" x1="27" y1="145.685" x2="69" y2="145.685"/><line class="body" x1="253" y1="145.685" x2="295" y2="145.685"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="128.685" x2="48" y2="158.685"/><line class="dimline" x1="274" y1="128.685" x2="274" y2="158.685"/><line class="dimline" x1="48" y1="154.685" x2="274" y2="154.685"/><polygon class="arrow" points="48,154.685 54,158.085 54,151.285"/><polygon class="arrow" points="274,154.685 268,151.285 268,158.085"/></g><g class="dimgroup"><line class="dimline" x1="135" y1="62.97" x2="135" y2="62.97"/><line class="dimline" x1="187" y1="62.97" x2="187" y2="62.97"/><line class="dimline" x1="135" y1="58.97" x2="187" y2="58.97"/><polygon class="arrow" points="135,58.97 141,62.37 141,55.57"/><polygon class="arrow" points="187,58.97 181,55.57 181,62.37"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="L" tabindex="0" aria-label="スパン L 3,600 mm"><rect class="pill" rx="8" ry="8" height="48" x="124.2" y="144.685" width="73.6"/><text class="pill-txt" x="161" y="168.685">3,600 mm</text></g><g class="dim is-input" data-key="W" tabindex="0" aria-label="荷重 P 1,000 N"><rect class="pill" rx="8" ry="8" height="48" x="127.8" y="48.97" width="66.4"/><text class="pill-txt" x="161" y="72.97">1,000 N</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">単純梁の反力でできること</h2>
+<p>単純梁の反力は、スパン L・荷重 P・左支点からの距離 aのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：反力、支点、集中荷重、梁、モーメント、RA、RB</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">スパン L</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">荷重 P</th><td>N / kN / kgf</td><td>1kgあたり約9.8N</td></tr>
+<tr><th scope="row">左支点からの距離 a</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>荷重がかかる位置</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>右支点からの距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>左の反力</strong><span class="doc__unit">N / kN / kgf</span></li>
+<li><strong>右の反力</strong><span class="doc__unit">N / kN / kgf</span></li>
+<li><strong>最大曲げモーメント</strong><span class="doc__unit">N·mm / N·m / kN·m</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">スパン L・荷重 P・左支点からの距離 a</span><span class="combo__arrow">→</span><span class="combo__out">左の反力・右の反力・最大曲げモーメント</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>反力＝支点が受け持つ力</h3>
+<p>梁に載った荷重は、両端の支点が分けて受け持ちます。
+荷重が中央なら半分ずつ、端に寄れば近いほうの支点が多く受けます。
+この値が、柱や基礎にかかる力になります。</p>
+
+<h3>最大曲げモーメントの位置</h3>
+<p>単純梁に集中荷重が載る場合、最大の曲げモーメントは荷重の真下に生じます。
+その値は「左の反力 × 左からの距離」。
+断面を検討するときは、この最大値を使います。</p>
+
+<p>この計算は理論式に数値を当てはめるだけのものです。節や割れといった木材のばらつき、接合部の効き、長期にわたる荷重（クリープ）は含まれていません。人が乗るもの、落ちると危険なものは、必ず専門家にご確認ください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>単純梁の反力で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>右支点からの距離 b = L − a</code></li>
+<li><code>左の反力 RA = P × b ÷ L</code></li>
+<li><code>右の反力 RB = P × a ÷ L</code></li>
+<li><code>最大曲げモーメント M = P × a × b ÷ L</code></li>
+</ul>
+<p class="doc__kw">記号の意味：L = スパン L、P = 荷重 P、a = 左支点からの距離 a、b = 右支点からの距離、RA = 左の反力、RB = 右の反力、M = 最大曲げモーメント</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">スパン3600mmの梁の左から1200mmに1000Nが載るときの反力</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>スパン L</span><b>3,600 mm</b></li>
+      <li><span>荷重 P</span><b>1,000 N</b></li>
+      <li><span>左支点からの距離 a</span><b>1,200 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>左の反力</span><b>666.67 N</b></li>
+      <li><span>右の反力</span><b>333.33 N</b></li>
+      <li><span>最大曲げモーメント</span><b>800,000 N·mm</b></li>
+      <li><span>右支点からの距離</span><b>2,400 mm</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>右支点からの距離 b = L − a</td><td>3,600 − 1,200</td><td>2,400 mm</td></tr>
+<tr><td>左の反力 RA = P × b ÷ L</td><td>1,000 × 2,400 ÷ 3,600</td><td>666.67 N</td></tr>
+<tr><td>右の反力 RB = P × a ÷ L</td><td>1,000 × 1,200 ÷ 3,600</td><td>333.33 N</td></tr>
+<tr><td>最大曲げモーメント M = P × a × b ÷ L</td><td>1,000 × 1,200 × 2,400 ÷ 3,600</td><td>800,000 N·mm</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 単純梁の反力 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">単純梁の反力のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>単純梁の反力は何が分かれば計算できますか？</summary><div class="qa__a"><p>スパン L・荷重 P・左支点からの距離 aを入力すると左の反力・右の反力・最大曲げモーメントが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>単純梁の反力で使える単位は何ですか？</summary><div class="qa__a"><p>スパン Lは mm / cm / m / inch / ft / 尺 / 寸、荷重 Pは N / kN / kgf から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>単純梁の反力以外の構造・強度の計算もありますか？</summary><div class="qa__a"><p>あります。構造・強度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず建築士・構造設計者などの専門家にご確認ください。ここでは公式にもとづく数値の算出のみを行います。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>構造・強度のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../struct-section/"><strong>断面性能（長方形断面）</strong><span>幅と成から断面積・断面二次モーメント・断面係数を計算</span></a></li>
+<li><a href="../struct-beam-udl/"><strong>梁のたわみ（両端支持・等分布荷重）</strong><span>棚板や根太のように、全体へ均等に載る荷重のたわみ</span></a></li>
+<li><a href="../struct-beam-point/"><strong>梁のたわみ（両端支持・中央集中荷重）</strong><span>中央の1点に載る荷重のたわみ</span></a></li>
+<li><a href="../struct-cantilever/"><strong>たわみ（片持ち梁・先端集中荷重）</strong><span>片側だけで支える棚受け・跳ね出しのたわみ</span></a></li>
+<li><a href="../struct-bending/"><strong>曲げ応力度（σ = M ÷ Z）</strong><span>曲げモーメントと断面係数から、部材に生じる応力度を計算</span></a></li>
+<li><a href="../struct-column/"><strong>座屈荷重（オイラーの式）</strong><span>細長い柱・支柱が横に曲がり始める理論上の荷重</span></a></li>
+<li><a href="../struct-slender/"><strong>細長比</strong><span>断面二次モーメントと断面積から、断面二次半径と細長比を計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/struct/">構造・強度の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

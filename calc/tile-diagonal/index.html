@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>45度貼り（斜め貼り）の枚数の計算｜DIY計算ツール</title>
+<meta name="description" content="45度貼り（斜め貼り）の枚数を無料で計算。部屋の寸法とタイル寸法から、斜め貼りに必要な枚数とカット数を計算。部屋の幅・部屋の奥行き・タイル1辺の寸法を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/tile-diagonal/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="45度貼り（斜め貼り）の枚数の計算｜DIY計算ツール">
+<meta property="og:description" content="45度貼り（斜め貼り）の枚数を無料で計算。部屋の寸法とタイル寸法から、斜め貼りに必要な枚数とカット数を計算。部屋の幅・部屋の奥行き・タイル1辺の寸法を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/tile-diagonal/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "タイル・床材",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/tile/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "45度貼り（斜め貼り）の枚数",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tile-diagonal/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tile-diagonal/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tile-diagonal/",
+   "name": "45度貼り（斜め貼り）の枚数の計算",
+   "description": "45度貼り（斜め貼り）の枚数を無料で計算。部屋の寸法とタイル寸法から、斜め貼りに必要な枚数とカット数を計算。部屋の幅・部屋の奥行き・タイル1辺の寸法を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "45度貼り（斜め貼り）の枚数, 45度貼り（斜め貼り）の枚数 計算, 45度貼り, 45度貼り 計算, 斜め貼り, 斜め貼り 計算, ダイヤ貼り, ダイヤ貼り 計算, タイル, タイル 計算, 枚数, 枚数 計算, ロス, ロス 計算, カット, カット 計算, 床, 床 計算, タイル・床材",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "45度貼り（斜め貼り）の枚数は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "部屋の幅・部屋の奥行き・タイル1辺の寸法・目地幅・ロス率（%）を入力すると部屋の面積・タイル1枚が占める面積・ピッチ（タイル＋目地）・対角のピッチ・ロスなしの枚数・周囲のカット枚数（目安）・必要な枚数（ロス込み）が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "45度貼り（斜め貼り）の枚数で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "部屋の幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "45度貼り（斜め貼り）の枚数以外のタイル・床材の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。タイル・床材のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/tile/">タイル・床材</a><span class="crumb__sep">›</span><span aria-current="page">45度貼り（斜め貼り）の枚数</span></nav>
+<h1>45度貼り（斜め貼り）の枚数の計算</h1>
+<p class="doc__lead">部屋の寸法とタイル寸法から、斜め貼りに必要な枚数とカット数を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/tile.diagonal">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="長方形の図" focusable="false"><g class="layer-body"><polygon class="body" points="75.75,156 228.25,156 228.25,34 75.75,34"/></g><g class="layer-aux"><line class="aux" x1="75.75" y1="156" x2="228.25" y2="34" stroke-dasharray="4 3"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="75.75" y1="160" x2="75.75" y2="180"/><line class="dimline" x1="228.25" y1="160" x2="228.25" y2="180"/><line class="dimline" x1="75.75" y1="176" x2="228.25" y2="176"/><polygon class="arrow" points="75.75,176 81.75,179.4 81.75,172.6"/><polygon class="arrow" points="228.25,176 222.25,172.6 222.25,179.4"/></g><g class="dimgroup"><line class="dimline" x1="232.25" y1="156" x2="250.25" y2="156"/><line class="dimline" x1="232.25" y1="34" x2="250.25" y2="34"/><line class="dimline" x1="246.25" y1="156" x2="246.25" y2="34"/><polygon class="arrow" points="246.25,156 249.65,150 242.85,150"/><polygon class="arrow" points="246.25,34 242.85,40 249.65,40"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="部屋の幅 3,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="115.2" y="163" width="73.6"/><text class="pill-txt" x="152" y="187">3,000 mm</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="部屋の奥行き 2,400 mm"><rect class="pill" rx="8" ry="8" height="48" x="219.45" y="71" width="73.6"/><text class="pill-txt" x="256.25" y="95">2,400 mm</text></g><g class="dim is-readonly" data-key="S" aria-label="部屋の面積 7.2 m²（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="122.4" y="71" width="59.2"/><text class="pill-txt" x="152" y="95">7.2 m²</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">45度貼り（斜め貼り）の枚数でできること</h2>
+<p>45度貼り（斜め貼り）の枚数は、部屋の幅・部屋の奥行き・タイル1辺の寸法・目地幅・ロス率（%）のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：45度貼り、斜め貼り、ダイヤ貼り、タイル、枚数、ロス、カット、床</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">部屋の幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">部屋の奥行き</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">タイル1辺の寸法</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">目地幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>突き付けなら 0</td></tr>
+<tr><th scope="row">ロス率（%）</th><td>%</td><td>斜め貼りは切り欠きが多いため 15〜20% 程度みておくのが一般的</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>必要な枚数（ロス込み）</strong></li>
+<li><strong>周囲のカット枚数（目安）</strong></li>
+<li><strong>ロスなしの枚数</strong></li>
+<li><strong>部屋の面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>タイル1枚が占める面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>ピッチ（タイル＋目地）</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>対角のピッチ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">部屋の幅・部屋の奥行き・タイル1辺の寸法・目地幅・ロス率（%）</span><span class="combo__arrow">→</span><span class="combo__out">部屋の面積・タイル1枚が占める面積・ピッチ（タイル＋目地）・対角のピッチ・ロスなしの枚数・周囲のカット枚数（目安）・必要な枚数（ロス込み）</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>45度貼りはカットが増える</h3>
+<p>タイルを斜めに貼ると、部屋の四辺すべてで三角形にカットすることになります。
+まっすぐ貼る場合に比べてロスが増えるので、
+発注は10〜15%程度の余裕を見ておくと足りなくなりません。</p>
+
+<h3>対角のピッチで割り付ける</h3>
+<p>斜め貼りでは、タイルが並ぶ間隔は1辺の寸法ではなく、
+対角線方向のピッチ（1辺 × √2 に目地を足した値）になります。
+この計算はその対角ピッチで枚数を数えています。</p>
+
+<h3>基準線は部屋の中心から</h3>
+<p>壁から45度の線を引き始めると、部屋がゆがんでいたときに端で大きくずれます。
+部屋の中心に基準の十字を出し、そこから45度の線を引いて左右対称に振ると、
+端の三角形が両側で揃ってきれいに見えます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>45度貼り（斜め貼り）の枚数で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>部屋の面積 = 幅 × 奥行き</code></li>
+<li><code>1枚が占める面積 = (タイル + 目地)²</code></li>
+<li><code>必要枚数 = 部屋の面積 ÷ 1枚の面積</code></li>
+<li><code>対角のピッチ = ピッチ × √2</code></li>
+<li><code>周囲のカット枚数 ≒ 周長 ÷ 対角ピッチ</code></li>
+<li><code>ロス込みの枚数 = 必要枚数 × (1 + ロス率)（切り上げ）</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">3000×2400mmの床に300mmタイルを45度貼りする</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>部屋の幅</span><b>3,000 mm</b></li>
+      <li><span>部屋の奥行き</span><b>2,400 mm</b></li>
+      <li><span>タイル1辺の寸法</span><b>300 mm</b></li>
+      <li><span>目地幅</span><b>3 mm</b></li>
+      <li><span>ロス率（%）</span><b>15%</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>部屋の面積</span><b>7.2 m²</b></li>
+      <li><span>タイル1枚が占める面積</span><b>0.09 m²</b></li>
+      <li><span>ピッチ（タイル＋目地）</span><b>303 mm</b></li>
+      <li><span>対角のピッチ</span><b>428.51 mm</b></li>
+      <li><span>ロスなしの枚数</span><b>78.42</b></li>
+      <li><span>周囲のカット枚数（目安）</span><b>26</b></li>
+      <li><span>必要な枚数（ロス込み）</span><b>91</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>部屋の面積 = 幅 × 奥行き</td><td>3,000 × 2,400</td><td>7.2 m²</td></tr>
+<tr><td>1枚が占める面積 = (タイル + 目地)²</td><td>(300 + 3)²</td><td>0.09 m²</td></tr>
+<tr><td>必要枚数 = 部屋の面積 ÷ 1枚の面積</td><td>7.2 ÷ 0.09</td><td>78.42 枚</td></tr>
+<tr><td>対角のピッチ = ピッチ × √2</td><td>303 × 1.414</td><td>428.51 mm</td></tr>
+<tr><td>周囲のカット枚数 ≒ 周長 ÷ 対角ピッチ</td><td>10,800 ÷ 428.51</td><td>26 枚</td></tr>
+<tr><td>ロス込みの枚数 = 必要枚数 × (1 + ロス率)（切り上げ）</td><td>78.42 × 1.15</td><td>91 枚</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 45度貼り（斜め貼り）の枚数 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">45度貼り（斜め貼り）の枚数のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>45度貼り（斜め貼り）の枚数は何が分かれば計算できますか？</summary><div class="qa__a"><p>部屋の幅・部屋の奥行き・タイル1辺の寸法・目地幅・ロス率（%）を入力すると部屋の面積・タイル1枚が占める面積・ピッチ（タイル＋目地）・対角のピッチ・ロスなしの枚数・周囲のカット枚数（目安）・必要な枚数（ロス込み）が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>45度貼り（斜め貼り）の枚数で使える単位は何ですか？</summary><div class="qa__a"><p>部屋の幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>45度貼り（斜め貼り）の枚数以外のタイル・床材の計算もありますか？</summary><div class="qa__a"><p>あります。タイル・床材のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>必要枚数は目地幅を含めた概算です。端部のカット・割付の実際の納まりは現地で確認してください。</li>
+<li>周囲のカット枚数は周長から求めた概算です。基準線をどこに置くかで実際のカット数と端部の寸法は変わります。</li>
+<li>斜め貼りは切り欠きが多く出るため、ロス率は通常の貼り方より大きめにみてください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>タイル・床材のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../tile-layout/"><strong>タイル・床材の割付</strong><span>全長・タイル寸法・目地幅・ロス率から必要枚数と端部寸法を計算</span></a></li>
+<li><a href="../tile-grout/"><strong>目地材の必要量</strong><span>タイルの寸法と目地の幅・深さから、必要な目地材の量を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../estimate-board/"><strong>ボード・合板の必要枚数</strong><span>材料・積算｜施工面積と1枚のサイズ・ロス率から、必要な枚数を計算</span></a></li>
+<li><a href="../wood-cut45/"><strong>45度カット寸法</strong><span>木工・DIY寸法｜材の幅から45度カット面の長さと出寸法を計算</span></a></li>
+<li><a href="../wood-taper/"><strong>テーパー（先細りのカット）</strong><span>木工・DIY寸法｜両端の幅と長さから、片側の削り量・角度・勾配を計算</span></a></li>
+<li><a href="../wood-yield/"><strong>木取り（定尺から何本取れるか）</strong><span>木工・DIY寸法｜定尺材の長さ・必要な長さ・切りしろから、取れる本数と端材を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/tile/">タイル・床材の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

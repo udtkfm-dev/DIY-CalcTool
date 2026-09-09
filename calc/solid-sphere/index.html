@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>球の表面積・直径の計算｜立体・3D｜DIY計算ツール</title>
+<meta name="description" content="球の表面積・直径を無料で計算。半径・直径・表面積・体積を相互計算。半径・直径・表面積を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-sphere/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="球の表面積・直径の計算｜立体・3D｜DIY計算ツール">
+<meta property="og:description" content="球の表面積・直径を無料で計算。半径・直径・表面積・体積を相互計算。半径・直径・表面積を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-sphere/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "立体・3D",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/solid/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "球の表面積・直径",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-sphere/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-sphere/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-sphere/",
+   "name": "球の表面積・直径の計算",
+   "description": "球の表面積・直径を無料で計算。半径・直径・表面積・体積を相互計算。半径・直径・表面積を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "球の表面積・直径, 球の表面積・直径 計算, 球, 球 計算, ボール, ボール 計算, 表面積, 表面積 計算, 直径, 直径 計算, 半径, 半径 計算, 立体, 立体 計算, ドーム, ドーム 計算, 立体・3D",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "球の表面積・直径は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "半径を入力すると直径・表面積・大円の円周・体積(L)が求まります。直径を入力すると半径・表面積・大円の円周・体積(L)が求まります。表面積を入力すると半径・直径・大円の円周・体積(L)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば表面積を入れると半径・直径・大円の円周・体積(L)が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "球の表面積・直径で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "半径は mm / cm / m / inch / ft / 尺 / 寸、表面積は mm² / cm² / m² / 坪 / 畳 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "球の表面積・直径以外の立体・3Dの計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/solid/">立体・3D</a><span class="crumb__sep">›</span><span aria-current="page">球の表面積・直径</span></nav>
+<h1>球の表面積・直径の計算</h1>
+<p class="doc__lead">半径・直径・表面積・体積を相互計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/solid.sphere">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="球の図" focusable="false"><g class="layer-body"><polygon class="body" points="228,101 227.68,94.43 226.71,87.93 225.12,81.55 222.9,75.36 220.09,69.42 216.71,63.78 212.79,58.5 208.38,53.62 203.5,49.21 198.22,45.29 192.58,41.91 186.64,39.1 180.45,36.88 174.07,35.29 167.57,34.32 161,34 154.43,34.32 147.93,35.29 141.55,36.88 135.36,39.1 129.42,41.91 123.78,45.29 118.5,49.21 113.62,53.62 109.21,58.5 105.29,63.78 101.91,69.42 99.1,75.36 96.88,81.55 95.29,87.93 94.32,94.43 94,101 94.32,107.57 95.29,114.07 96.88,120.45 99.1,126.64 101.91,132.58 105.29,138.22 109.21,143.5 113.62,148.38 118.5,152.79 123.78,156.71 129.42,160.09 135.36,162.9 141.55,165.12 147.93,166.71 154.43,167.68 161,168 167.57,167.68 174.07,166.71 180.45,165.12 186.64,162.9 192.58,160.09 198.22,156.71 203.5,152.79 208.38,148.38 212.79,143.5 216.71,138.22 220.09,132.58 222.9,126.64 225.12,120.45 226.71,114.07 227.68,107.57"/></g><g class="layer-aux"><line class="aux" x1="228" y1="101" x2="227.68" y2="99.16"/><line class="aux" x1="227.68" y1="99.16" x2="226.71" y2="97.34"/><line class="aux" x1="226.71" y1="97.34" x2="225.12" y2="95.55"/><line class="aux" x1="225.12" y1="95.55" x2="222.9" y2="93.82"/><line class="aux" x1="222.9" y1="93.82" x2="220.09" y2="92.16"/><line class="aux" x1="220.09" y1="92.16" x2="216.71" y2="90.58"/><line class="aux" x1="216.71" y1="90.58" x2="212.79" y2="89.1"/><line class="aux" x1="212.79" y1="89.1" x2="208.38" y2="87.73"/><line class="aux" x1="208.38" y1="87.73" x2="203.5" y2="86.5"/><line class="aux" x1="203.5" y1="86.5" x2="198.22" y2="85.4"/><line class="aux" x1="198.22" y1="85.4" x2="192.58" y2="84.46"/><line class="aux" x1="192.58" y1="84.46" x2="186.64" y2="83.67"/><line class="aux" x1="186.64" y1="83.67" x2="180.45" y2="83.05"/><line class="aux" x1="180.45" y1="83.05" x2="174.07" y2="82.6"/><line class="aux" x1="174.07" y1="82.6" x2="167.57" y2="82.33"/><line class="aux" x1="167.57" y1="82.33" x2="161" y2="82.24"/><line class="aux" x1="161" y1="82.24" x2="154.43" y2="82.33"/><line class="aux" x1="154.43" y1="82.33" x2="147.93" y2="82.6"/><line class="aux" x1="147.93" y1="82.6" x2="141.55" y2="83.05"/><line class="aux" x1="141.55" y1="83.05" x2="135.36" y2="83.67"/><line class="aux" x1="135.36" y1="83.67" x2="129.42" y2="84.46"/><line class="aux" x1="129.42" y1="84.46" x2="123.78" y2="85.4"/><line class="aux" x1="123.78" y1="85.4" x2="118.5" y2="86.5"/><line class="aux" x1="118.5" y1="86.5" x2="113.62" y2="87.73"/><line class="aux" x1="113.62" y1="87.73" x2="109.21" y2="89.1"/><line class="aux" x1="109.21" y1="89.1" x2="105.29" y2="90.58"/><line class="aux" x1="105.29" y1="90.58" x2="101.91" y2="92.16"/><line class="aux" x1="101.91" y1="92.16" x2="99.1" y2="93.82"/><line class="aux" x1="99.1" y1="93.82" x2="96.88" y2="95.55"/><line class="aux" x1="96.88" y1="95.55" x2="95.29" y2="97.34"/><line class="aux" x1="95.29" y1="97.34" x2="94.32" y2="99.16"/><line class="aux" x1="94.32" y1="99.16" x2="94" y2="101"/><line class="aux" x1="94" y1="101" x2="94.32" y2="102.84"/><line class="aux" x1="94.32" y1="102.84" x2="95.29" y2="104.66"/><line class="aux" x1="95.29" y1="104.66" x2="96.88" y2="106.45"/><line class="aux" x1="96.88" y1="106.45" x2="99.1" y2="108.18"/><line class="aux" x1="99.1" y1="108.18" x2="101.91" y2="109.84"/><line class="aux" x1="101.91" y1="109.84" x2="105.29" y2="111.42"/><line class="aux" x1="105.29" y1="111.42" x2="109.21" y2="112.9"/><line class="aux" x1="109.21" y1="112.9" x2="113.62" y2="114.27"/><line class="aux" x1="113.62" y1="114.27" x2="118.5" y2="115.5"/><line class="aux" x1="118.5" y1="115.5" x2="123.78" y2="116.6"/><line class="aux" x1="123.78" y1="116.6" x2="129.42" y2="117.54"/><line class="aux" x1="129.42" y1="117.54" x2="135.36" y2="118.33"/><line class="aux" x1="135.36" y1="118.33" x2="141.55" y2="118.95"/><line class="aux" x1="141.55" y1="118.95" x2="147.93" y2="119.4"/><line class="aux" x1="147.93" y1="119.4" x2="154.43" y2="119.67"/><line class="aux" x1="154.43" y1="119.67" x2="161" y2="119.76"/><line class="aux" x1="161" y1="119.76" x2="167.57" y2="119.67"/><line class="aux" x1="167.57" y1="119.67" x2="174.07" y2="119.4"/><line class="aux" x1="174.07" y1="119.4" x2="180.45" y2="118.95"/><line class="aux" x1="180.45" y1="118.95" x2="186.64" y2="118.33"/><line class="aux" x1="186.64" y1="118.33" x2="192.58" y2="117.54"/><line class="aux" x1="192.58" y1="117.54" x2="198.22" y2="116.6"/><line class="aux" x1="198.22" y1="116.6" x2="203.5" y2="115.5"/><line class="aux" x1="203.5" y1="115.5" x2="208.38" y2="114.27"/><line class="aux" x1="208.38" y1="114.27" x2="212.79" y2="112.9"/><line class="aux" x1="212.79" y1="112.9" x2="216.71" y2="111.42"/><line class="aux" x1="216.71" y1="111.42" x2="220.09" y2="109.84"/><line class="aux" x1="220.09" y1="109.84" x2="222.9" y2="108.18"/><line class="aux" x1="222.9" y1="108.18" x2="225.12" y2="106.45"/><line class="aux" x1="225.12" y1="106.45" x2="226.71" y2="104.66"/><line class="aux" x1="226.71" y1="104.66" x2="227.68" y2="102.84"/><line class="aux" x1="227.68" y1="102.84" x2="228" y2="101"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="163.83" y1="103.83" x2="175.14" y2="115.14"/><line class="dimline" x1="211.2" y1="56.45" x2="222.52" y2="67.77"/><line class="dimline" x1="172.31" y1="112.31" x2="219.69" y2="64.94"/><polygon class="arrow" points="172.31,112.31 178.96,110.48 174.15,105.67"/><polygon class="arrow" points="219.69,64.94 213.04,66.78 217.85,71.58"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="r" tabindex="0" aria-label="半径 0.1 m"><rect class="pill" rx="8" ry="8" height="48" x="178.49" y="73.11" width="52"/><text class="pill-txt" x="204.49" y="97.11">0.1 m</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">球の表面積・直径でできること</h2>
+<p>球の表面積・直径は、半径・直径・表面積のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：球、ボール、表面積、直径、半径、立体、ドーム</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">半径</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">直径</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">表面積</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>半径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>直径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>表面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>大円の円周</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>体積(L)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">半径</span><span class="combo__arrow">→</span><span class="combo__out">直径・表面積・大円の円周・体積(L)</span></li>
+<li><span class="combo__in">直径</span><span class="combo__arrow">→</span><span class="combo__out">半径・表面積・大円の円周・体積(L)</span></li>
+<li><span class="combo__in">表面積</span><span class="combo__arrow">→</span><span class="combo__out">半径・直径・大円の円周・体積(L)</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>球の表面積は 4 × π × 半径²</h3>
+<p>同じ半径の円の面積のちょうど4倍です。
+球形の飾りを塗る、ドームを覆う、といった数量計算に使います。</p>
+
+<h3>直径から入れてもよい</h3>
+<p>球は中心が測りにくいので、半径より直径のほうが実測しやすいことがほとんどです。
+直径を入れれば半径・表面積・体積が同時に出ます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>球の表面積・直径で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>表面積 = 4πr²</code></li>
+<li><code>体積 = 4πr³ ÷ 3</code></li>
+<li><code>半径 = √(表面積 ÷ 4π)</code></li>
+</ul>
+<p class="doc__kw">記号の意味：r = 半径</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">半径100mmの球の表面積</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>半径</span><b>0.1 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>直径</span><b>0.2 m</b></li>
+      <li><span>表面積</span><b>0.13 m²</b></li>
+      <li><span>大円の円周</span><b>0.63 m</b></li>
+      <li><span>体積(L)</span><b>4.19 L</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>表面積 = 4πr²</td><td>4 × π × 0.1²</td><td>0.13 m²</td></tr>
+<tr><td>体積 = 4πr³ ÷ 3</td><td>4 × π × 0.1³ ÷ 3</td><td>4.19 L</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 球の表面積・直径 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">球の表面積・直径のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>球の表面積・直径は何が分かれば計算できますか？</summary><div class="qa__a"><p>半径を入力すると直径・表面積・大円の円周・体積(L)が求まります。直径を入力すると半径・表面積・大円の円周・体積(L)が求まります。表面積を入力すると半径・直径・大円の円周・体積(L)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば表面積を入れると半径・直径・大円の円周・体積(L)が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>球の表面積・直径で使える単位は何ですか？</summary><div class="qa__a"><p>半径は mm / cm / m / inch / ft / 尺 / 寸、表面積は mm² / cm² / m² / 坪 / 畳 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>球の表面積・直径以外の立体・3Dの計算もありますか？</summary><div class="qa__a"><p>あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>立体・3Dのほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+<li><a href="../solid-distance3d/"><strong>2点間の距離（3次元）</strong><span>X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算</span></a></li>
+<li><a href="../solid-surface-box/"><strong>直方体の表面積</strong><span>箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）</span></a></li>
+<li><a href="../solid-surface-cyl/"><strong>円柱の表面積</strong><span>半径（または直径）と高さから、側面積・全表面積を計算</span></a></li>
+<li><a href="../solid-cone-dev/"><strong>円錐の展開図（扇形）</strong><span>底面の半径と高さから、板を切り抜く扇形の半径と中心角を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../area-circle/"><strong>円の面積・円周</strong><span>面積｜半径・直径・円周・面積のどれか1つから残りを計算</span></a></li>
+<li><a href="../vol-sphere/"><strong>球の体積</strong><span>体積｜半径・体積を相互計算</span></a></li>
+<li><a href="../wood-arc/"><strong>円弧・アール（弦と矢から半径）</strong><span>木工・DIY寸法｜両端の間隔とふくらみから、曲線の半径・弧長・中心角を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/solid/">立体・3Dの計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

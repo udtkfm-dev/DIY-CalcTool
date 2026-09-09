@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>直方体の表面積の計算｜立体・3D｜DIY計算ツール</title>
+<meta name="description" content="直方体の表面積を無料で計算。箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）。幅・奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-box/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="直方体の表面積の計算｜立体・3D｜DIY計算ツール">
+<meta property="og:description" content="直方体の表面積を無料で計算。箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）。幅・奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-box/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "立体・3D",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/solid/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "直方体の表面積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-box/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-box/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-box/",
+   "name": "直方体の表面積の計算",
+   "description": "直方体の表面積を無料で計算。箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）。幅・奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "直方体の表面積, 直方体の表面積 計算, 表面積, 表面積 計算, 直方体, 直方体 計算, 箱, 箱 計算, 塗装, 塗装 計算, 面積, 面積 計算, 側面積, 側面積 計算, 立体, 立体 計算, ラッピング, ラッピング 計算, 立体・3D",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "直方体の表面積は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅・奥行・高さを入力すると全表面積・側面積（4面）・上面（＝底面）・底面の周長・体積(m³)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "直方体の表面積で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "直方体の表面積以外の立体・3Dの計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/solid/">立体・3D</a><span class="crumb__sep">›</span><span aria-current="page">直方体の表面積</span></nav>
+<h1>直方体の表面積の計算</h1>
+<p class="doc__lead">箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/solid.surfaceBox">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="直方体の図" focusable="false"><g class="layer-body"><polygon class="body" points="218.61,151.19 274,122.12 274,36.81 218.61,65.88"/><polygon class="body" points="48,65.88 218.61,65.88 274,36.81 103.39,36.81"/><polygon class="body" points="48,151.19 218.61,151.19 218.61,65.88 48,65.88"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="155.19" x2="48" y2="177.19"/><line class="dimline" x1="218.61" y1="155.19" x2="218.61" y2="177.19"/><line class="dimline" x1="48" y1="173.19" x2="218.61" y2="173.19"/><polygon class="arrow" points="48,173.19 54,176.59 54,169.79"/><polygon class="arrow" points="218.61,173.19 212.61,169.79 212.61,176.59"/></g><g class="dimgroup"><line class="dimline" x1="222.61" y1="151.19" x2="244.61" y2="151.19"/><line class="dimline" x1="222.61" y1="65.88" x2="244.61" y2="65.88"/><line class="dimline" x1="240.61" y1="151.19" x2="240.61" y2="65.88"/><polygon class="arrow" points="240.61,151.19 244.01,145.19 237.21,145.19"/><polygon class="arrow" points="240.61,65.88 237.21,71.88 244.01,71.88"/></g><g class="dimgroup"><line class="dimline" x1="46.14" y1="62.34" x2="39.63" y2="49.95"/><line class="dimline" x1="101.53" y1="33.27" x2="95.03" y2="20.87"/><line class="dimline" x1="41.49" y1="53.49" x2="96.88" y2="24.42"/><polygon class="arrow" points="41.49,53.49 48.39,53.71 45.23,47.69"/><polygon class="arrow" points="96.88,24.42 89.99,24.19 93.15,30.21"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="幅 0.6 m"><rect class="pill" rx="8" ry="8" height="48" x="107.3" y="161.19" width="52"/><text class="pill-txt" x="133.3" y="185.19">0.6 m</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="高さ 0.3 m"><rect class="pill" rx="8" ry="8" height="48" x="226.61" y="84.54" width="52"/><text class="pill-txt" x="252.61" y="108.54">0.3 m</text></g><g class="dim is-input" data-key="d" tabindex="0" aria-label="奥行 0.4 m"><rect class="pill" rx="8" ry="8" height="48" x="37.61" y="6" width="52"/><text class="pill-txt" x="63.61" y="30">0.4 m</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">直方体の表面積でできること</h2>
+<p>直方体の表面積は、幅・奥行・高さのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：表面積、直方体、箱、塗装、面積、側面積、立体、ラッピング</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">奥行</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">高さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>全表面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>側面積（4面）</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>上面（＝底面）</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>底面の周長</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>体積(m³)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">幅・奥行・高さ</span><span class="combo__arrow">→</span><span class="combo__out">全表面積・側面積（4面）・上面（＝底面）・底面の周長・体積(m³)</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>塗る面積・貼る面積を数える</h3>
+<p>直方体の全表面積は 2×(幅×奥行 + 奥行×高さ + 高さ×幅)。
+箱を塗る、シートを貼る、断熱材で包むといった作業の数量計算に使います。</p>
+
+<h3>底面を塗らないときは引く</h3>
+<p>床に置く箱は底面を塗らないことが多いので、
+全表面積から上面（＝底面）1枚ぶんを引いてください。
+この計算は側面積と上面積も別に出すので、必要な面だけ足し合わせられます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>直方体の表面積で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>上面（＝底面）= 幅 × 奥行</code></li>
+<li><code>側面積 = 周長 × 高さ</code></li>
+<li><code>全表面積 = 上面 × 2 + 側面積</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">600×400×300mmの箱を塗るときの表面積</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>幅</span><b>0.6 m</b></li>
+      <li><span>奥行</span><b>0.4 m</b></li>
+      <li><span>高さ</span><b>0.3 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>全表面積</span><b>1.08 m²</b></li>
+      <li><span>側面積（4面）</span><b>0.6 m²</b></li>
+      <li><span>上面（＝底面）</span><b>0.24 m²</b></li>
+      <li><span>底面の周長</span><b>2 m</b></li>
+      <li><span>体積(m³)</span><b>0.07 m³</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>上面（＝底面）= 幅 × 奥行</td><td>0.6 × 0.4</td><td>0.24 m²</td></tr>
+<tr><td>側面積 = 周長 × 高さ</td><td>2 × 0.3</td><td>0.6 m²</td></tr>
+<tr><td>全表面積 = 上面 × 2 + 側面積</td><td>0.24 × 2 + 0.6</td><td>1.08 m²</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 直方体の表面積 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">直方体の表面積のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>直方体の表面積は何が分かれば計算できますか？</summary><div class="qa__a"><p>幅・奥行・高さを入力すると全表面積・側面積（4面）・上面（＝底面）・底面の周長・体積(m³)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>直方体の表面積で使える単位は何ですか？</summary><div class="qa__a"><p>幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>直方体の表面積以外の立体・3Dの計算もありますか？</summary><div class="qa__a"><p>あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>ふたの無い箱を塗る場合などは、結果から不要な面の分を引いてください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>立体・3Dのほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+<li><a href="../solid-distance3d/"><strong>2点間の距離（3次元）</strong><span>X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算</span></a></li>
+<li><a href="../solid-surface-cyl/"><strong>円柱の表面積</strong><span>半径（または直径）と高さから、側面積・全表面積を計算</span></a></li>
+<li><a href="../solid-cone-dev/"><strong>円錐の展開図（扇形）</strong><span>底面の半径と高さから、板を切り抜く扇形の半径と中心角を計算</span></a></li>
+<li><a href="../solid-sphere/"><strong>球の表面積・直径</strong><span>半径・直径・表面積・体積を相互計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../vol-box/"><strong>直方体の体積</strong><span>体積｜幅・奥行・高さ・体積を相互計算</span></a></li>
+<li><a href="../area-circle/"><strong>円の面積・円周</strong><span>面積｜半径・直径・円周・面積のどれか1つから残りを計算</span></a></li>
+<li><a href="../area-ellipse/"><strong>楕円の面積</strong><span>面積｜長半径・短半径・面積を相互計算</span></a></li>
+<li><a href="../area-parallelogram/"><strong>平行四辺形の面積</strong><span>面積｜底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-rect/"><strong>長方形の面積</strong><span>面積｜幅・高さ・面積・対角線を相互計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/solid/">立体・3Dの計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

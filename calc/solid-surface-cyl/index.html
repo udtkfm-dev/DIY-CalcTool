@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>円柱の表面積の計算｜立体・3D｜DIY計算ツール</title>
+<meta name="description" content="円柱の表面積を無料で計算。半径（または直径）と高さから、側面積・全表面積を計算。半径・直径・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-cyl/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="円柱の表面積の計算｜立体・3D｜DIY計算ツール">
+<meta property="og:description" content="円柱の表面積を無料で計算。半径（または直径）と高さから、側面積・全表面積を計算。半径・直径・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-cyl/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "立体・3D",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/solid/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "円柱の表面積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-cyl/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-cyl/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-surface-cyl/",
+   "name": "円柱の表面積の計算",
+   "description": "円柱の表面積を無料で計算。半径（または直径）と高さから、側面積・全表面積を計算。半径・直径・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "円柱の表面積, 円柱の表面積 計算, 表面積, 表面積 計算, 円柱, 円柱 計算, パイプ, パイプ 計算, 塗装, 塗装 計算, 側面積, 側面積 計算, 筒, 筒 計算, 缶, 缶 計算, 立体, 立体 計算, 立体・3D",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "円柱の表面積は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "半径・高さを入力すると直径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。直径・高さを入力すると半径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば直径・高さを入れると半径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "円柱の表面積で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "半径は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "円柱の表面積以外の立体・3Dの計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/solid/">立体・3D</a><span class="crumb__sep">›</span><span aria-current="page">円柱の表面積</span></nav>
+<h1>円柱の表面積の計算</h1>
+<p class="doc__lead">半径（または直径）と高さから、側面積・全表面積を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/solid.surfaceCyl">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="円柱の図" focusable="false"><g class="layer-body"><polygon class="body" points="120.48,46.97 120.48,155.03 120.48,155.03 120.82,156.72 121.86,158.39 123.56,159.99 125.91,161.52 128.85,162.93 132.35,164.2 136.33,165.32 140.74,166.26 145.49,167.01 150.51,167.56 155.71,167.89 161,168 166.29,167.89 171.49,167.56 176.51,167.01 181.26,166.26 185.67,165.32 189.65,164.2 193.15,162.93 196.09,161.52 198.44,159.99 200.14,158.39 201.18,156.72 201.52,155.03 201.52,46.97"/><polygon class="body" points="201.52,46.97 201.18,45.28 200.14,43.61 198.44,42.01 196.09,40.48 193.15,39.07 189.65,37.8 185.67,36.68 181.26,35.74 176.51,34.99 171.49,34.44 166.29,34.11 161,34 155.71,34.11 150.51,34.44 145.49,34.99 140.74,35.74 136.33,36.68 132.35,37.8 128.85,39.07 125.91,40.48 123.56,42.01 121.86,43.61 120.82,45.28 120.48,46.97 120.82,48.66 121.86,50.32 123.56,51.93 125.91,53.45 128.85,54.86 132.35,56.14 136.33,57.26 140.74,58.2 145.49,58.95 150.51,59.49 155.71,59.82 161,59.94 166.29,59.82 171.49,59.49 176.51,58.95 181.26,58.2 185.67,57.26 189.65,56.14 193.15,54.86 196.09,53.45 198.44,51.93 200.14,50.32 201.18,48.66 201.52,46.97"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="159.78" y1="43.16" x2="156.12" y2="31.73"/><line class="dimline" x1="131.13" y1="52.33" x2="127.47" y2="40.9"/><line class="dimline" x1="157.34" y1="35.54" x2="128.69" y2="44.71"/><polygon class="arrow" points="157.34,35.54 150.59,34.13 152.66,40.61"/><polygon class="arrow" points="128.69,44.71 135.44,46.12 133.37,39.64"/></g><g class="dimgroup"><line class="dimline" x1="197.52" y1="46.97" x2="177.52" y2="46.97"/><line class="dimline" x1="197.52" y1="155.03" x2="177.52" y2="155.03"/><line class="dimline" x1="181.52" y1="46.97" x2="181.52" y2="155.03"/><polygon class="arrow" points="181.52,46.97 178.12,52.97 184.92,52.97"/><polygon class="arrow" points="181.52,155.03 184.92,149.03 178.12,149.03"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="r" tabindex="0" aria-label="半径 0.15 m"><rect class="pill" rx="8" ry="8" height="48" x="109.76" y="6" width="59.2"/><text class="pill-txt" x="139.36" y="30">0.15 m</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="高さ 0.4 m"><rect class="pill" rx="8" ry="8" height="48" x="143.52" y="77" width="52"/><text class="pill-txt" x="169.52" y="101">0.4 m</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">円柱の表面積でできること</h2>
+<p>円柱の表面積は、半径・直径・高さのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：表面積、円柱、パイプ、塗装、側面積、筒、缶、立体</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">半径</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">直径</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">高さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>半径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>直径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>全表面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>側面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>底面（1面）</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>円周</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>体積(L)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">半径・高さ</span><span class="combo__arrow">→</span><span class="combo__out">直径・側面積・底面（1面）・全表面積・円周・体積(L)</span></li>
+<li><span class="combo__in">直径・高さ</span><span class="combo__arrow">→</span><span class="combo__out">半径・側面積・底面（1面）・全表面積・円周・体積(L)</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>円柱の側面は「円周 × 高さ」</h3>
+<p>丸い柱にシートを巻く、円筒を塗る、といった場面では、
+側面積 = 円周（2πr）× 高さ で求まります。
+展開すると長方形になるので、貼る材料の寸法もそのまま決まります。</p>
+
+<h3>ふたの有無で全表面積が変わる</h3>
+<p>上下ともふさがった円柱なら側面＋底面2枚、
+片方だけなら側面＋底面1枚です。
+この計算は底面1枚ぶんも別に出すので、必要な組み合わせで足してください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>円柱の表面積で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>円周 = 2πr</code></li>
+<li><code>側面積 = 円周 × 高さ</code></li>
+<li><code>全表面積 = 側面積 + πr² × 2</code></li>
+</ul>
+<p class="doc__kw">記号の意味：r = 半径</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">半径150mm・高さ400mmの円柱の表面積</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>半径</span><b>0.15 m</b></li>
+      <li><span>高さ</span><b>0.4 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>直径</span><b>0.3 m</b></li>
+      <li><span>側面積</span><b>0.38 m²</b></li>
+      <li><span>底面（1面）</span><b>0.07 m²</b></li>
+      <li><span>全表面積</span><b>0.52 m²</b></li>
+      <li><span>円周</span><b>0.94 m</b></li>
+      <li><span>体積(L)</span><b>28.27 L</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>円周 = 2πr</td><td>2 × π × 0.15</td><td>0.94 m</td></tr>
+<tr><td>側面積 = 円周 × 高さ</td><td>0.94 × 0.4</td><td>0.38 m²</td></tr>
+<tr><td>全表面積 = 側面積 + πr² × 2</td><td>0.38 + 0.07 × 2</td><td>0.52 m²</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 円柱の表面積 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">円柱の表面積のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>円柱の表面積は何が分かれば計算できますか？</summary><div class="qa__a"><p>半径・高さを入力すると直径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。直径・高さを入力すると半径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば直径・高さを入れると半径・側面積・底面（1面）・全表面積・円周・体積(L)が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>円柱の表面積で使える単位は何ですか？</summary><div class="qa__a"><p>半径は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>円柱の表面積以外の立体・3Dの計算もありますか？</summary><div class="qa__a"><p>あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>立体・3Dのほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+<li><a href="../solid-distance3d/"><strong>2点間の距離（3次元）</strong><span>X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算</span></a></li>
+<li><a href="../solid-surface-box/"><strong>直方体の表面積</strong><span>箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）</span></a></li>
+<li><a href="../solid-cone-dev/"><strong>円錐の展開図（扇形）</strong><span>底面の半径と高さから、板を切り抜く扇形の半径と中心角を計算</span></a></li>
+<li><a href="../solid-sphere/"><strong>球の表面積・直径</strong><span>半径・直径・表面積・体積を相互計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../concrete-pier/"><strong>柱基礎・円柱基礎の体積</strong><span>コンクリート｜半径・深さと余裕率から、円柱基礎の生コン必要量を計算</span></a></li>
+<li><a href="../metal-tube/"><strong>丸パイプの重量</strong><span>金属加工・機械｜外径・肉厚・長さ・比重から、中空断面の重さを計算</span></a></li>
+<li><a href="../paint-area/"><strong>塗料の必要量</strong><span>塗装・壁紙｜塗装面積・塗布回数・塗料の塗布量から、必要な塗料の量を計算</span></a></li>
+<li><a href="../room-wall/"><strong>壁面積（開口部を除く）</strong><span>建築・リフォーム｜周長・天井高・開口部の合計面積から、塗装や壁紙に必要な壁面積を計算</span></a></li>
+<li><a href="../vol-cylinder/"><strong>円柱の体積</strong><span>体積｜半径・高さ・体積を相互計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/solid/">立体・3Dの計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

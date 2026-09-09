@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>垂木の長さ・棟高の計算｜屋根｜DIY計算ツール</title>
+<meta name="description" content="垂木の長さ・棟高を無料で計算。軒までの水平距離・軒の出・角度から垂木の長さと棟高を計算。軒までの水平距離・軒の出・角度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/roof-rafter/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="垂木の長さ・棟高の計算｜屋根｜DIY計算ツール">
+<meta property="og:description" content="垂木の長さ・棟高を無料で計算。軒までの水平距離・軒の出・角度から垂木の長さと棟高を計算。軒までの水平距離・軒の出・角度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/roof-rafter/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "屋根",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/roof/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "垂木の長さ・棟高",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/roof-rafter/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/roof-rafter/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/roof-rafter/",
+   "name": "垂木の長さ・棟高の計算",
+   "description": "垂木の長さ・棟高を無料で計算。軒までの水平距離・軒の出・角度から垂木の長さと棟高を計算。軒までの水平距離・軒の出・角度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "垂木の長さ・棟高, 垂木の長さ・棟高 計算, 垂木, 垂木 計算, 棟高, 棟高 計算, 軒の出, 軒の出 計算, 屋根, 屋根 計算, たるき, たるき 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "垂木の長さ・棟高は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "軒までの水平距離・軒の出・角度を入力すると棟高・垂木の長さ・軒先までの水平距離（軒の出を含む）が求まります。軒までの水平距離・角度を入力すると棟高が求まります。軒までの水平距離・棟高を入力すると角度が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば軒までの水平距離・棟高を入れると角度が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "垂木の長さ・棟高で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "軒までの水平距離は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "垂木の長さ・棟高以外の屋根の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。屋根のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/roof/">屋根</a><span class="crumb__sep">›</span><span aria-current="page">垂木の長さ・棟高</span></nav>
+<h1>垂木の長さ・棟高の計算</h1>
+<p class="doc__lead">軒までの水平距離・軒の出・角度から垂木の長さと棟高を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/roof.rafter">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="直角三角形の図" focusable="false"><g class="layer-body"><polygon class="body" points="48,130 258,130 258,60"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="134" x2="48" y2="154"/><line class="dimline" x1="258" y1="134" x2="258" y2="154"/><line class="dimline" x1="48" y1="150" x2="258" y2="150"/><polygon class="arrow" points="48,150 54,153.4 54,146.6"/><polygon class="arrow" points="258,150 252,146.6 252,153.4"/></g><g class="dimgroup"><line class="dimline" x1="262" y1="130" x2="280" y2="130"/><line class="dimline" x1="262" y1="60" x2="280" y2="60"/><line class="dimline" x1="276" y1="130" x2="276" y2="60"/><polygon class="arrow" points="276,130 279.4,124 272.6,124"/><polygon class="arrow" points="276,60 272.6,66 279.4,66"/></g><g class="dimgroup"><line class="dimline" x1="256.74" y1="56.21" x2="250.41" y2="37.23"/><line class="dimline" x1="46.74" y1="126.2" x2="40.41" y2="107.23"/><line class="dimline" x1="251.68" y1="41.03" x2="41.68" y2="111.02"/><polygon class="arrow" points="251.68,41.03 244.91,39.7 247.06,46.15"/><polygon class="arrow" points="41.68,111.02 48.44,112.35 46.29,105.9"/></g><path class="arc" d="M 74 129.9975031065426 A 26 26 0 0 0 72.66594171003136 121.77610909108907"/><polyline class="dimline" fill="none" points="247,130 247,119 258,119"/></g><g class="layer-labels"><g class="dim is-readonly" data-key="a" aria-label="軒先までの水平距離（軒の出を含む） 3,600 mm（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="124.22" y="137" width="73.6"/><text class="pill-txt" x="161.02" y="161">3,600 mm</text></g><g class="dim is-derived" data-key="b" tabindex="0" aria-label="棟高 1,199.91 mm"><rect class="pill" rx="8" ry="8" height="48" x="218.8" y="71" width="95.2"/><text class="pill-txt" x="266.4" y="95">1,199.91 mm</text></g><g class="dim is-derived" data-key="c" tabindex="0" aria-label="垂木の長さ 3,877.28 mm"><rect class="pill" rx="8" ry="8" height="48" x="95.28" y="40.64" width="95.2"/><text class="pill-txt" x="142.88" y="64.64">3,877.28 mm</text></g><g class="dim is-input" data-key="angA" tabindex="0" aria-label="角度 21.8°"><rect class="pill" rx="8" ry="8" height="48" x="62.22" y="98.95" width="52"/><text class="pill-txt" x="88.22" y="122.95">21.8°</text></g><text class="vertex" x="37" y="142" text-anchor="middle">A</text><text class="vertex" x="269" y="142" text-anchor="middle">B</text><text class="vertex" x="270" y="54" text-anchor="middle">C</text><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">垂木の長さ・棟高でできること</h2>
+<p>垂木の長さ・棟高は、軒までの水平距離・軒の出・角度・棟高・垂木の長さのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：垂木、棟高、軒の出、屋根、たるき</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">軒までの水平距離</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>壁の中心から軒までの水平距離（半間口）</td></tr>
+<tr><th scope="row">軒の出</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>壁面から軒先までの張り出し</td></tr>
+<tr><th scope="row">角度</th><td>° / rad</td><td>屋根勾配の角度</td></tr>
+<tr><th scope="row">棟高</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>壁の高さから棟までの高さ</td></tr>
+<tr><th scope="row">垂木の長さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>軒先から棟までの垂木の実長（軒の出を含む）</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>軒までの水平距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>軒の出</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>角度</strong><span class="doc__unit">° / rad</span></li>
+<li><strong>棟高</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>垂木の長さ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>軒先までの水平距離（軒の出を含む）</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">軒までの水平距離・軒の出・角度</span><span class="combo__arrow">→</span><span class="combo__out">棟高・垂木の長さ・軒先までの水平距離（軒の出を含む）</span></li>
+<li><span class="combo__in">軒までの水平距離・角度</span><span class="combo__arrow">→</span><span class="combo__out">棟高</span></li>
+<li><span class="combo__in">軒までの水平距離・棟高</span><span class="combo__arrow">→</span><span class="combo__out">角度</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>垂木の長さは軒の出を足してから</h3>
+<p>垂木（たるき）の長さは、棟から軒先までの斜めの距離です。
+壁の外面までの水平距離だけで計算すると、軒の出のぶん足りません。
+軒の出を含めた水平距離に対する斜辺として出す必要があります。</p>
+
+<h3>棟高も同時に決まる</h3>
+<p>軒までの水平距離と勾配が決まれば、棟がどれだけ高くなるかも決まります。
+小屋やカーポートを作るとき、この棟高が高さ制限や既存の建物との取り合いに関わるので、
+垂木の長さと一緒に確認しておくと手戻りがありません。</p>
+
+<h3>実際に切る前に</h3>
+<p>垂木は両端に勾配なりの切り欠き（鼻先の垂直切り、桁に乗る部分の欠き込み）が入ります。
+計算で出る長さはあくまで直線距離なので、1本を型板として作り、
+現物に当ててから残りを写すのが確実です。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>垂木の長さ・棟高で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>棟高 = 軒までの水平距離 × tan(角度)</code></li>
+<li><code>垂木長 = (軒までの水平距離 + 軒の出) ÷ cos(角度)</code></li>
+<li><code>角度 = atan(棟高 ÷ 軒までの水平距離)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">軒まで3000mm・軒の出600mm・21.8°の垂木</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>軒までの水平距離</span><b>3,000 mm</b></li>
+      <li><span>軒の出</span><b>600 mm</b></li>
+      <li><span>角度</span><b>21.8°</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>棟高</span><b>1,199.91 mm</b></li>
+      <li><span>垂木の長さ</span><b>3,877.28 mm</b></li>
+      <li><span>軒先までの水平距離（軒の出を含む）</span><b>3,600 mm</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>棟高 = 軒までの水平距離 × tan(角度)</td><td>3,000 × tan(21.8°)</td><td>1,199.91 mm</td></tr>
+<tr><td>垂木長 = (軒までの水平距離 + 軒の出) ÷ cos(角度)</td><td>(3,000 + 600) ÷ cos(21.8°)</td><td>3,877.28 mm</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 垂木の長さ・棟高 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">垂木の長さ・棟高のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>垂木の長さ・棟高は何が分かれば計算できますか？</summary><div class="qa__a"><p>軒までの水平距離・軒の出・角度を入力すると棟高・垂木の長さ・軒先までの水平距離（軒の出を含む）が求まります。軒までの水平距離・角度を入力すると棟高が求まります。軒までの水平距離・棟高を入力すると角度が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば軒までの水平距離・棟高を入れると角度が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>垂木の長さ・棟高で使える単位は何ですか？</summary><div class="qa__a"><p>軒までの水平距離は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>垂木の長さ・棟高以外の屋根の計算もありますか？</summary><div class="qa__a"><p>あります。屋根のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>屋根の形状（片流れ・切妻・寄棟）による面積の違いは、水平投影面積に勾配の割増係数を掛けた概算値です。寄棟など複雑な形状は特に目安としてご利用ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>屋根のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../roof-slope/"><strong>屋根勾配と面積の割増係数</strong><span>勾配（角度・%・寸）から、屋根面積の割増係数を計算</span></a></li>
+<li><a href="../roof-area/"><strong>屋根面積（概算）</strong><span>水平投影面積と勾配から、屋根の実面積を概算（片流れ・切妻・寄棟共通）</span></a></li>
+<li><a href="../roof-hip/"><strong>隅木・谷木の長さ</strong><span>2方向の水平距離と高さから、隅木の実長と勾配を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../hvac-uvalue/"><strong>熱貫流率（U値）</strong><span>空調・断熱｜壁や屋根の層構成から、熱の伝わりやすさを計算</span></a></li>
+<li><a href="../slope-convert/"><strong>勾配の相互変換</strong><span>勾配｜角度・勾配%・勾配比・寸を相互計算</span></a></li>
+<li><a href="../slope-length/"><strong>勾配と距離</strong><span>勾配｜高低差・水平距離・斜距離・角度・勾配%を相互計算</span></a></li>
+<li><a href="../tri-right/"><strong>直角三角形</strong><span>三角・角度｜底辺・高さ・斜辺・角度を相互計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/roof/">屋根の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

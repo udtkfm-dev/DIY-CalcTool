@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>隅肉溶接ののど厚の計算｜金属加工・機械｜DIY計算ツール</title>
+<meta name="description" content="隅肉溶接ののど厚を無料で計算。脚長からのど厚と、溶接部の有効断面積を計算。脚長 S・のど厚 a・溶接の有効長さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/metal-weld/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="隅肉溶接ののど厚の計算｜金属加工・機械｜DIY計算ツール">
+<meta property="og:description" content="隅肉溶接ののど厚を無料で計算。脚長からのど厚と、溶接部の有効断面積を計算。脚長 S・のど厚 a・溶接の有効長さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/metal-weld/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "金属加工・機械",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/metal/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "隅肉溶接ののど厚",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/metal-weld/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/metal-weld/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/metal-weld/",
+   "name": "隅肉溶接ののど厚の計算",
+   "description": "隅肉溶接ののど厚を無料で計算。脚長からのど厚と、溶接部の有効断面積を計算。脚長 S・のど厚 a・溶接の有効長さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "隅肉溶接ののど厚, 隅肉溶接ののど厚 計算, 溶接, 溶接 計算, 隅肉, 隅肉 計算, のど厚, のど厚 計算, 脚長, 脚長 計算, サイズ, サイズ 計算, 有効長さ, 有効長さ 計算, 金属加工・機械",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "隅肉溶接ののど厚は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "脚長 S・溶接の有効長さを入力するとのど厚 a・有効断面積が求まります。のど厚 a・溶接の有効長さを入力すると脚長 S・有効断面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえばのど厚 a・溶接の有効長さを入れると脚長 S・有効断面積が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "隅肉溶接ののど厚で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "脚長 Sは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "隅肉溶接ののど厚以外の金属加工・機械の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。金属加工・機械のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/metal/">金属加工・機械</a><span class="crumb__sep">›</span><span aria-current="page">隅肉溶接ののど厚</span></nav>
+<h1>隅肉溶接ののど厚の計算</h1>
+<p class="doc__lead">脚長からのど厚と、溶接部の有効断面積を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/metal.weld">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="隅肉溶接の図" focusable="false"><g class="layer-body"><polygon class="body" points="97,160 223,160 223,138.19 97,138.19"/><polygon class="body" points="97,138.19 118.81,138.19 118.81,34 97,34"/><polygon class="body-weld" points="118.81,138.19 167.27,138.19 118.81,89.73"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="118.81" y1="134.19" x2="118.81" y2="120.19"/><line class="dimline" x1="167.27" y1="134.19" x2="167.27" y2="120.19"/><line class="dimline" x1="118.81" y1="124.19" x2="167.27" y2="124.19"/><polygon class="arrow" points="118.81,124.19 124.81,127.59 124.81,120.79"/><polygon class="arrow" points="167.27,124.19 161.27,120.79 161.27,127.59"/></g><g class="dimgroup"><line class="dimline" x1="97" y1="164" x2="97" y2="190"/><line class="dimline" x1="223" y1="164" x2="223" y2="190"/><line class="dimline" x1="97" y1="186" x2="223" y2="186"/><polygon class="arrow" points="97,186 103,189.4 103,182.6"/><polygon class="arrow" points="223,186 217,182.6 217,189.4"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="s" tabindex="0" aria-label="脚長 S 6 mm"><rect class="pill" rx="8" ry="8" height="48" x="117.04" y="105.25" width="52"/><text class="pill-txt" x="143.04" y="129.25">6 mm</text></g><g class="dim is-derived" data-key="a" tabindex="0" aria-label="のど厚 a 4.24 mm"><rect class="pill" rx="8" ry="8" height="48" x="136.49" y="47.25" width="66.4"/><text class="pill-txt" x="169.69" y="71.25">4.24 mm</text></g><g class="dim is-input" data-key="L" tabindex="0" aria-label="溶接の有効長さ 200 mm"><rect class="pill" rx="8" ry="8" height="48" x="130.4" y="166" width="59.2"/><text class="pill-txt" x="160" y="190">200 mm</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">隅肉溶接ののど厚でできること</h2>
+<p>隅肉溶接ののど厚は、脚長 S・のど厚 a・溶接の有効長さのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：溶接、隅肉、のど厚、脚長、サイズ、有効長さ</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">脚長 S</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>溶接部の一辺の長さ</td></tr>
+<tr><th scope="row">のど厚 a</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">溶接の有効長さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>脚長</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>のど厚</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>有効断面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">脚長 S・溶接の有効長さ</span><span class="combo__arrow">→</span><span class="combo__out">のど厚 a・有効断面積</span></li>
+<li><span class="combo__in">のど厚 a・溶接の有効長さ</span><span class="combo__arrow">→</span><span class="combo__out">脚長 S・有効断面積</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>のど厚は脚長の約0.7倍</h3>
+<p>隅肉溶接の強さは、脚長（S）ではなく、断面のいちばん薄いところ＝のど厚（a）で決まります。
+等脚の隅肉溶接では a ≒ S × 0.707（cos45°）。
+脚長6mmなら、のど厚は約4.24mmです。</p>
+
+<h3>有効断面積</h3>
+<p>のど厚 × 有効長さ が、力を受け持つ断面積です。
+溶接の始端・終端はビードが不安定なので、
+有効長さは実際のビード長さから両端を差し引いて考えることがあります。</p>
+
+<h3>強度計算は基準に従って</h3>
+<p>この計算は寸法から断面積を出すだけです。
+許容応力度や必要な溶接長さは、母材・溶接材料・適用する規格で決まります。
+構造に関わる溶接は必ず有資格者・専門家にご確認ください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>隅肉溶接ののど厚で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>のど厚 = 脚長 × cos45° ≒ 脚長 × 0.707</code></li>
+<li><code>有効断面積 = のど厚 × 有効長さ</code></li>
+<li><code>脚長 = のど厚 ÷ 0.707</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">脚長6mm・有効長さ200mmの隅肉溶接</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>脚長 S</span><b>6 mm</b></li>
+      <li><span>溶接の有効長さ</span><b>200 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>のど厚 a</span><b>4.24 mm</b></li>
+      <li><span>有効断面積</span><b>848.53 mm²</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>のど厚 = 脚長 × cos45° ≒ 脚長 × 0.707</td><td>6 × 0.707</td><td>4.24 mm</td></tr>
+<tr><td>有効断面積 = のど厚 × 有効長さ</td><td>4.24 × 200</td><td>848.53 mm²</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 隅肉溶接ののど厚 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">隅肉溶接ののど厚のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>隅肉溶接ののど厚は何が分かれば計算できますか？</summary><div class="qa__a"><p>脚長 S・溶接の有効長さを入力するとのど厚 a・有効断面積が求まります。のど厚 a・溶接の有効長さを入力すると脚長 S・有効断面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえばのど厚 a・溶接の有効長さを入れると脚長 S・有効断面積が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>隅肉溶接ののど厚で使える単位は何ですか？</summary><div class="qa__a"><p>脚長 Sは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>隅肉溶接ののど厚以外の金属加工・機械の計算もありますか？</summary><div class="qa__a"><p>あります。金属加工・機械のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>加工条件・締付力は材料や工具、機械の状態で変わります。実際の値はメーカーの資料や現場の基準にあわせてご確認ください。</li>
+<li>溶接の設計・施工方法や資格要件は規格・仕様で定められています。ここでは寸法の換算のみを行います。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>金属加工・機械のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../metal-bend/"><strong>板金の展開長（曲げ伸び代）</strong><span>板厚・曲げ半径・角度から、曲げ代を含む展開寸法を計算</span></a></li>
+<li><a href="../metal-cutting/"><strong>切削条件（回転数・送り速度）</strong><span>切削速度と工具径から主軸回転数を、刃数と1刃送りから送り速度を計算</span></a></li>
+<li><a href="../metal-torque/"><strong>ねじの締付トルク</strong><span>トルク係数・呼び径・軸力から締付トルクを計算</span></a></li>
+<li><a href="../metal-gear/"><strong>平歯車の諸元</strong><span>モジュールと歯数から、ピッチ円直径・外径・中心距離を計算</span></a></li>
+<li><a href="../metal-weight/"><strong>材料の重量</strong><span>寸法と比重から、材料の重さを計算</span></a></li>
+<li><a href="../metal-tap/"><strong>タップの下穴径</strong><span>ねじの呼び径とピッチ、ひっかかり率から下穴の直径を計算</span></a></li>
+<li><a href="../metal-tube/"><strong>丸パイプの重量</strong><span>外径・肉厚・長さ・比重から、中空断面の重さを計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/metal/">金属加工・機械の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

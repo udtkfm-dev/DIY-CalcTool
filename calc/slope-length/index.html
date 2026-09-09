@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>勾配と距離の計算｜勾配｜DIY計算ツール</title>
+<meta name="description" content="勾配と距離を無料で計算。高低差・水平距離・斜距離・角度・勾配%を相互計算。高低差・水平距離・斜距離を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/slope-length/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="勾配と距離の計算｜勾配｜DIY計算ツール">
+<meta property="og:description" content="勾配と距離を無料で計算。高低差・水平距離・斜距離・角度・勾配%を相互計算。高低差・水平距離・斜距離を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/slope-length/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "勾配",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/slope/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "勾配と距離",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/slope-length/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/slope-length/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/slope-length/",
+   "name": "勾配と距離の計算",
+   "description": "勾配と距離を無料で計算。高低差・水平距離・斜距離・角度・勾配%を相互計算。高低差・水平距離・斜距離を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "勾配と距離, 勾配と距離 計算, 勾配, 勾配 計算, 高低差, 高低差 計算, 水平距離, 水平距離 計算, 斜距離, 斜距離 計算, 屋根, 屋根 計算, スロープ, スロープ 計算, 階段, 階段 計算, 排水, 排水 計算, 水勾配, 水勾配 計算, 配管, 配管 計算, 道路, 道路 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "勾配と距離は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "高低差・水平距離を入力すると斜距離・角度・勾配 %が求まります。水平距離・角度を入力すると高低差・斜距離・勾配 %が求まります。高低差・角度を入力すると水平距離・斜距離・勾配 %が求まります。このほか6通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば水平距離・勾配「寸」を入れると高低差・斜距離・角度が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "勾配と距離で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "高低差は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "勾配と距離以外の勾配の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。勾配のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/slope/">勾配</a><span class="crumb__sep">›</span><span aria-current="page">勾配と距離</span></nav>
+<h1>勾配と距離の計算</h1>
+<p class="doc__lead">高低差・水平距離・斜距離・角度・勾配%を相互計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/slope.length">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="直角三角形の図" focusable="false"><g class="layer-body"><polygon class="body" points="48,116 258,116 258,74"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="120" x2="48" y2="140"/><line class="dimline" x1="258" y1="120" x2="258" y2="140"/><line class="dimline" x1="48" y1="136" x2="258" y2="136"/><polygon class="arrow" points="48,136 54,139.4 54,132.6"/><polygon class="arrow" points="258,136 252,132.6 252,139.4"/></g><g class="dimgroup"><line class="dimline" x1="262" y1="116" x2="280" y2="116"/><line class="dimline" x1="262" y1="74" x2="280" y2="74"/><line class="dimline" x1="276" y1="116" x2="276" y2="74"/><polygon class="arrow" points="276,116 279.4,110 272.6,110"/><polygon class="arrow" points="276,74 272.6,80 279.4,80"/></g><g class="dimgroup"><line class="dimline" x1="257.22" y1="70.08" x2="253.29" y2="50.47"/><line class="dimline" x1="47.22" y1="112.08" x2="43.29" y2="92.47"/><line class="dimline" x1="254.08" y1="54.39" x2="44.08" y2="96.39"/><polygon class="arrow" points="254.08,54.39 247.53,52.23 248.86,58.9"/><polygon class="arrow" points="44.08,96.39 50.63,98.55 49.29,91.88"/></g><path class="arc" d="M 74 116 A 26 26 0 0 0 73.49509756796392 110.90098048640722"/><polyline class="dimline" fill="none" points="247,116 247,105 258,105"/></g><g class="layer-labels"><g class="dim is-input" data-key="a" tabindex="0" aria-label="水平距離 5,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="123.79" y="123" width="73.6"/><text class="pill-txt" x="160.59" y="147">5,000 mm</text></g><g class="dim is-input" data-key="b" tabindex="0" aria-label="高低差 1,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="240.4" y="71" width="73.6"/><text class="pill-txt" x="277.2" y="95">1,000 mm</text></g><g class="dim is-derived" data-key="c" tabindex="0" aria-label="斜距離 5,099.02 mm"><rect class="pill" rx="8" ry="8" height="48" x="99.12" y="34.64" width="95.2"/><text class="pill-txt" x="146.72" y="58.64">5,099.02 mm</text></g><g class="dim is-derived" data-key="angA" tabindex="0" aria-label="角度 11.31°"><rect class="pill" rx="8" ry="8" height="48" x="54.59" y="92.64" width="59.2"/><text class="pill-txt" x="84.19" y="116.64">11.31°</text></g><text class="vertex" x="37" y="128" text-anchor="middle">A</text><text class="vertex" x="269" y="128" text-anchor="middle">B</text><text class="vertex" x="270" y="68" text-anchor="middle">C</text><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">勾配と距離でできること</h2>
+<p>勾配と距離は、高低差・水平距離・斜距離・角度・勾配 %・勾配比（1:n の n）・勾配「寸」のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：勾配、高低差、水平距離、斜距離、屋根、スロープ、階段、排水</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">高低差</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>垂直方向の高さの差</td></tr>
+<tr><th scope="row">水平距離</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>水平方向の距離</td></tr>
+<tr><th scope="row">斜距離</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>斜めの距離</td></tr>
+<tr><th scope="row">角度</th><td>° / rad</td><td>水平からの傾き</td></tr>
+<tr><th scope="row">勾配 %</th><td>%</td><td></td></tr>
+<tr><th scope="row">勾配比（1:n の n）</th><td>—</td><td></td></tr>
+<tr><th scope="row">勾配「寸」</th><td>—</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>高低差</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>水平距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>斜距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>角度</strong><span class="doc__unit">° / rad</span></li>
+<li><strong>勾配 %</strong><span class="doc__unit">%</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">高低差・水平距離</span><span class="combo__arrow">→</span><span class="combo__out">斜距離・角度・勾配 %</span></li>
+<li><span class="combo__in">水平距離・角度</span><span class="combo__arrow">→</span><span class="combo__out">高低差・斜距離・勾配 %</span></li>
+<li><span class="combo__in">高低差・角度</span><span class="combo__arrow">→</span><span class="combo__out">水平距離・斜距離・勾配 %</span></li>
+<li><span class="combo__in">斜距離・角度</span><span class="combo__arrow">→</span><span class="combo__out">高低差・水平距離・勾配 %</span></li>
+<li><span class="combo__in">高低差・斜距離</span><span class="combo__arrow">→</span><span class="combo__out">水平距離・角度・勾配 %</span></li>
+<li><span class="combo__in">水平距離・斜距離</span><span class="combo__arrow">→</span><span class="combo__out">高低差・角度・勾配 %</span></li>
+<li><span class="combo__in">水平距離・勾配 %</span><span class="combo__arrow">→</span><span class="combo__out">高低差・斜距離・角度</span></li>
+<li><span class="combo__in">水平距離・勾配比（1:n の n）</span><span class="combo__arrow">→</span><span class="combo__out">高低差・斜距離・角度</span></li>
+<li><span class="combo__in">水平距離・勾配「寸」</span><span class="combo__arrow">→</span><span class="combo__out">高低差・斜距離・角度</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>スロープの長さは「水平距離」ではない</h3>
+<p>50cm の段差にスロープを付けるとき、必要な板の長さは水平距離そのものではなく、
+斜めの長さ（斜距離）です。勾配 1/8 で 500mm 上げるなら水平距離は 4000mm、
+斜距離は約 4031mm。差はわずかですが、板を切ってから足りないと分かると作り直しになります。</p>
+
+<h3>敷地の高低差から必要な長さを出す</h3>
+<p>庭のアプローチや駐車場のスロープでは、「高低差」と「使える水平距離」が先に決まっていて、
+勾配が後から決まることがほとんどです。その2つを入れれば勾配が%・角度・比の形で出るので、
+きつすぎないかをその場で判断できます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>勾配と距離で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>slant = √(rise² + run²)</code></li>
+<li><code>角度 = atan(rise ÷ run)</code></li>
+<li><code>勾配% = rise ÷ run × 100</code></li>
+<li><code>rise = run × tan(角度)</code></li>
+<li><code>slant = run ÷ cos(角度)</code></li>
+<li><code>run = rise ÷ tan(角度)</code></li>
+<li><code>slant = rise ÷ sin(角度)</code></li>
+<li><code>rise = slant × sin(角度)</code></li>
+<li><code>run = slant × cos(角度)</code></li>
+<li><code>角度に換算してから rise = run × tan(角度)</code></li>
+</ul>
+<p class="doc__kw">記号の意味：rise = 高低差、run = 水平距離、slant = 斜距離</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">水平5000mmで1000mm上がるスロープ</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>高低差</span><b>1,000 mm</b></li>
+      <li><span>水平距離</span><b>5,000 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>斜距離</span><b>5,099.02 mm</b></li>
+      <li><span>角度</span><b>11.31°</b></li>
+      <li><span>勾配 %</span><b>20%</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>slant = √(rise² + run²)</td><td>√(1,000² + 5,000²)</td><td>5,099.02 mm</td></tr>
+<tr><td>角度 = atan(rise ÷ run)</td><td>atan(1,000 ÷ 5,000)</td><td>11.31°</td></tr>
+<tr><td>勾配% = rise ÷ run × 100</td><td>1,000 ÷ 5,000 × 100</td><td>20%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 勾配と距離 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">勾配と距離のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>勾配と距離は何が分かれば計算できますか？</summary><div class="qa__a"><p>高低差・水平距離を入力すると斜距離・角度・勾配 %が求まります。水平距離・角度を入力すると高低差・斜距離・勾配 %が求まります。高低差・角度を入力すると水平距離・斜距離・勾配 %が求まります。このほか6通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば水平距離・勾配「寸」を入れると高低差・斜距離・角度が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>勾配と距離で使える単位は何ですか？</summary><div class="qa__a"><p>高低差は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>勾配と距離以外の勾配の計算もありますか？</summary><div class="qa__a"><p>あります。勾配のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>用途ごとの推奨値は目安です。基準や施工条件は各仕様をご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>勾配のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../slope-convert/"><strong>勾配の相互変換</strong><span>角度・勾配%・勾配比・寸を相互計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../pipe-slope/"><strong>配管の勾配・高低差・管長</strong><span>配管・排水｜高低差・水平距離・管長・勾配%を相互計算</span></a></li>
+<li><a href="../earth-excavation/"><strong>掘削・盛土の体積</strong><span>土木・外構｜幅・奥行き・深さ（高さ）から、掘削や盛土の体積を計算</span></a></li>
+<li><a href="../earth-gravel/"><strong>砕石量の計算</strong><span>土木・外構｜面積と敷き厚さから、必要な砕石の体積を計算</span></a></li>
+<li><a href="../fence-posts/"><strong>フェンス支柱の間隔・本数</strong><span>土木・外構｜全長と支柱間隔（または本数）から、支柱の本数と位置を計算</span></a></li>
+<li><a href="../hvac-uvalue/"><strong>熱貫流率（U値）</strong><span>空調・断熱｜壁や屋根の層構成から、熱の伝わりやすさを計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/slope/">勾配の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

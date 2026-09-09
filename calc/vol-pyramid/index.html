@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>角錐の体積の計算｜体積｜DIY計算ツール</title>
+<meta name="description" content="角錐の体積を無料で計算。底面（幅×奥行）と高さから、四角錐の体積を計算。底面の幅・底面の奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/vol-pyramid/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="角錐の体積の計算｜体積｜DIY計算ツール">
+<meta property="og:description" content="角錐の体積を無料で計算。底面（幅×奥行）と高さから、四角錐の体積を計算。底面の幅・底面の奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/vol-pyramid/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "体積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/volume/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "角錐の体積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/vol-pyramid/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/vol-pyramid/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/vol-pyramid/",
+   "name": "角錐の体積の計算",
+   "description": "角錐の体積を無料で計算。底面（幅×奥行）と高さから、四角錐の体積を計算。底面の幅・底面の奥行・高さを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "角錐の体積, 角錐の体積 計算, 角錐, 角錐 計算, 四角錐, 四角錐 計算, ピラミッド, ピラミッド 計算, 体積, 体積 計算, 三角屋根, 三角屋根 計算, 砂山, 砂山 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "角錐の体積は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "底面の幅・底面の奥行・高さを入力すると底面積・体積(mm³)・体積(m³)・体積(L)が求まります。体積・底面の幅・底面の奥行を入力すると底面積・高さが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば体積・底面の幅・底面の奥行を入れると底面積・高さが求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "角錐の体積で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "底面の幅は mm / cm / m / inch / ft / 尺 / 寸、体積は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "角錐の体積以外の体積の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。体積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/volume/">体積</a><span class="crumb__sep">›</span><span aria-current="page">角錐の体積</span></nav>
+<h1>角錐の体積の計算</h1>
+<p class="doc__lead">底面（幅×奥行）と高さから、四角錐の体積を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/vol.pyramid">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="角錐の図" focusable="false"><g class="layer-body"><polygon class="body" points="61.14,146 188.73,146 250.86,113.39 123.27,113.39"/><polygon class="body" points="188.73,146 250.86,113.39 156,34"/><polygon class="body" points="61.14,146 188.73,146 156,34"/></g><g class="layer-aux"><line class="aux" x1="156" y1="129.69" x2="156" y2="34" stroke-dasharray="4 3"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="61.14" y1="150" x2="61.14" y2="170"/><line class="dimline" x1="188.73" y1="150" x2="188.73" y2="170"/><line class="dimline" x1="61.14" y1="166" x2="188.73" y2="166"/><polygon class="arrow" points="61.14,166 67.14,169.4 67.14,162.6"/><polygon class="arrow" points="188.73,166 182.73,162.6 182.73,169.4"/></g><g class="dimgroup"><line class="dimline" x1="190.59" y1="149.54" x2="199.88" y2="167.25"/><line class="dimline" x1="252.72" y1="116.93" x2="262.02" y2="134.64"/><line class="dimline" x1="198.02" y1="163.71" x2="260.16" y2="131.1"/><polygon class="arrow" points="198.02,163.71 204.91,163.93 201.75,157.91"/><polygon class="arrow" points="260.16,131.1 253.27,130.87 256.43,136.9"/></g><g class="dimgroup"><line class="dimline" x1="152" y1="129.69" x2="126" y2="129.69"/><line class="dimline" x1="152" y1="34" x2="126" y2="34"/><line class="dimline" x1="130" y1="129.69" x2="130" y2="34"/><polygon class="arrow" points="130,129.69 133.4,123.69 126.6,123.69"/><polygon class="arrow" points="130,34 126.6,40 133.4,40"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="底面の幅 0.4 m"><rect class="pill" rx="8" ry="8" height="48" x="98.93" y="153" width="52"/><text class="pill-txt" x="124.93" y="177">0.4 m</text></g><g class="dim is-input" data-key="d" tabindex="0" aria-label="底面の奥行 0.4 m"><rect class="pill" rx="8" ry="8" height="48" x="209.13" y="134.91" width="52"/><text class="pill-txt" x="235.13" y="158.91">0.4 m</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="高さ 0.3 m"><rect class="pill" rx="8" ry="8" height="48" x="92" y="57.85" width="52"/><text class="pill-txt" x="118" y="81.85">0.3 m</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">角錐の体積でできること</h2>
+<p>角錐の体積は、底面の幅・底面の奥行・高さ・体積のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：角錐、四角錐、ピラミッド、体積、三角屋根、砂山</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">底面の幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">底面の奥行</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">高さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">体積</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>底面の幅</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>底面の奥行</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>高さ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>底面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>体積(mm³)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>体積(m³)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>体積(L)</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">底面の幅・底面の奥行・高さ</span><span class="combo__arrow">→</span><span class="combo__out">底面積・体積(mm³)・体積(m³)・体積(L)</span></li>
+<li><span class="combo__in">体積・底面の幅・底面の奥行</span><span class="combo__arrow">→</span><span class="combo__out">底面積・高さ</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>角錐は同じ底面・高さの箱の3分の1</h3>
+<p>底面の幅 × 奥行 × 高さ ÷ 3。
+四角錐の屋根（方形屋根）の内容積、ピラミッド型の飾り、
+四角い漏斗などがこの形です。</p>
+
+<h3>高さは「真上からの高さ」</h3>
+<p>高さは頂点から底面へ垂直に下ろした距離です。
+斜面（稜線）の長さではありません。
+斜面の長さしか分からないときは、先に直角三角形の計算で高さを出してください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>角錐の体積で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>底面積 = 幅 × 奥行</code></li>
+<li><code>V = 底面積 × 高さ ÷ 3</code></li>
+<li><code>高さ = 3V ÷ 底面積</code></li>
+</ul>
+<p class="doc__kw">記号の意味：V = 体積</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">底面400×400mm・高さ300mmの四角錐</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>底面の幅</span><b>0.4 m</b></li>
+      <li><span>底面の奥行</span><b>0.4 m</b></li>
+      <li><span>高さ</span><b>0.3 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>底面積</span><b>0.16 m²</b></li>
+      <li><span>体積(mm³)</span><b>16,000,000 mm³</b></li>
+      <li><span>体積(m³)</span><b>0.02 m³</b></li>
+      <li><span>体積(L)</span><b>16 L</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>底面積 = 幅 × 奥行</td><td>0.4 × 0.4</td><td>0.16 m²</td></tr>
+<tr><td>V = 底面積 × 高さ ÷ 3</td><td>0.16 × 0.3 ÷ 3</td><td>16 L</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 角錐の体積 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">角錐の体積のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>角錐の体積は何が分かれば計算できますか？</summary><div class="qa__a"><p>底面の幅・底面の奥行・高さを入力すると底面積・体積(mm³)・体積(m³)・体積(L)が求まります。体積・底面の幅・底面の奥行を入力すると底面積・高さが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば体積・底面の幅・底面の奥行を入れると底面積・高さが求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>角錐の体積で使える単位は何ですか？</summary><div class="qa__a"><p>底面の幅は mm / cm / m / inch / ft / 尺 / 寸、体積は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>角錐の体積以外の体積の計算もありますか？</summary><div class="qa__a"><p>あります。体積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>体積のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-volume/"><strong>体積の単位換算</strong><span>mm³・cm³・m³・L・mLを相互変換</span></a></li>
+<li><a href="../vol-box/"><strong>直方体の体積</strong><span>幅・奥行・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-cube/"><strong>立方体の体積</strong><span>一辺・体積を相互計算</span></a></li>
+<li><a href="../vol-cylinder/"><strong>円柱の体積</strong><span>半径・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-cone/"><strong>円錐の体積</strong><span>半径・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-sphere/"><strong>球の体積</strong><span>半径・体積を相互計算</span></a></li>
+<li><a href="../vol-prism-tri/"><strong>三角柱の体積</strong><span>底辺・高さ・長さ・体積を相互計算</span></a></li>
+<li><a href="../vol-frustum-cone/"><strong>円錐台の体積（バケツ・植木鉢）</strong><span>上下の直径と高さから、すぼまった容器の容量を計算</span></a></li>
+<li><a href="../vol-tank-h/"><strong>横置きタンクの液量</strong><span>横に寝かせた円筒タンクの、液面の深さから残量を計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/volume/">体積の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>塗料の希釈の計算｜塗装・壁紙｜DIY計算ツール</title>
+<meta name="description" content="塗料の希釈を無料で計算。希釈率から、混ぜるうすめ液の量と合計量を計算。塗料の量・希釈率（%）・うすめ液の量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/paint-thinner/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="塗料の希釈の計算｜塗装・壁紙｜DIY計算ツール">
+<meta property="og:description" content="塗料の希釈を無料で計算。希釈率から、混ぜるうすめ液の量と合計量を計算。塗料の量・希釈率（%）・うすめ液の量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/paint-thinner/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "塗装・壁紙",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/paint/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "塗料の希釈",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/paint-thinner/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/paint-thinner/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/paint-thinner/",
+   "name": "塗料の希釈の計算",
+   "description": "塗料の希釈を無料で計算。希釈率から、混ぜるうすめ液の量と合計量を計算。塗料の量・希釈率（%）・うすめ液の量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "塗料の希釈, 塗料の希釈 計算, 希釈, 希釈 計算, うすめ液, うすめ液 計算, シンナー, シンナー 計算, 塗料, 塗料 計算, 配合, 配合 計算, 割合, 割合 計算, スプレー, スプレー 計算, 吹き付け, 吹き付け 計算, 塗装・壁紙",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "塗料の希釈は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "塗料の量・希釈率（%）を入力するとうすめ液の量・希釈後の合計が求まります。希釈後の合計・希釈率（%）を入力すると塗料の量・うすめ液の量が求まります。塗料の量・うすめ液の量を入力すると希釈率（%）・希釈後の合計が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば塗料の量・うすめ液の量を入れると希釈率（%）・希釈後の合計が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "塗料の希釈で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "塗料の量は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "塗料の希釈以外の塗装・壁紙の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。塗装・壁紙のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/paint/">塗装・壁紙</a><span class="crumb__sep">›</span><span aria-current="page">塗料の希釈</span></nav>
+<h1>塗料の希釈の計算</h1>
+<p class="doc__lead">希釈率から、混ぜるうすめ液の量と合計量を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/paint.thinner">この計算をアプリで開く</a></p>
+
+<h2 id="about">塗料の希釈でできること</h2>
+<p>塗料の希釈は、塗料の量・希釈率（%）・うすめ液の量・希釈後の合計のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：希釈、うすめ液、シンナー、塗料、配合、割合、スプレー、吹き付け</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">塗料の量</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">希釈率（%）</th><td>—</td><td>塗料に対するうすめ液の割合。刷毛塗りで5〜10%、スプレーで30〜50%が目安</td></tr>
+<tr><th scope="row">うすめ液の量</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">希釈後の合計</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>塗料の量</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>うすめ液の量</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>希釈率（%）</strong></li>
+<li><strong>希釈後の合計</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">塗料の量・希釈率（%）</span><span class="combo__arrow">→</span><span class="combo__out">うすめ液の量・希釈後の合計</span></li>
+<li><span class="combo__in">希釈後の合計・希釈率（%）</span><span class="combo__arrow">→</span><span class="combo__out">塗料の量・うすめ液の量</span></li>
+<li><span class="combo__in">塗料の量・うすめ液の量</span><span class="combo__arrow">→</span><span class="combo__out">希釈率（%）・希釈後の合計</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>希釈率は「塗料に対する割合」</h3>
+<p>「10%希釈」は、塗料1000mLに対してうすめ液100mLを足すという意味です。
+合計は1100mLになります。
+仕上がり量に対する割合ではないので、逆に計算すると量が合いません。</p>
+
+<h3>薄めすぎると隠ぺい力が落ちる</h3>
+<p>塗りやすくなるからと薄めすぎると、下地が透けて塗り重ねが増え、
+結局は塗料を多く使うことになります。
+希釈率は製品の缶に書かれた範囲を守ってください。</p>
+
+<h3>うすめ液の種類</h3>
+<p>水性塗料は水、油性塗料はペイントうすめ液（ミネラルスピリット）、
+ラッカーはラッカーシンナーと、対応する溶剤が決まっています。
+違うものを混ぜると分離したり固まったりします。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>塗料の希釈で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>うすめ液 = 塗料 × 希釈率 ÷ 100</code></li>
+<li><code>合計 = 塗料 + うすめ液</code></li>
+<li><code>塗料 = 合計 ÷ (1 + 希釈率 ÷ 100)</code></li>
+<li><code>うすめ液 = 合計 − 塗料</code></li>
+<li><code>希釈率 = うすめ液 ÷ 塗料 × 100</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">塗料1000mLを10%希釈する</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>塗料の量</span><b>1,000 mL</b></li>
+      <li><span>希釈率（%）</span><b>10</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>うすめ液の量</span><b>100 mL</b></li>
+      <li><span>希釈後の合計</span><b>1,100 mL</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>うすめ液 = 塗料 × 希釈率 ÷ 100</td><td>1,000 × 10 ÷ 100</td><td>100 mL</td></tr>
+<tr><td>合計 = 塗料 + うすめ液</td><td>1,000 + 100</td><td>1,100 mL</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 塗料の希釈 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">塗料の希釈のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>塗料の希釈は何が分かれば計算できますか？</summary><div class="qa__a"><p>塗料の量・希釈率（%）を入力するとうすめ液の量・希釈後の合計が求まります。希釈後の合計・希釈率（%）を入力すると塗料の量・うすめ液の量が求まります。塗料の量・うすめ液の量を入力すると希釈率（%）・希釈後の合計が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば塗料の量・うすめ液の量を入れると希釈率（%）・希釈後の合計が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>塗料の希釈で使える単位は何ですか？</summary><div class="qa__a"><p>塗料の量は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>塗料の希釈以外の塗装・壁紙の計算もありますか？</summary><div class="qa__a"><p>あります。塗装・壁紙のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>塗料・壁紙の必要量は目安です。製品ごとの塗布量・ロス率は商品表示をご確認ください。</li>
+<li>適した希釈率は塗料の種類・気温・塗る道具で変わります。製品の表示をご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>塗装・壁紙のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../paint-area/"><strong>塗料の必要量</strong><span>塗装面積・塗布回数・塗料の塗布量から、必要な塗料の量を計算</span></a></li>
+<li><a href="../wallpaper-length/"><strong>壁紙の必要長</strong><span>周長・天井高・壁紙幅・柄合わせ余裕から、必要な壁紙の長さを計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-percent/"><strong>割合・増減率</strong><span>長さ・単位｜もとの値・割合(%)・割合をかけた値を相互計算</span></a></li>
+<li><a href="../concrete-mix/"><strong>コンクリート・モルタルの配合</strong><span>コンクリート｜容積比から、セメント・砂・砂利それぞれの必要量を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/paint/">塗装・壁紙の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

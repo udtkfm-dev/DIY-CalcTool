@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>流量・流速・管径の計算｜配管・排水｜DIY計算ツール</title>
+<meta name="description" content="流量・流速・管径を無料で計算。管の内径と流速から流量を計算（必要な管径の逆算もできます）。管の内径・流速・流量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-flow/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="流量・流速・管径の計算｜配管・排水｜DIY計算ツール">
+<meta property="og:description" content="流量・流速・管径を無料で計算。管の内径と流速から流量を計算（必要な管径の逆算もできます）。管の内径・流速・流量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-flow/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "配管・排水",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/pipe/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "流量・流速・管径",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-flow/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-flow/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-flow/",
+   "name": "流量・流速・管径の計算",
+   "description": "流量・流速・管径を無料で計算。管の内径と流速から流量を計算（必要な管径の逆算もできます）。管の内径・流速・流量を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "流量・流速・管径, 流量・流速・管径 計算, 流量, 流量 計算, 流速, 流速 計算, 管径, 管径 計算, 内径, 内径 計算, L/min, L/min 計算, 給水, 給水 計算, 通水, 通水 計算, 配管・排水",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "流量・流速・管径は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "管の内径・流速を入力すると流量・管の断面積が求まります。流量・流速を入力すると管の内径・管の断面積が求まります。流量・管の内径を入力すると流速・管の断面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば流量・管の内径を入れると流速・管の断面積が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "流量・流速・管径で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "管の内径は mm / cm / m / inch / ft / 尺 / 寸、流速は m/s / m/min、流量は L/min / L/s / m³/h / m³/s から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "流量・流速・管径以外の配管・排水の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。配管・排水のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/pipe/">配管・排水</a><span class="crumb__sep">›</span><span aria-current="page">流量・流速・管径</span></nav>
+<h1>流量・流速・管径の計算</h1>
+<p class="doc__lead">管の内径と流速から流量を計算（必要な管径の逆算もできます）。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/pipe.flow">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="円の図" focusable="false"><g class="layer-body"><polygon class="body" points="228,101 227.68,94.43 226.71,87.93 225.12,81.55 222.9,75.36 220.09,69.42 216.71,63.78 212.79,58.5 208.38,53.62 203.5,49.21 198.22,45.29 192.58,41.91 186.64,39.1 180.45,36.88 174.07,35.29 167.57,34.32 161,34 154.43,34.32 147.93,35.29 141.55,36.88 135.36,39.1 129.42,41.91 123.78,45.29 118.5,49.21 113.62,53.62 109.21,58.5 105.29,63.78 101.91,69.42 99.1,75.36 96.88,81.55 95.29,87.93 94.32,94.43 94,101 94.32,107.57 95.29,114.07 96.88,120.45 99.1,126.64 101.91,132.58 105.29,138.22 109.21,143.5 113.62,148.38 118.5,152.79 123.78,156.71 129.42,160.09 135.36,162.9 141.55,165.12 147.93,166.71 154.43,167.68 161,168 167.57,167.68 174.07,166.71 180.45,165.12 186.64,162.9 192.58,160.09 198.22,156.71 203.5,152.79 208.38,148.38 212.79,143.5 216.71,138.22 220.09,132.58 222.9,126.64 225.12,120.45 226.71,114.07 227.68,107.57"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="163.83" y1="103.83" x2="175.14" y2="115.14"/><line class="dimline" x1="211.2" y1="56.45" x2="222.52" y2="67.77"/><line class="dimline" x1="172.31" y1="112.31" x2="219.69" y2="64.94"/><polygon class="arrow" points="172.31,112.31 178.96,110.48 174.15,105.67"/><polygon class="arrow" points="219.69,64.94 213.04,66.78 217.85,71.58"/></g><g class="dimgroup"><line class="dimline" x1="94" y1="105" x2="94" y2="125"/><line class="dimline" x1="228" y1="105" x2="228" y2="125"/><line class="dimline" x1="94" y1="121" x2="228" y2="121"/><polygon class="arrow" points="94,121 100,124.4 100,117.6"/><polygon class="arrow" points="228,121 222,117.6 222,124.4"/></g></g><g class="layer-labels"><g class="dim is-readonly" data-key="r" aria-label="管の内半径 10 mm（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="191.71" y="73.11" width="52"/><text class="pill-txt" x="217.71" y="97.11">10 mm</text></g><g class="dim is-input" data-key="d" tabindex="0" aria-label="管の内径 20 mm"><rect class="pill" rx="8" ry="8" height="48" x="129.71" y="108" width="52"/><text class="pill-txt" x="155.71" y="132">20 mm</text></g><g class="dim is-readonly" data-key="S" aria-label="管の断面積 314.16 mm²（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="157" y="166" width="88"/><text class="pill-txt" x="201" y="190">314.16 mm²</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">流量・流速・管径でできること</h2>
+<p>流量・流速・管径は、管の内径・流速・流量のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：流量、流速、管径、内径、L/min、給水、通水</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">管の内径</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">流速</th><td>m/s / m/min</td><td>給水管で 0.6〜2.0 m/s 程度が一般的な範囲</td></tr>
+<tr><th scope="row">流量</th><td>L/min / L/s / m³/h / m³/s</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>管の内径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>管の内半径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>管の断面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>流速</strong><span class="doc__unit">m/s / m/min</span></li>
+<li><strong>流量</strong><span class="doc__unit">L/min / L/s / m³/h / m³/s</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">管の内径・流速</span><span class="combo__arrow">→</span><span class="combo__out">流量・管の断面積</span></li>
+<li><span class="combo__in">流量・流速</span><span class="combo__arrow">→</span><span class="combo__out">管の内径・管の断面積</span></li>
+<li><span class="combo__in">流量・管の内径</span><span class="combo__arrow">→</span><span class="combo__out">流速・管の断面積</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>流量 = 断面積 × 流速</h3>
+<p>管の内径と流速から、1分あたり何リットル流れるかが出ます。
+逆に、必要な流量から管径を求めることもできるので、
+「毎分30L流したいなら内径いくつか」という選定にも使えます。</p>
+
+<h3>流速の目安</h3>
+<p>給水管では 1.0〜2.0 m/s 程度がよく使われます。
+速すぎると流水音が出たり、管の内面が傷んだりします。
+遅すぎると必要な管径が大きくなり、コストが上がります。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>流量・流速・管径で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>断面積 = π × (内径 ÷ 2)²</code></li>
+<li><code>流量 = 断面積[m²] × 流速 × 60 × 1000</code></li>
+<li><code>断面積 = 流量 ÷ (流速 × 60 × 1000)</code></li>
+<li><code>内径 = 2 × √(断面積 ÷ π)</code></li>
+<li><code>流速 = 流量 ÷ (断面積[m²] × 60 × 1000)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">内径20mmの管を流速1.5m/sで流したときの流量</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>管の内径</span><b>20 mm</b></li>
+      <li><span>流速</span><b>1.5 m/s</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>流量</span><b>28.27 L/min</b></li>
+      <li><span>管の断面積</span><b>314.16 mm²</b></li>
+      <li><span>管の内半径</span><b>10 mm</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>断面積 = π × (内径 ÷ 2)²</td><td>π × (20 ÷ 2)²</td><td>314.16 mm²</td></tr>
+<tr><td>流量 = 断面積[m²] × 流速 × 60 × 1000</td><td>0 × 1.5 × 60000</td><td>28.27 L/min</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 流量・流速・管径 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">流量・流速・管径のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>流量・流速・管径は何が分かれば計算できますか？</summary><div class="qa__a"><p>管の内径・流速を入力すると流量・管の断面積が求まります。流量・流速を入力すると管の内径・管の断面積が求まります。流量・管の内径を入力すると流速・管の断面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば流量・管の内径を入れると流速・管の断面積が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>流量・流速・管径で使える単位は何ですか？</summary><div class="qa__a"><p>管の内径は mm / cm / m / inch / ft / 尺 / 寸、流速は m/s / m/min、流量は L/min / L/s / m³/h / m³/s から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>流量・流速・管径以外の配管・排水の計算もありますか？</summary><div class="qa__a"><p>あります。配管・排水のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>排水勾配などの推奨値は目安です。基準や施工条件は各仕様をご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>配管・排水のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../pipe-slope/"><strong>配管の勾配・高低差・管長</strong><span>高低差・水平距離・管長・勾配%を相互計算</span></a></li>
+<li><a href="../pipe-volume/"><strong>管内体積・水量</strong><span>内径・管長から、管の中に入る水の量を計算</span></a></li>
+<li><a href="../pipe-pressure-loss/"><strong>配管の圧力損失</strong><span>ヘーゼン・ウィリアムスの式で、直管の摩擦損失水頭を計算</span></a></li>
+<li><a href="../pipe-pump-head/"><strong>ポンプの全揚程</strong><span>実揚程・損失水頭・速度水頭から全揚程を計算</span></a></li>
+<li><a href="../pipe-rainwater/"><strong>雨水の排水量（合理式）</strong><span>屋根や敷地の面積と降雨強度から、流出量を計算</span></a></li>
+<li><a href="../pipe-tank/"><strong>タンクの容量と満水時間</strong><span>容量と流量から、満水までにかかる時間を計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/pipe/">配管・排水の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>階段の段数・蹴上げ・踏面の計算｜階段｜DIY計算ツール</title>
+<meta name="description" content="階段の段数・蹴上げ・踏面を無料で計算。階高・段数・蹴上げ・踏面・全長・角度・斜距離を相互計算。階高・段数・蹴上げを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/stair-main/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="階段の段数・蹴上げ・踏面の計算｜階段｜DIY計算ツール">
+<meta property="og:description" content="階段の段数・蹴上げ・踏面を無料で計算。階高・段数・蹴上げ・踏面・全長・角度・斜距離を相互計算。階高・段数・蹴上げを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/stair-main/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "階段",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/stair/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "階段の段数・蹴上げ・踏面",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/stair-main/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/stair-main/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/stair-main/",
+   "name": "階段の段数・蹴上げ・踏面の計算",
+   "description": "階段の段数・蹴上げ・踏面を無料で計算。階高・段数・蹴上げ・踏面・全長・角度・斜距離を相互計算。階高・段数・蹴上げを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "階段の段数・蹴上げ・踏面, 階段の段数・蹴上げ・踏面 計算, 階段, 階段 計算, 段数, 段数 計算, 蹴上げ, 蹴上げ 計算, 踏面, 踏面 計算, けあげ, けあげ 計算, ふみづら, ふみづら 計算, 階高, 階高 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "階段の段数・蹴上げ・踏面は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "階高・段数を入力すると蹴上げが求まります。階高・蹴上げを入力すると段数が求まります。段数・蹴上げを入力すると階高が求まります。このほか4通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば階高・全長（水平距離）を入れると斜距離・角度が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "階段の段数・蹴上げ・踏面で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "階高は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "階段の段数・蹴上げ・踏面以外の階段の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。階段のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/stair/">階段</a><span class="crumb__sep">›</span><span aria-current="page">階段の段数・蹴上げ・踏面</span></nav>
+<h1>階段の段数・蹴上げ・踏面の計算</h1>
+<p class="doc__lead">階高・段数・蹴上げ・踏面・全長・角度・斜距離を相互計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/stair.main">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="直角三角形の図" focusable="false"><g class="layer-body"><polygon class="body" points="48,147.5 258,147.5 258,42.5"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="151.5" x2="48" y2="171.5"/><line class="dimline" x1="258" y1="151.5" x2="258" y2="171.5"/><line class="dimline" x1="48" y1="167.5" x2="258" y2="167.5"/><polygon class="arrow" points="48,167.5 54,170.9 54,164.1"/><polygon class="arrow" points="258,167.5 252,164.1 252,170.9"/></g><g class="dimgroup"><line class="dimline" x1="262" y1="147.5" x2="280" y2="147.5"/><line class="dimline" x1="262" y1="42.5" x2="280" y2="42.5"/><line class="dimline" x1="276" y1="147.5" x2="276" y2="42.5"/><polygon class="arrow" points="276,147.5 279.4,141.5 272.6,141.5"/><polygon class="arrow" points="276,42.5 272.6,48.5 279.4,48.5"/></g><g class="dimgroup"><line class="dimline" x1="256.21" y1="38.92" x2="247.27" y2="21.03"/><line class="dimline" x1="46.21" y1="143.92" x2="37.27" y2="126.03"/><line class="dimline" x1="249.06" y1="24.61" x2="39.06" y2="129.61"/><polygon class="arrow" points="249.06,24.61 242.17,24.25 245.21,30.34"/><polygon class="arrow" points="39.06,129.61 45.94,129.97 42.9,123.89"/></g><path class="arc" d="M 74 147.5 A 26 26 0 0 0 71.25510696599781 135.8724465170011"/><polyline class="dimline" fill="none" points="247,147.5 247,136.5 258,136.5"/></g><g class="layer-labels"><g class="dim is-empty" data-key="a" tabindex="0" aria-label="全長（水平距離） — mm"><rect class="pill" rx="8" ry="8" height="48" x="127" y="154.5" width="52"/><text class="pill-txt" x="153" y="178.5">— mm</text></g><g class="dim is-input" data-key="b" tabindex="0" aria-label="階高 2,700 mm"><rect class="pill" rx="8" ry="8" height="48" x="240.4" y="71" width="73.6"/><text class="pill-txt" x="277.2" y="95">2,700 mm</text></g><g class="dim is-empty" data-key="c" tabindex="0" aria-label="斜距離 — mm"><rect class="pill" rx="8" ry="8" height="48" x="112.69" y="42.38" width="52"/><text class="pill-txt" x="138.69" y="66.38">— mm</text></g><g class="dim is-empty" data-key="angA" tabindex="0" aria-label="角度 — °"><rect class="pill" rx="8" ry="8" height="48" x="64.82" y="113.39" width="52"/><text class="pill-txt" x="90.82" y="137.39">— °</text></g><text class="vertex" x="37" y="159.5" text-anchor="middle">A</text><text class="vertex" x="269" y="159.5" text-anchor="middle">B</text><text class="vertex" x="270" y="36.5" text-anchor="middle">C</text><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">階段の段数・蹴上げ・踏面でできること</h2>
+<p>階段の段数・蹴上げ・踏面は、階高・段数・蹴上げ・踏面・全長（水平距離）・角度・斜距離のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：階段、段数、蹴上げ、踏面、けあげ、ふみづら、階高</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">階高</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">段数</th><td>—</td><td>階段の段の数</td></tr>
+<tr><th scope="row">蹴上げ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">踏面</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">全長（水平距離）</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>階段の水平方向の長さ</td></tr>
+<tr><th scope="row">角度</th><td>° / rad</td><td>階段の傾斜角</td></tr>
+<tr><th scope="row">斜距離</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>階段の踏面に沿った斜めの長さ</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>階高</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>段数</strong></li>
+<li><strong>蹴上げ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>踏面</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>全長（水平距離）</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>角度</strong><span class="doc__unit">° / rad</span></li>
+<li><strong>斜距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">階高・段数</span><span class="combo__arrow">→</span><span class="combo__out">蹴上げ</span></li>
+<li><span class="combo__in">階高・蹴上げ</span><span class="combo__arrow">→</span><span class="combo__out">段数</span></li>
+<li><span class="combo__in">段数・蹴上げ</span><span class="combo__arrow">→</span><span class="combo__out">階高</span></li>
+<li><span class="combo__in">段数・踏面</span><span class="combo__arrow">→</span><span class="combo__out">全長（水平距離）</span></li>
+<li><span class="combo__in">全長（水平距離）・段数</span><span class="combo__arrow">→</span><span class="combo__out">踏面</span></li>
+<li><span class="combo__in">蹴上げ・踏面</span><span class="combo__arrow">→</span><span class="combo__out">角度</span></li>
+<li><span class="combo__in">階高・全長（水平距離）</span><span class="combo__arrow">→</span><span class="combo__out">斜距離・角度</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>階高が先、段数は後</h3>
+<p>階段の計算は、床から床までの高さ（階高）が動かせない値として先にあり、
+そこから段数を決め、段数で割って蹴上げ（1段の高さ）を出す、という順で進みます。
+階高2700mmを15段で上がるなら蹴上げは180mm。
+段数を1つ増やすと約169mm、1つ減らすと約193mmになります。</p>
+
+<h3>蹴上げと踏面の目安</h3>
+<p>住宅では蹴上げ 180〜200mm、踏面 220〜240mm 前後がよく使われます。
+蹴上げが高いほど階段は短くて済みますが上りにくく、
+低いほど上りやすい代わりに水平距離（全長）が伸びます。
+どちらを優先するかは、階段に使える床面積で決まります。</p>
+
+<h3>全長が入るかを先に確かめる</h3>
+<p>段数が決まると踏面と全長も決まります。
+「段数を増やして上りやすくしたら、階段が廊下にはみ出した」ということが起きるので、
+蹴上げを決める前に、全長（水平距離）が確保できるかを確認してください。</p>
+
+<h3>寸法と法規は別の話</h3>
+<p>建築基準法では、用途ごとに蹴上げ・踏面・幅の上限下限が定められています。
+このアプリは入力した寸法どおりに計算するだけで、その階段が基準を満たすかは判断できません。
+新築・改修で階段を作る場合は必ず専門家にご確認ください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>階段の段数・蹴上げ・踏面で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>蹴上げ = 階高 ÷ 段数</code></li>
+<li><code>段数 = 階高 ÷ 蹴上げ</code></li>
+<li><code>階高 = 段数 × 蹴上げ</code></li>
+<li><code>全長 = 踏面 × (段数 − 1)</code></li>
+<li><code>踏面 = 全長 ÷ (段数 − 1)</code></li>
+<li><code>角度 = atan(蹴上げ ÷ 踏面)</code></li>
+<li><code>斜距離 = √(階高² + 全長²)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">階高2700mmを15段で上がる階段</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>階高</span><b>2,700 mm</b></li>
+      <li><span>段数</span><b>15</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>蹴上げ</span><b>180 mm</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>蹴上げ = 階高 ÷ 段数</td><td>2,700 ÷ 15</td><td>180 mm</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 階段の段数・蹴上げ・踏面 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">階段の段数・蹴上げ・踏面のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>階段の段数・蹴上げ・踏面は何が分かれば計算できますか？</summary><div class="qa__a"><p>階高・段数を入力すると蹴上げが求まります。階高・蹴上げを入力すると段数が求まります。段数・蹴上げを入力すると階高が求まります。このほか4通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば階高・全長（水平距離）を入れると斜距離・角度が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>階段の段数・蹴上げ・踏面で使える単位は何ですか？</summary><div class="qa__a"><p>階高は mm / cm / m / inch / ft / 尺 / 寸、角度は ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>階段の段数・蹴上げ・踏面以外の階段の計算もありますか？</summary><div class="qa__a"><p>あります。階段のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>蹴上げ・踏面の推奨寸法は建物や用途によって基準が異なります。必ず該当する仕様をご確認ください。</li>
+<li>蹴上げ・踏面・全長・角度・斜距離の全組み合わせを逆算できるわけではありません。階高・段数・踏面の3つから求める方法を基本としています。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>階段のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../stair-landing/"><strong>踊り場を含む階段の全長</strong><span>第1区間・踊り場・第2区間の水平距離から全長を計算</span></a></li>
+<li><a href="../stair-rule/"><strong>蹴上げと踏面の関係</strong><span>2R+T などの経験式の値を計算（目標値から逆算もできます）</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../slope-length/"><strong>勾配と距離</strong><span>勾配｜高低差・水平距離・斜距離・角度・勾配%を相互計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/stair/">階段の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

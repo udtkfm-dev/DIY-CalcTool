@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>2点間の距離（3次元）の計算｜立体・3D｜DIY計算ツール</title>
+<meta name="description" content="2点間の距離（3次元）を無料で計算。X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算。点1 の X・点1 の Y・点1 の Zを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-distance3d/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="2点間の距離（3次元）の計算｜立体・3D｜DIY計算ツール">
+<meta property="og:description" content="2点間の距離（3次元）を無料で計算。X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算。点1 の X・点1 の Y・点1 の Zを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-distance3d/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "立体・3D",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/solid/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "2点間の距離（3次元）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-distance3d/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-distance3d/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/solid-distance3d/",
+   "name": "2点間の距離（3次元）の計算",
+   "description": "2点間の距離（3次元）を無料で計算。X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算。点1 の X・点1 の Y・点1 の Zを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "2点間の距離（3次元）, 2点間の距離（3次元） 計算, 2点間, 2点間 計算, 距離, 距離 計算, 3次元, 3次元 計算, 座標, 座標 計算, xyz, xyz 計算, 立体, 立体 計算, 高低差, 高低差 計算, 仰角, 仰角 計算, 斜め, 斜め 計算, 立体・3D",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "2点間の距離（3次元）は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "点1 の X・点1 の Y・点1 の Z・点2 の X・点2 の Y・点2 の Zを入力するとΔX・ΔY・高低差（ΔZ）・水平距離・直線距離・仰角が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "2点間の距離（3次元）で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "点1 の Xは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "2点間の距離（3次元）以外の立体・3Dの計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/solid/">立体・3D</a><span class="crumb__sep">›</span><span aria-current="page">2点間の距離（3次元）</span></nav>
+<h1>2点間の距離（3次元）の計算</h1>
+<p class="doc__lead">X・Y・Z の座標2点から、直線距離・水平距離・高低差・仰角を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/solid.distance3d">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="2点の座標平面図" focusable="false"><g class="layer-body"/><g class="layer-aux"><line class="aux" x1="122.79" y1="143.95" x2="134.79" y2="143.95"/><line class="aux" x1="128.79" y1="137.95" x2="128.79" y2="149.95"/><line class="aux" x1="128.79" y1="143.95" x2="193.21" y2="58.05" stroke-dasharray="4 3"/><polygon class="body" points="133.29,143.95 131.97,147.13 128.79,148.45 125.61,147.13 124.29,143.95 125.61,140.77 128.79,139.45 131.97,140.77"/><polygon class="body" points="197.71,58.05 196.39,61.23 193.21,62.55 190.03,61.23 188.71,58.05 190.03,54.87 193.21,53.55 196.39,54.87"/></g><g class="layer-dims"/><g class="layer-labels"><text class="vertex" x="114.79" y="133.95" text-anchor="middle">点1</text><text class="vertex" x="207.21" y="48.05" text-anchor="middle">点2</text><g class="dim is-input" data-key="x1" tabindex="0" aria-label="点1 の X 0 mm"><rect class="pill" rx="8" ry="8" height="48" x="102.79" y="163.95" width="52"/><text class="pill-txt" x="128.79" y="187.95">0 mm</text></g><g class="dim is-input" data-key="y1" tabindex="0" aria-label="点1 の Y 0 mm"><rect class="pill" rx="8" ry="8" height="48" x="60.79" y="105.95" width="52"/><text class="pill-txt" x="86.79" y="129.95">0 mm</text></g><g class="dim is-input" data-key="x2" tabindex="0" aria-label="点2 の X 3,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="156.41" y="78.05" width="73.6"/><text class="pill-txt" x="193.21" y="102.05">3,000 mm</text></g><g class="dim is-input" data-key="y2" tabindex="0" aria-label="点2 の Y 4,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="198.41" y="20.05" width="73.6"/><text class="pill-txt" x="235.21" y="44.05">4,000 mm</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">2点間の距離（3次元）でできること</h2>
+<p>2点間の距離（3次元）は、点1 の X・点1 の Y・点1 の Z・点2 の X・点2 の Y・点2 の Zのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：2点間、距離、3次元、座標、xyz、立体、高低差、仰角</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">点1 の X</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">点1 の Y</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">点1 の Z</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>高さ方向</td></tr>
+<tr><th scope="row">点2 の X</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">点2 の Y</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">点2 の Z</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>高さ方向</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>直線距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>水平距離</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>高低差（ΔZ）</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>ΔX</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>ΔY</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>仰角</strong><span class="doc__unit">° / rad</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">点1 の X・点1 の Y・点1 の Z・点2 の X・点2 の Y・点2 の Z</span><span class="combo__arrow">→</span><span class="combo__out">ΔX・ΔY・高低差（ΔZ）・水平距離・直線距離・仰角</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>高さが違う2点の距離</h3>
+<p>敷地の測点、屋根の上と地面、足場の対角など、
+高さが違う2点の間の直線距離は、水平距離だけでは出せません。
+X・Y・Zの座標を入れると、直線距離・水平距離・高低差・仰角がまとめて出ます。</p>
+
+<h3>仰角がわかると材の角度が決まる</h3>
+<p>2点間の仰角は、そこに渡す部材を何度に切るかにそのまま使えます。
+斜めに渡す筋交いやワイヤーの取り付け角度を決めるときに便利です。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>2点間の距離（3次元）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>水平距離 = √(ΔX² + ΔY²)</code></li>
+<li><code>直線距離 = √(ΔX² + ΔY² + ΔZ²)</code></li>
+<li><code>仰角 = atan(ΔZ ÷ 水平距離)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">原点から(3000, 4000, 1200)mmの点までの直線距離</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>点1 の X</span><b>0 mm</b></li>
+      <li><span>点1 の Y</span><b>0 mm</b></li>
+      <li><span>点1 の Z</span><b>0 mm</b></li>
+      <li><span>点2 の X</span><b>3,000 mm</b></li>
+      <li><span>点2 の Y</span><b>4,000 mm</b></li>
+      <li><span>点2 の Z</span><b>1,200 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>ΔX</span><b>3,000 mm</b></li>
+      <li><span>ΔY</span><b>4,000 mm</b></li>
+      <li><span>高低差（ΔZ）</span><b>1,200 mm</b></li>
+      <li><span>水平距離</span><b>5,000 mm</b></li>
+      <li><span>直線距離</span><b>5,141.98 mm</b></li>
+      <li><span>仰角</span><b>13.5°</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>水平距離 = √(ΔX² + ΔY²)</td><td>√(3,000² + 4,000²)</td><td>5,000 mm</td></tr>
+<tr><td>直線距離 = √(ΔX² + ΔY² + ΔZ²)</td><td>√(5,000² + 1,200²)</td><td>5,141.98 mm</td></tr>
+<tr><td>仰角 = atan(ΔZ ÷ 水平距離)</td><td>atan(1,200 ÷ 5,000)</td><td>13.5°</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 2点間の距離（3次元） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">2点間の距離（3次元）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>2点間の距離（3次元）は何が分かれば計算できますか？</summary><div class="qa__a"><p>点1 の X・点1 の Y・点1 の Z・点2 の X・点2 の Y・点2 の Zを入力するとΔX・ΔY・高低差（ΔZ）・水平距離・直線距離・仰角が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>2点間の距離（3次元）で使える単位は何ですか？</summary><div class="qa__a"><p>点1 の Xは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>2点間の距離（3次元）以外の立体・3Dの計算もありますか？</summary><div class="qa__a"><p>あります。立体・3Dのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>座標にはマイナスの値も入れられます（テンキーの ± キー）。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>立体・3Dのほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+<li><a href="../solid-surface-box/"><strong>直方体の表面積</strong><span>箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）</span></a></li>
+<li><a href="../solid-surface-cyl/"><strong>円柱の表面積</strong><span>半径（または直径）と高さから、側面積・全表面積を計算</span></a></li>
+<li><a href="../solid-cone-dev/"><strong>円錐の展開図（扇形）</strong><span>底面の半径と高さから、板を切り抜く扇形の半径と中心角を計算</span></a></li>
+<li><a href="../solid-sphere/"><strong>球の表面積・直径</strong><span>半径・直径・表面積・体積を相互計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../pipe-slope/"><strong>配管の勾配・高低差・管長</strong><span>配管・排水｜高低差・水平距離・管長・勾配%を相互計算</span></a></li>
+<li><a href="../slope-length/"><strong>勾配と距離</strong><span>勾配｜高低差・水平距離・斜距離・角度・勾配%を相互計算</span></a></li>
+<li><a href="../survey-distance2p/"><strong>2点間の距離・方位角</strong><span>測量・位置｜2点の座標(x,y)から、距離と方位角を計算</span></a></li>
+<li><a href="../survey-midpoint/"><strong>2点の中点・等分点</strong><span>測量・位置｜2点の座標から中点、または線分をn等分する点の座標を計算</span></a></li>
+<li><a href="../survey-offset/"><strong>基準線からのオフセット位置</strong><span>測量・位置｜基準線（2点）・沿い距離・直角オフセットから、点の座標を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/solid/">立体・3Dの計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

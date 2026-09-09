@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>直角三角形の計算｜三角・角度｜DIY計算ツール</title>
+<meta name="description" content="直角三角形を無料で計算。底辺・高さ・斜辺・角度を相互計算。底辺・高さ・斜辺を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/tri-right/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="直角三角形の計算｜三角・角度｜DIY計算ツール">
+<meta property="og:description" content="直角三角形を無料で計算。底辺・高さ・斜辺・角度を相互計算。底辺・高さ・斜辺を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/tri-right/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "三角・角度",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/triangle/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "直角三角形",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tri-right/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tri-right/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/tri-right/",
+   "name": "直角三角形の計算",
+   "description": "直角三角形を無料で計算。底辺・高さ・斜辺・角度を相互計算。底辺・高さ・斜辺を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "直角三角形, 直角三角形 計算, 斜め, 斜め 計算, 斜辺, 斜辺 計算, 三平方, 三平方 計算, ピタゴラス, ピタゴラス 計算, 直角, 直角 計算, 角度, 角度 計算, 屋根, 屋根 計算, 筋交い, 筋交い 計算, ななめ, ななめ 計算, ブレース, ブレース 計算, 斜材, 斜材 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "直角三角形は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "底辺・高さを入力すると斜辺・角A・角C・面積・勾配が求まります。底辺・斜辺を入力すると高さ・角A・角C・面積・勾配が求まります。高さ・斜辺を入力すると底辺・角A・角C・面積・勾配が求まります。このほか6通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば斜辺・角Cを入れると底辺・高さ・角A・面積・勾配が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "直角三角形で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "底辺は mm / cm / m / inch / ft / 尺 / 寸、角Aは ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "直角三角形以外の三角・角度の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。三角・角度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/triangle/">三角・角度</a><span class="crumb__sep">›</span><span aria-current="page">直角三角形</span></nav>
+<h1>直角三角形の計算</h1>
+<p class="doc__lead">底辺・高さ・斜辺・角度を相互計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/tri.right">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="直角三角形の図" focusable="false"><g class="layer-body"><polygon class="body" points="107.25,156 198.75,156 198.75,34"/></g><g class="layer-aux"/><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="107.25" y1="160" x2="107.25" y2="180"/><line class="dimline" x1="198.75" y1="160" x2="198.75" y2="180"/><line class="dimline" x1="107.25" y1="176" x2="198.75" y2="176"/><polygon class="arrow" points="107.25,176 113.25,179.4 113.25,172.6"/><polygon class="arrow" points="198.75,176 192.75,172.6 192.75,179.4"/></g><g class="dimgroup"><line class="dimline" x1="202.75" y1="156" x2="220.75" y2="156"/><line class="dimline" x1="202.75" y1="34" x2="220.75" y2="34"/><line class="dimline" x1="216.75" y1="156" x2="216.75" y2="34"/><polygon class="arrow" points="216.75,156 220.15,150 213.35,150"/><polygon class="arrow" points="216.75,34 213.35,40 220.15,40"/></g><g class="dimgroup"><line class="dimline" x1="195.55" y1="31.6" x2="179.55" y2="19.6"/><line class="dimline" x1="104.05" y1="153.6" x2="88.05" y2="141.6"/><line class="dimline" x1="182.75" y1="22" x2="91.25" y2="144"/><polygon class="arrow" points="182.75,22 176.43,24.76 181.87,28.84"/><polygon class="arrow" points="91.25,144 97.57,141.24 92.13,137.16"/></g><path class="arc" d="M 133.25 156 A 26 26 0 0 0 122.85 135.2"/><path class="arc" d="M 183.15 54.800000000000004 A 26 26 0 0 0 198.75 60"/><polyline class="dimline" fill="none" points="187.75,156 187.75,145 198.75,145"/></g><g class="layer-labels"><g class="dim is-input" data-key="a" tabindex="0" aria-label="底辺 900 mm"><rect class="pill" rx="8" ry="8" height="48" x="123.4" y="166" width="59.2"/><text class="pill-txt" x="153" y="190">900 mm</text></g><g class="dim is-input" data-key="b" tabindex="0" aria-label="高さ 1,200 mm"><rect class="pill" rx="8" ry="8" height="48" x="219.26" y="71" width="73.6"/><text class="pill-txt" x="256.06" y="95">1,200 mm</text></g><g class="dim is-derived" data-key="c" tabindex="0" aria-label="斜辺 1,500 mm"><rect class="pill" rx="8" ry="8" height="48" x="66.46" y="50.06" width="73.6"/><text class="pill-txt" x="103.26" y="74.06">1,500 mm</text></g><g class="dim is-derived" data-key="angA" tabindex="0" aria-label="角A 53.13°"><rect class="pill" rx="8" ry="8" height="48" x="117" y="108.08" width="59.2"/><text class="pill-txt" x="146.6" y="132.08">53.13°</text></g><g class="dim is-derived" data-key="angC" tabindex="0" aria-label="角C 36.87°"><rect class="pill" rx="8" ry="8" height="48" x="150.06" y="50.08" width="59.2"/><text class="pill-txt" x="179.66" y="74.08">36.87°</text></g><text class="vertex" x="96.25" y="168" text-anchor="middle">A</text><text class="vertex" x="209.75" y="168" text-anchor="middle">B</text><text class="vertex" x="210.75" y="28" text-anchor="middle">C</text><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">直角三角形でできること</h2>
+<p>直角三角形は、底辺・高さ・斜辺・角A・角Cのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：斜め、斜辺、三平方、ピタゴラス、直角、角度、屋根、筋交い</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">底辺</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>水平方向の長さ</td></tr>
+<tr><th scope="row">高さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>垂直方向の長さ</td></tr>
+<tr><th scope="row">斜辺</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>斜めの辺の長さ</td></tr>
+<tr><th scope="row">角A</th><td>° / rad</td><td>底辺と斜辺がつくる角</td></tr>
+<tr><th scope="row">角C</th><td>° / rad</td><td>高さと斜辺がつくる角</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>底辺</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>高さ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>斜辺</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>角A</strong><span class="doc__unit">° / rad</span></li>
+<li><strong>角C</strong><span class="doc__unit">° / rad</span></li>
+<li><strong>面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>勾配</strong><span class="doc__unit">%</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">底辺・高さ</span><span class="combo__arrow">→</span><span class="combo__out">斜辺・角A・角C・面積・勾配</span></li>
+<li><span class="combo__in">底辺・斜辺</span><span class="combo__arrow">→</span><span class="combo__out">高さ・角A・角C・面積・勾配</span></li>
+<li><span class="combo__in">高さ・斜辺</span><span class="combo__arrow">→</span><span class="combo__out">底辺・角A・角C・面積・勾配</span></li>
+<li><span class="combo__in">底辺・角A</span><span class="combo__arrow">→</span><span class="combo__out">高さ・斜辺・角C・面積・勾配</span></li>
+<li><span class="combo__in">高さ・角A</span><span class="combo__arrow">→</span><span class="combo__out">底辺・斜辺・角C・面積・勾配</span></li>
+<li><span class="combo__in">斜辺・角A</span><span class="combo__arrow">→</span><span class="combo__out">底辺・高さ・角C・面積・勾配</span></li>
+<li><span class="combo__in">底辺・角C</span><span class="combo__arrow">→</span><span class="combo__out">高さ・斜辺・角A・面積・勾配</span></li>
+<li><span class="combo__in">高さ・角C</span><span class="combo__arrow">→</span><span class="combo__out">底辺・斜辺・角A・面積・勾配</span></li>
+<li><span class="combo__in">斜辺・角C</span><span class="combo__arrow">→</span><span class="combo__out">底辺・高さ・角A・面積・勾配</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>DIYで直角三角形の計算を使う場面</h3>
+<p>板を斜めに切る、棚を斜めに支える、枠が直角かを確かめる——DIYで「斜め」が出てくる場面は、
+ほとんどが直角三角形の計算に置き換えられます。底辺と高さの2つが分かれば斜辺（斜めの長さ）と
+両端の角度が決まるので、丸ノコの角度を何度に合わせればよいかがその場で分かります。</p>
+
+<h3>3-4-5 の直角出しを実寸で行う</h3>
+<p>基礎や土台の直角を出すとき、3:4:5 の辺の比が直角三角形になることを使う方法があります。
+このとき「900mm と 1200mm を測ったら対角は何mmになるか」を出すのが、この計算の使い方です。
+答えは 1500mm。実際の現場では 900・1200 のように切りのいい数字が取れないことも多いので、
+測った実寸をそのまま入れて対角を出すほうが確実です。</p>
+
+<h3>角度から寸法を逆に出す</h3>
+<p>「30度の勾配で 600mm 上げたい」のように、角度が先に決まっている場合は、
+角度と高さを入れれば底辺と斜辺が出ます。丸ノコやスライド丸ノコの角度目盛りに合わせる値と、
+実際に切る材の長さを、同じ画面で確認できます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>直角三角形で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>c = √(a² + b²)</code></li>
+<li><code>A = atan(b ÷ a)</code></li>
+<li><code>C = 90° − A</code></li>
+<li><code>勾配 = b ÷ a × 100</code></li>
+<li><code>面積 = a × b ÷ 2</code></li>
+<li><code>b = √(c² − a²)</code></li>
+<li><code>A = acos(a ÷ c)</code></li>
+<li><code>b = a × tan(A)</code></li>
+<li><code>c = a ÷ cos(A)</code></li>
+<li><code>a = b ÷ tan(A)</code></li>
+<li><code>c = b ÷ sin(A)</code></li>
+<li><code>a = c × cos(A)</code></li>
+<li><code>b = c × sin(A)</code></li>
+<li><code>A = 90° − C</code></li>
+</ul>
+<p class="doc__kw">記号の意味：a = 底辺、b = 高さ、c = 斜辺</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">底辺900mm・高さ1200mmの直角三角形で斜辺と角度を求める</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>底辺</span><b>900 mm</b></li>
+      <li><span>高さ</span><b>1,200 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>斜辺</span><b>1,500 mm</b></li>
+      <li><span>角A</span><b>53.13°</b></li>
+      <li><span>角C</span><b>36.87°</b></li>
+      <li><span>勾配</span><b>133.33%</b></li>
+      <li><span>面積</span><b>540,000 mm²</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>c = √(a² + b²)</td><td>√(900² + 1,200²)</td><td>1,500 mm</td></tr>
+<tr><td>A = atan(b ÷ a)</td><td>atan(1,200 ÷ 900)</td><td>53.13°</td></tr>
+<tr><td>C = 90° − A</td><td>90° − 53.13°</td><td>36.87°</td></tr>
+<tr><td>勾配 = b ÷ a × 100</td><td>1,200 ÷ 900 × 100</td><td>133.33%</td></tr>
+<tr><td>面積 = a × b ÷ 2</td><td>900 × 1,200 ÷ 2</td><td>540,000 mm²</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 直角三角形 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">直角三角形のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>直角三角形は何が分かれば計算できますか？</summary><div class="qa__a"><p>底辺・高さを入力すると斜辺・角A・角C・面積・勾配が求まります。底辺・斜辺を入力すると高さ・角A・角C・面積・勾配が求まります。高さ・斜辺を入力すると底辺・角A・角C・面積・勾配が求まります。このほか6通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば斜辺・角Cを入れると底辺・高さ・角A・面積・勾配が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>直角三角形で使える単位は何ですか？</summary><div class="qa__a"><p>底辺は mm / cm / m / inch / ft / 尺 / 寸、角Aは ° / rad から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>直角三角形以外の三角・角度の計算もありますか？</summary><div class="qa__a"><p>あります。三角・角度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>三角・角度のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../tri-any/"><strong>任意三角形</strong><span>3辺・3角のうち3つから残りを計算</span></a></li>
+<li><a href="../tri-trig/"><strong>三角関数（sin・cos・tan）</strong><span>角度とsin・cos・tanの値を相互計算</span></a></li>
+<li><a href="../basic-unit-angle/"><strong>角度の単位換算</strong><span>度とラジアンを相互変換</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../wood-brace/"><strong>筋交い・斜材の長さ</strong><span>木工・DIY寸法｜横幅・高さから斜材の長さと両端の切断角度を計算</span></a></li>
+<li><a href="../slope-convert/"><strong>勾配の相互変換</strong><span>勾配｜角度・勾配%・勾配比・寸を相互計算</span></a></li>
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>立体・3D｜箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+<li><a href="../hvac-uvalue/"><strong>熱貫流率（U値）</strong><span>空調・断熱｜壁や屋根の層構成から、熱の伝わりやすさを計算</span></a></li>
+<li><a href="../roof-area/"><strong>屋根面積（概算）</strong><span>屋根｜水平投影面積と勾配から、屋根の実面積を概算（片流れ・切妻・寄棟共通）</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/triangle/">三角・角度の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

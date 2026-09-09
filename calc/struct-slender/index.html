@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>細長比の計算｜構造・強度｜DIY計算ツール</title>
+<meta name="description" content="細長比を無料で計算。断面二次モーメントと断面積から、断面二次半径と細長比を計算。断面二次モーメント・断面積・座屈長さ Lkを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-slender/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="細長比の計算｜構造・強度｜DIY計算ツール">
+<meta property="og:description" content="細長比を無料で計算。断面二次モーメントと断面積から、断面二次半径と細長比を計算。断面二次モーメント・断面積・座屈長さ Lkを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-slender/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "構造・強度",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/struct/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "細長比",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-slender/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-slender/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/struct-slender/",
+   "name": "細長比の計算",
+   "description": "細長比を無料で計算。断面二次モーメントと断面積から、断面二次半径と細長比を計算。断面二次モーメント・断面積・座屈長さ Lkを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "細長比, 細長比 計算, さいちょうひ, さいちょうひ 計算, λ, λ 計算, ラムダ, ラムダ 計算, 断面二次半径, 断面二次半径 計算, 座屈, 座屈 計算, 柱, 柱 計算, 構造・強度",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "細長比は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "断面二次モーメント・断面積・座屈長さ Lkを入力すると断面二次半径・細長比 λが求まります。断面二次モーメント・断面積・細長比 λを入力すると断面二次半径・座屈長さ Lkが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば断面二次モーメント・断面積・細長比 λを入れると断面二次半径・座屈長さ Lkが求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "細長比で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "断面二次モーメントは mm⁴ / cm⁴、断面積は mm² / cm² / m² / 坪 / 畳、座屈長さ Lkは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "細長比以外の構造・強度の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。構造・強度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/struct/">構造・強度</a><span class="crumb__sep">›</span><span aria-current="page">細長比</span></nav>
+<h1>細長比の計算</h1>
+<p class="doc__lead">断面二次モーメントと断面積から、断面二次半径と細長比を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/struct.slender">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="柱の図" focusable="false"><g class="layer-body"><polygon class="body" points="149.6,164 170.4,164 170.4,34 149.6,34"/></g><g class="layer-aux"><line class="body" x1="135.04" y1="164" x2="184.96" y2="164"/><line class="body" x1="135.04" y1="34" x2="184.96" y2="34"/><line class="aux" x1="160" y1="8" x2="160" y2="34"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="174.4" y1="164" x2="194.4" y2="164"/><line class="dimline" x1="174.4" y1="34" x2="194.4" y2="34"/><line class="dimline" x1="190.4" y1="164" x2="190.4" y2="34"/><polygon class="arrow" points="190.4,164 193.8,158 187,158"/><polygon class="arrow" points="190.4,34 187,40 193.8,40"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="L" tabindex="0" aria-label="座屈長さ Lk 2,000 mm"><rect class="pill" rx="8" ry="8" height="48" x="164.6" y="75" width="73.6"/><text class="pill-txt" x="201.4" y="99">2,000 mm</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">細長比でできること</h2>
+<p>細長比は、断面二次モーメント・断面積・座屈長さ Lk・細長比 λのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：細長比、さいちょうひ、λ、ラムダ、断面二次半径、座屈、柱</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">断面二次モーメント</th><td>mm⁴ / cm⁴</td><td></td></tr>
+<tr><th scope="row">断面積</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">座屈長さ Lk</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td>材長 × 支持係数（「座屈荷重」の計算で求められます）</td></tr>
+<tr><th scope="row">細長比 λ</th><td>—</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>断面二次半径</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>細長比 λ</strong></li>
+<li><strong>座屈長さ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">断面二次モーメント・断面積・座屈長さ Lk</span><span class="combo__arrow">→</span><span class="combo__out">断面二次半径・細長比 λ</span></li>
+<li><span class="combo__in">断面二次モーメント・断面積・細長比 λ</span><span class="combo__arrow">→</span><span class="combo__out">断面二次半径・座屈長さ Lk</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>細長比＝どれだけ細長いか</h3>
+<p>座屈長さ ÷ 断面二次半径。
+値が大きいほど細長く、座屈しやすいことを表します。
+柱や支柱を選ぶときの目安になります。</p>
+
+<h3>断面二次半径</h3>
+<p>√(断面二次モーメント ÷ 断面積)。
+同じ断面積でも、材料が中心から離れて配置されているほど大きくなります。
+中空のパイプが同じ重さの丸棒より座屈に強いのはこのためです。</p>
+
+<h3>弱いほうの軸で見る</h3>
+<p>長方形断面の柱は、幅方向と成方向で断面二次モーメントが違います。
+座屈は必ず弱いほう（Iが小さいほう）で起きるので、
+細長比は小さいほうのIで計算してください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>細長比で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>断面二次半径 i = √(I ÷ A)</code></li>
+<li><code>細長比 λ = 座屈長さ ÷ 断面二次半径</code></li>
+<li><code>座屈長さ = 細長比 × 断面二次半径</code></li>
+</ul>
+<p class="doc__kw">記号の意味：I = 断面二次モーメント、A = 断面積、i = 断面二次半径</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">I=236250mm⁴・A=3150mm²・座屈長さ2000mmの細長比</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>断面二次モーメント</span><b>236,250 mm⁴</b></li>
+      <li><span>断面積</span><b>3,150 mm²</b></li>
+      <li><span>座屈長さ Lk</span><b>2,000 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>断面二次半径</span><b>8.66 mm</b></li>
+      <li><span>細長比 λ</span><b>230.94</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>断面二次半径 i = √(I ÷ A)</td><td>√(236,250 ÷ 3,150)</td><td>8.66 mm</td></tr>
+<tr><td>細長比 λ = 座屈長さ ÷ 断面二次半径</td><td>2,000 ÷ 8.66</td><td>230.94</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 細長比 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">細長比のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>細長比は何が分かれば計算できますか？</summary><div class="qa__a"><p>断面二次モーメント・断面積・座屈長さ Lkを入力すると断面二次半径・細長比 λが求まります。断面二次モーメント・断面積・細長比 λを入力すると断面二次半径・座屈長さ Lkが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば断面二次モーメント・断面積・細長比 λを入れると断面二次半径・座屈長さ Lkが求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>細長比で使える単位は何ですか？</summary><div class="qa__a"><p>断面二次モーメントは mm⁴ / cm⁴、断面積は mm² / cm² / m² / 坪 / 畳、座屈長さ Lkは mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>細長比以外の構造・強度の計算もありますか？</summary><div class="qa__a"><p>あります。構造・強度のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず建築士・構造設計者などの専門家にご確認ください。ここでは公式にもとづく数値の算出のみを行います。</li>
+<li>細長比の上限は材料と規格ごとに定められています。ここでは値の算出のみを行います。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>構造・強度のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../struct-section/"><strong>断面性能（長方形断面）</strong><span>幅と成から断面積・断面二次モーメント・断面係数を計算</span></a></li>
+<li><a href="../struct-beam-udl/"><strong>梁のたわみ（両端支持・等分布荷重）</strong><span>棚板や根太のように、全体へ均等に載る荷重のたわみ</span></a></li>
+<li><a href="../struct-beam-point/"><strong>梁のたわみ（両端支持・中央集中荷重）</strong><span>中央の1点に載る荷重のたわみ</span></a></li>
+<li><a href="../struct-cantilever/"><strong>たわみ（片持ち梁・先端集中荷重）</strong><span>片側だけで支える棚受け・跳ね出しのたわみ</span></a></li>
+<li><a href="../struct-bending/"><strong>曲げ応力度（σ = M ÷ Z）</strong><span>曲げモーメントと断面係数から、部材に生じる応力度を計算</span></a></li>
+<li><a href="../struct-column/"><strong>座屈荷重（オイラーの式）</strong><span>細長い柱・支柱が横に曲がり始める理論上の荷重</span></a></li>
+<li><a href="../struct-reaction/"><strong>単純梁の反力</strong><span>荷重の位置から、左右の支点にかかる力と最大曲げモーメントを計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/struct/">構造・強度の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

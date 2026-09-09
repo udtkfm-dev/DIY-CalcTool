@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>板の対角線・直角出しの計算｜木工・DIY寸法｜DIY計算ツール</title>
+<meta name="description" content="板の対角線・直角出しを無料で計算。幅・高さ・対角線を相互計算し、直角の確認に使う（3-4-5の実寸版）。幅・高さ・対角線を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/wood-diagonal/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="板の対角線・直角出しの計算｜木工・DIY寸法｜DIY計算ツール">
+<meta property="og:description" content="板の対角線・直角出しを無料で計算。幅・高さ・対角線を相互計算し、直角の確認に使う（3-4-5の実寸版）。幅・高さ・対角線を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/wood-diagonal/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "木工・DIY寸法",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/wood/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "板の対角線・直角出し",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/wood-diagonal/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/wood-diagonal/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/wood-diagonal/",
+   "name": "板の対角線・直角出しの計算",
+   "description": "板の対角線・直角出しを無料で計算。幅・高さ・対角線を相互計算し、直角の確認に使う（3-4-5の実寸版）。幅・高さ・対角線を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "板の対角線・直角出し, 板の対角線・直角出し 計算, 直角出し, 直角出し 計算, 対角線, 対角線 計算, 3-4-5, 3-4-5 計算, さしがね, さしがね 計算, 木工, 木工 計算, 土台, 土台 計算, 基礎, 基礎 計算, 木工・DIY寸法",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "板の対角線・直角出しは何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅・高さを入力すると対角線が求まります。対角線・幅を入力すると高さが求まります。対角線・高さを入力すると幅が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば対角線・高さを入れると幅が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "板の対角線・直角出しで使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "板の対角線・直角出し以外の木工・DIY寸法の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。木工・DIY寸法のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/wood/">木工・DIY寸法</a><span class="crumb__sep">›</span><span aria-current="page">板の対角線・直角出し</span></nav>
+<h1>板の対角線・直角出しの計算</h1>
+<p class="doc__lead">幅・高さ・対角線を相互計算し、直角の確認に使う（3-4-5の実寸版）。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/wood.diagonal">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="長方形の図" focusable="false"><g class="layer-body"><polygon class="body" points="48,147 256,147 256,43 48,43"/></g><g class="layer-aux"><line class="aux" x1="48" y1="147" x2="256" y2="43" stroke-dasharray="4 3"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="48" y1="151" x2="48" y2="171"/><line class="dimline" x1="256" y1="151" x2="256" y2="171"/><line class="dimline" x1="48" y1="167" x2="256" y2="167"/><polygon class="arrow" points="48,167 54,170.4 54,163.6"/><polygon class="arrow" points="256,167 250,163.6 250,170.4"/></g><g class="dimgroup"><line class="dimline" x1="260" y1="147" x2="278" y2="147"/><line class="dimline" x1="260" y1="43" x2="278" y2="43"/><line class="dimline" x1="274" y1="147" x2="274" y2="43"/><polygon class="arrow" points="274,147 277.4,141 270.6,141"/><polygon class="arrow" points="274,43 270.6,49 277.4,49"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="幅 1,800 mm"><rect class="pill" rx="8" ry="8" height="48" x="115.2" y="154.5" width="73.6"/><text class="pill-txt" x="152" y="178.5">1,800 mm</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="高さ 900 mm"><rect class="pill" rx="8" ry="8" height="48" x="254.4" y="71" width="59.2"/><text class="pill-txt" x="284" y="95">900 mm</text></g><g class="dim is-derived" data-key="d" tabindex="0" aria-label="対角線 2,012.46 mm"><rect class="pill" rx="8" ry="8" height="48" x="52.4" y="96.5" width="95.2"/><text class="pill-txt" x="100" y="120.5">2,012.46 mm</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">板の対角線・直角出しでできること</h2>
+<p>板の対角線・直角出しは、幅・高さ・対角線のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：直角出し、対角線、3-4-5、さしがね、木工、土台、基礎</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">高さ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">対角線</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>幅</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>高さ</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>対角線</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">幅・高さ</span><span class="combo__arrow">→</span><span class="combo__out">対角線</span></li>
+<li><span class="combo__in">対角線・幅</span><span class="combo__arrow">→</span><span class="combo__out">高さ</span></li>
+<li><span class="combo__in">対角線・高さ</span><span class="combo__arrow">→</span><span class="combo__out">幅</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>対角線が同じなら長方形になっている</h3>
+<p>棚や箱を組むとき、4辺の長さが合っていても、平行四辺形に傾いていることがあります。
+これを見つけるいちばん簡単な方法が、2本の対角線を測って同じ長さかを確かめることです。
+違っていれば傾いているので、長いほうの対角を押して縮めれば直角に戻ります。</p>
+
+<h3>直角を出したい寸法をあらかじめ知る</h3>
+<p>幅と高さを入れれば、直角のときの対角線が何mmになるかが分かります。
+組み立て中にその値を目標にしてクランプを締めれば、直角が出た状態で固定できます。
+1800×900mm の枠なら、対角は約2012mm です。</p>
+
+<h3>3-4-5の実寸版として使う</h3>
+<p>基礎やウッドデッキの土台のように大きなものは、差し金では直角が出せません。
+一辺に900mm、直角方向に1200mmの印を付け、その間が1500mmになるように調整すると直角になります。
+実際の現場ではこの3つの数字にならないことが多いので、測れた2辺を入れて対角を出すほうが実用的です。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>板の対角線・直角出しで使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>対角線 = √(幅² + 高さ²)</code></li>
+<li><code>幅 = √(対角線² − 高さ²)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">1800×900mmの枠が直角かを対角線で確かめる</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>幅</span><b>1,800 mm</b></li>
+      <li><span>高さ</span><b>900 mm</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>対角線</span><b>2,012.46 mm</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>対角線 = √(幅² + 高さ²)</td><td>√(1,800² + 900²)</td><td>2,012.46 mm</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 板の対角線・直角出し の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">板の対角線・直角出しのよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>板の対角線・直角出しは何が分かれば計算できますか？</summary><div class="qa__a"><p>幅・高さを入力すると対角線が求まります。対角線・幅を入力すると高さが求まります。対角線・高さを入力すると幅が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば対角線・高さを入れると幅が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>板の対角線・直角出しで使える単位は何ですか？</summary><div class="qa__a"><p>幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>板の対角線・直角出し以外の木工・DIY寸法の計算もありますか？</summary><div class="qa__a"><p>あります。木工・DIY寸法のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>対角線の長さが幅・高さから求めた値と一致すれば、その四角形は直角です。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>木工・DIY寸法のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../wood-brace/"><strong>筋交い・斜材の長さ</strong><span>横幅・高さから斜材の長さと両端の切断角度を計算</span></a></li>
+<li><a href="../wood-miter/"><strong>留め継ぎ・任意角度カット</strong><span>接合角度からカット角度（半分）を計算</span></a></li>
+<li><a href="../wood-cut45/"><strong>45度カット寸法</strong><span>材の幅から45度カット面の長さと出寸法を計算</span></a></li>
+<li><a href="../wood-yield/"><strong>木取り（定尺から何本取れるか）</strong><span>定尺材の長さ・必要な長さ・切りしろから、取れる本数と端材を計算</span></a></li>
+<li><a href="../wood-moisture/"><strong>含水率による寸法変化</strong><span>木材が乾く・湿るときの伸び縮みを計算</span></a></li>
+<li><a href="../wood-plywood/"><strong>板取り（合板から何枚取れるか）</strong><span>母材の板から、部材を縦向き・横向きで何枚取れるかを比較</span></a></li>
+<li><a href="../wood-arc/"><strong>円弧・アール（弦と矢から半径）</strong><span>両端の間隔とふくらみから、曲線の半径・弧長・中心角を計算</span></a></li>
+<li><a href="../wood-taper/"><strong>テーパー（先細りのカット）</strong><span>両端の幅と長さから、片側の削り量・角度・勾配を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../concrete-formwork/"><strong>型枠の面積・材料</strong><span>コンクリート｜打設する範囲の寸法から、型枠の面積・コンパネの枚数・桟木の長さを計算</span></a></li>
+<li><a href="../concrete-slab/"><strong>土間・基礎の体積（余裕率つき）</strong><span>コンクリート｜幅・奥行き・厚さと余裕率から、生コンの必要量を計算</span></a></li>
+<li><a href="../earth-excavation/"><strong>掘削・盛土の体積</strong><span>土木・外構｜幅・奥行き・深さ（高さ）から、掘削や盛土の体積を計算</span></a></li>
+<li><a href="../furniture-dowel/"><strong>ダボ・ほぞの位置</strong><span>家具・木工｜板幅と本数から、端部余白と等間隔の位置を計算</span></a></li>
+<li><a href="../layout-center/"><strong>中央配置・左右均等</strong><span>等分・配置｜全幅と対象の幅から、左右の余白を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/wood/">木工・DIY寸法の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

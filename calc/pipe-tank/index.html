@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>タンクの容量と満水時間の計算｜配管・排水｜DIY計算ツール</title>
+<meta name="description" content="タンクの容量と満水時間を無料で計算。容量と流量から、満水までにかかる時間を計算。容量・流量・かかる時間を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-tank/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="タンクの容量と満水時間の計算｜配管・排水｜DIY計算ツール">
+<meta property="og:description" content="タンクの容量と満水時間を無料で計算。容量と流量から、満水までにかかる時間を計算。容量・流量・かかる時間を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-tank/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "配管・排水",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/pipe/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "タンクの容量と満水時間",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-tank/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-tank/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/pipe-tank/",
+   "name": "タンクの容量と満水時間の計算",
+   "description": "タンクの容量と満水時間を無料で計算。容量と流量から、満水までにかかる時間を計算。容量・流量・かかる時間を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "タンクの容量と満水時間, タンクの容量と満水時間 計算, タンク, タンク 計算, 貯水, 貯水 計算, 満水, 満水 計算, 時間, 時間 計算, 容量, 容量 計算, 給水, 給水 計算, 配管・排水",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "タンクの容量と満水時間は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "容量・流量を入力するとかかる時間・かかる時間（時間）が求まります。流量・かかる時間を入力すると容量・かかる時間（時間）が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば流量・かかる時間を入れると容量・かかる時間（時間）が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "タンクの容量と満水時間で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "容量は mm³ / cm³ / m³ / L / mL、流量は L/min / L/s / m³/h / m³/s から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "タンクの容量と満水時間以外の配管・排水の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。配管・排水のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/pipe/">配管・排水</a><span class="crumb__sep">›</span><span aria-current="page">タンクの容量と満水時間</span></nav>
+<h1>タンクの容量と満水時間の計算</h1>
+<p class="doc__lead">容量と流量から、満水までにかかる時間を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/pipe.tank">この計算をアプリで開く</a></p>
+
+<h2 id="about">タンクの容量と満水時間でできること</h2>
+<p>タンクの容量と満水時間は、容量・流量・かかる時間のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：タンク、貯水、満水、時間、容量、給水</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">容量</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">流量</th><td>L/min / L/s / m³/h / m³/s</td><td></td></tr>
+<tr><th scope="row">かかる時間</th><td>—</td><td>単位は分</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>容量</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>流量</strong><span class="doc__unit">L/min / L/s / m³/h / m³/s</span></li>
+<li><strong>かかる時間（分）</strong></li>
+<li><strong>かかる時間（時間）</strong></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">容量・流量</span><span class="combo__arrow">→</span><span class="combo__out">かかる時間・かかる時間（時間）</span></li>
+<li><span class="combo__in">流量・かかる時間</span><span class="combo__arrow">→</span><span class="combo__out">容量・かかる時間（時間）</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>満水までの時間</h3>
+<p>容量 ÷ 流量。200Lのタンクを毎分20Lで満たすなら10分です。
+逆に、時間から必要な流量を求めることもできます。</p>
+
+<h3>実際は計算より長い</h3>
+<p>流量は水圧で変わり、タンクに水が溜まるほど背圧で落ちることがあります。
+また、ホースの細さや継手の抵抗でも下がります。
+計算値は「これより短くはならない」下限として見てください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>タンクの容量と満水時間で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>時間[分] = 容量[L] ÷ 流量[L/min]</code></li>
+<li><code>時間[時] = 分 ÷ 60</code></li>
+<li><code>容量[L] = 流量[L/min] × 時間[分]</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">200Lのタンクを20L/minで満たす</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>容量</span><b>200 L</b></li>
+      <li><span>流量</span><b>20 L/min</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>かかる時間</span><b>10</b></li>
+      <li><span>かかる時間（時間）</span><b>0.17</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>時間[分] = 容量[L] ÷ 流量[L/min]</td><td>200 ÷ 20</td><td>10 分</td></tr>
+<tr><td>時間[時] = 分 ÷ 60</td><td>10 ÷ 60</td><td>0.17 時間</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから タンクの容量と満水時間 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">タンクの容量と満水時間のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>タンクの容量と満水時間は何が分かれば計算できますか？</summary><div class="qa__a"><p>容量・流量を入力するとかかる時間・かかる時間（時間）が求まります。流量・かかる時間を入力すると容量・かかる時間（時間）が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば流量・かかる時間を入れると容量・かかる時間（時間）が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>タンクの容量と満水時間で使える単位は何ですか？</summary><div class="qa__a"><p>容量は mm³ / cm³ / m³ / L / mL、流量は L/min / L/s / m³/h / m³/s から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>タンクの容量と満水時間以外の配管・排水の計算もありますか？</summary><div class="qa__a"><p>あります。配管・排水のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>排水勾配などの推奨値は目安です。基準や施工条件は各仕様をご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>配管・排水のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../pipe-slope/"><strong>配管の勾配・高低差・管長</strong><span>高低差・水平距離・管長・勾配%を相互計算</span></a></li>
+<li><a href="../pipe-volume/"><strong>管内体積・水量</strong><span>内径・管長から、管の中に入る水の量を計算</span></a></li>
+<li><a href="../pipe-flow/"><strong>流量・流速・管径</strong><span>管の内径と流速から流量を計算（必要な管径の逆算もできます）</span></a></li>
+<li><a href="../pipe-pressure-loss/"><strong>配管の圧力損失</strong><span>ヘーゼン・ウィリアムスの式で、直管の摩擦損失水頭を計算</span></a></li>
+<li><a href="../pipe-pump-head/"><strong>ポンプの全揚程</strong><span>実揚程・損失水頭・速度水頭から全揚程を計算</span></a></li>
+<li><a href="../pipe-rainwater/"><strong>雨水の排水量（合理式）</strong><span>屋根や敷地の面積と降雨強度から、流出量を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-volume/"><strong>体積の単位換算</strong><span>体積｜mm³・cm³・m³・L・mLを相互変換</span></a></li>
+<li><a href="../elec-battery/"><strong>バッテリーの稼働時間</strong><span>電気｜容量と消費電力から、およその使用可能時間を計算</span></a></li>
+<li><a href="../elec-load/"><strong>負荷電流の合計</strong><span>電気｜機器の消費電力を合計して、流れる電流を計算</span></a></li>
+<li><a href="../estimate-trips/"><strong>運搬回数（積載量から往復数）</strong><span>材料・積算｜運ぶ総量と1回に積める量から、必要な往復回数と所要時間を計算</span></a></li>
+<li><a href="../vol-box/"><strong>直方体の体積</strong><span>体積｜幅・奥行・高さ・体積を相互計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/pipe/">配管・排水の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>
