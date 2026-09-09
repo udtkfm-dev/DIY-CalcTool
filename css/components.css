@@ -950,3 +950,71 @@
 .sitefoot a{ color:var(--text-sub); text-decoration:none; }
 .sitefoot a:hover{ color:var(--accent); text-decoration:underline; }
 .sitefoot p{ margin:0; max-width:640px; margin-inline:auto; line-height:1.6; }
+
+/* ---------- サイト説明（index.html 内 #site-intro・main.js は表示/非表示のみ） ----------
+   HTMLに直接持っている本文。ホーム画面の下に読み物として続く。
+   ホーム以外の画面では main.js が hidden 属性を付ける（下の [hidden] 規則で消す）。
+   タップ領域は --tap（48px）を下回らないようにする（スマホからの利用が中心のため）。 */
+.siteintro{
+  border-top:1px solid var(--line);
+  background:var(--surface);
+  padding:var(--sp-5) var(--sp-4) var(--sp-5);
+  color:var(--text);
+  line-height:1.8;
+}
+.siteintro[hidden]{ display:none; }
+.siteintro__in{ max-width:720px; margin-inline:auto; }
+.siteintro h1{ font-size:20px; line-height:1.5; margin:0 0 var(--sp-3); }
+.siteintro h2{
+  font-size:17px; line-height:1.5;
+  margin:var(--sp-5) 0 var(--sp-3);
+  padding-bottom:var(--sp-2);
+  border-bottom:2px solid var(--line);
+}
+.siteintro h3{ font-size:15px; margin:var(--sp-4) 0 var(--sp-1); }
+.siteintro p{ margin:0 0 var(--sp-3); font-size:14px; }
+.siteintro__lead{ font-size:15px; color:var(--text-sub); }
+/* base.css の `ul,ol{ list-style:none }` を、この節の中だけ元に戻す
+   （読み物として中黒・番号が要る。アプリのリストは従来どおりマーカー無し） */
+.siteintro ul{ margin:0 0 var(--sp-3); padding-left:1.3em; font-size:14px; list-style:disc; }
+.siteintro ol{ margin:0 0 var(--sp-3); padding-left:1.5em; font-size:14px; list-style:decimal; }
+.siteintro ul.siteintro__cats{ list-style:none; padding-left:0; }
+.siteintro li{ margin-bottom:var(--sp-1); }
+.siteintro__cats{
+  display:flex; flex-wrap:wrap; gap:var(--sp-2);
+  list-style:none; padding:0;
+}
+.siteintro__cats a{
+  display:inline-flex; align-items:center; gap:var(--sp-2);
+  min-height:40px; padding:0 var(--sp-3);
+  border:1px solid var(--line); border-radius:999px;
+  background:var(--bg); color:var(--text);
+  font-size:14px; text-decoration:none;
+}
+.siteintro__cats a:hover{ border-color:var(--accent); color:var(--accent); }
+.siteintro__cats span{ font-size:12px; color:var(--text-sub); }
+.siteintro__more{ font-size:14px; }
+.siteintro a{ color:var(--accent); }
+
+/* よくある質問（開閉）。閉じた状態でも中身はHTMLにあるのでクローラは読める */
+.qa{
+  border-bottom:1px solid var(--line);
+}
+.qa > summary{
+  display:flex; align-items:center;
+  min-height:var(--tap);
+  padding:var(--sp-2) 28px var(--sp-2) 0;
+  position:relative;
+  font-size:14px; font-weight:700;
+  cursor:pointer;
+}
+.qa > summary::-webkit-details-marker{ display:none; }
+.qa > summary::after{
+  content:''; position:absolute; right:6px; top:50%;
+  width:8px; height:8px; margin-top:-6px;
+  border-right:2px solid var(--text-sub); border-bottom:2px solid var(--text-sub);
+  transform:rotate(45deg);
+}
+.qa[open] > summary::after{ transform:rotate(-135deg); margin-top:-2px; }
+.qa__a{ padding:0 0 var(--sp-3); }
+.qa__a p{ margin:0; font-size:14px; color:var(--text-sub); line-height:1.8; }

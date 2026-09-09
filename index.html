@@ -2,7 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- minimum-scale=1 が要る: これが無いと Android Chrome が「内容に合わせて縮める」
+     初期倍率を選ぶことがあり、開いた直後だけページ全体が小さく表示される
+     （スクロールや再読み込みで倍率が引き直されて直る、という症状になる）。
+     maximum-scale / user-scalable=no は付けないこと。指での拡大を殺してしまう -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0b6bcb">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,6 +25,7 @@
 <meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -213,6 +218,51 @@
      "url": "https://udtkfm-dev.github.io/DIY-CalcTool/category/garden/"
     }
    ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "無料で使えますか",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "すべての計算を無料で使えます。会員登録もアプリのインストールも必要ありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "スマートフォンでも使えますか",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "スマートフォンのブラウザで使うことを前提に作っています。ホーム画面に追加すると、アプリのように起動します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "入力した寸法は外部に送信されますか",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "送信しません。入力値と履歴は端末の中だけに保存されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "尺貫法（尺・寸）やインチは使えますか",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "使えます。長さは mm・cm・m・inch・ft・尺・寸、面積は mm²・cm²・m²・坪・畳を切り替えられます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "計算結果をそのまま施工の判断に使えますか",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "使えません。本サイトは寸法・数学の計算を支援するツールで、施工の可否や安全性は判断できません。構造や法規に関わる判断は必ず専門家にご確認ください。"
+     }
+    }
+   ]
   }
  ]
 }
@@ -232,8 +282,82 @@
 <div class="toast-root" id="toast-root" aria-live="polite"></div>
 <noscript>この計算アプリはJavaScriptを使います。ブラウザの設定で有効にしてください。計算の内容は<a href="calc/">計算一覧</a>のページで読めます。</noscript>
 <!-- SEO:FOOT:BEGIN 自動生成（scripts/build-seo.mjs）。
-     JavaScriptを使わずに全計算の説明ページへ辿れる入口で、検索エンジンの
-     クロール経路も兼ねる。main.js はこの要素を書き換えない -->
+     JavaScriptを使わずに読める本文と、全計算の説明ページへの入口を兼ねる。
+     main.js はこの要素の中身を書き換えない（表示/非表示だけ切り替える） -->
+<section class="siteintro" id="site-intro">
+  <div class="siteintro__in">
+    <h1>DIY・木工・建築の寸法計算ツール</h1>
+    <p class="siteintro__lead">木材の切り出し寸法、斜めカットの角度、勾配、面積や体積、材料の必要量まで、DIYと建築の現場で使う計算をまとめた無料のWebツールです。アプリのインストールも会員登録も要りません。</p>
+
+    <h2>このサイトでできること</h2>
+    <ul class="siteintro__can">
+      <li>木材を斜めに切るときのカット角度と、切り口の長さを出す</li>
+      <li>筋交い・方杖など斜材の長さと、両端の切断角度を出す</li>
+      <li>屋根や排水の勾配を、角度・％・「寸」・1:n の比で相互に変換する</li>
+      <li>部屋や板の面積を m²・坪・畳で同時に見る</li>
+      <li>階段の段数・蹴上げ・踏面をつり合いよく決める</li>
+      <li>コンクリート・塗料・タイル・ボードなど材料の必要量を数える</li>
+      <li>棚板や根太のたわみ、梁の反力といった構造の目安を確かめる</li>
+    </ul>
+
+    <h2>分野から探す</h2>
+    <ul class="siteintro__cats">
+      <li><a href="category/triangle/">三角・角度<span>4</span></a></li>
+      <li><a href="category/length/">長さ・単位<span>7</span></a></li>
+      <li><a href="category/area/">面積<span>12</span></a></li>
+      <li><a href="category/volume/">体積<span>10</span></a></li>
+      <li><a href="category/solid/">立体・3D<span>6</span></a></li>
+      <li><a href="category/slope/">勾配<span>2</span></a></li>
+      <li><a href="category/wood/">木工・DIY寸法<span>9</span></a></li>
+      <li><a href="category/layout/">等分・配置<span>6</span></a></li>
+      <li><a href="category/stair/">階段<span>3</span></a></li>
+      <li><a href="category/roof/">屋根<span>4</span></a></li>
+      <li><a href="category/room/">建築・リフォーム<span>4</span></a></li>
+      <li><a href="category/concrete/">コンクリート<span>5</span></a></li>
+      <li><a href="category/tile/">タイル・床材<span>3</span></a></li>
+      <li><a href="category/paint/">塗装・壁紙<span>3</span></a></li>
+      <li><a href="category/pipe/">配管・排水<span>7</span></a></li>
+      <li><a href="category/elec/">電気<span>9</span></a></li>
+      <li><a href="category/earth/">土木・外構<span>3</span></a></li>
+      <li><a href="category/survey/">測量・位置<span>4</span></a></li>
+      <li><a href="category/struct/">構造・強度<span>8</span></a></li>
+      <li><a href="category/furniture/">家具・木工<span>4</span></a></li>
+      <li><a href="category/estimate/">材料・積算<span>6</span></a></li>
+      <li><a href="category/metal/">金属加工・機械<span>8</span></a></li>
+      <li><a href="category/hvac/">空調・断熱<span>5</span></a></li>
+      <li><a href="category/light/">照明<span>2</span></a></li>
+      <li><a href="category/garden/">庭・外構<span>4</span></a></li>
+    </ul>
+    <p class="siteintro__more"><a href="calc/">計算一覧（全138種類）を見る</a></p>
+
+    <h2>使い方</h2>
+    <ol class="siteintro__steps">
+      <li>一覧から使いたい計算を選びます。</li>
+      <li>図に付いた数字か、下の入力欄をタップして、分かっている寸法を入れます。</li>
+      <li>単位はその場で切り替えられます（mm・cm・m・inch・尺・寸など）。</li>
+      <li>必要な値がそろうと、残りの寸法と途中式が自動で表示されます。</li>
+    </ol>
+
+    <h2>DIY計算ツールの特徴</h2>
+    <h3>逆算がそのままできる</h3>
+    <p>「答え」の欄に数字を入れれば、逆向きに計算されます。面積から一辺を、斜辺から底辺を、といった逆算のために別の画面へ移る必要はありません。</p>
+    <h3>途中式が出る</h3>
+    <p>どの式にどの数字を入れて、いくつになったかを画面に出します。答えだけでなく計算の筋道が見えるので、入力の間違いに気づけます。</p>
+    <h3>尺貫法・インチにも対応</h3>
+    <p>長さは mm・cm・m のほか inch・ft・尺・寸、面積は m²・坪・畳を切り替えられます。古い図面や輸入材の寸法をそのまま扱えます。</p>
+    <h3>通信が切れても使える</h3>
+    <p>一度開いたあとはオフラインでも計算できます。入力した値は端末の中だけに保存され、外部へ送信しません。</p>
+
+    <h2>よくある質問</h2>
+    <div class="siteintro__faq">
+      <details class="qa"><summary>無料で使えますか</summary><div class="qa__a"><p>すべての計算を無料で使えます。会員登録もアプリのインストールも必要ありません。</p></div></details>
+      <details class="qa"><summary>スマートフォンでも使えますか</summary><div class="qa__a"><p>スマートフォンのブラウザで使うことを前提に作っています。ホーム画面に追加すると、アプリのように起動します。</p></div></details>
+      <details class="qa"><summary>入力した寸法は外部に送信されますか</summary><div class="qa__a"><p>送信しません。入力値と履歴は端末の中だけに保存されます。</p></div></details>
+      <details class="qa"><summary>尺貫法（尺・寸）やインチは使えますか</summary><div class="qa__a"><p>使えます。長さは mm・cm・m・inch・ft・尺・寸、面積は mm²・cm²・m²・坪・畳を切り替えられます。</p></div></details>
+      <details class="qa"><summary>計算結果をそのまま施工の判断に使えますか</summary><div class="qa__a"><p>使えません。本サイトは寸法・数学の計算を支援するツールで、施工の可否や安全性は判断できません。構造や法規に関わる判断は必ず専門家にご確認ください。</p></div></details>
+    </div>
+  </div>
+</section>
 <footer class="sitefoot">
   <nav>
     <a href="category/triangle/">三角・角度</a>

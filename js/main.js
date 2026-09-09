@@ -61,6 +61,19 @@ function setPageMeta(title, description) {
   if (ogD) ogD.setAttribute('content', desc);
 }
 
+/* ---------- 検索エンジン向けの静的な本文（index.html の #site-intro） ----------
+ *
+ * サイトの説明・分野一覧・使い方・FAQ を HTML に直接持っている領域
+ * （scripts/build-seo.mjs が生成する。JavaScript 無しでも読める）。
+ * ホーム以外の画面では、計算の下に長い説明文がぶら下がるのを避けるため隠す。
+ * 中身は書き換えない——隠すだけなので、JavaScript が動かない環境で
+ * クローラが読む内容と、利用者が読む内容は一致する。 */
+const introEl = document.getElementById('site-intro');
+
+function showIntro(visible) {
+  if (introEl) introEl.hidden = !visible;
+}
+
 function applyTheme() {
   const theme = getSettings().theme;
   if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
@@ -79,6 +92,7 @@ function route() {
   window.scrollTo(0, 0);
 
   const { parts, query } = parseHash();
+  showIntro(parts.length === 0);
 
   if (parts.length === 0) {
     setPageMeta(null, null);

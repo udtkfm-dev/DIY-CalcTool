@@ -378,3 +378,302 @@ body.doc {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- 計算式 ---------- */
+
+.doc__formulas{
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  list-style: none;
+}
+
+.doc__formulas li {
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__formulas code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+/* ---------- 計算例 ---------- */
+
+.doc__scene {
+  font-weight: 700;
+}
+
+/* 入力と結果を横並びにする。狭い画面では自動で縦に積む */
+.doc__example {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.ex__col {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+  background: var(--surface);
+}
+
+.doc .ex__col h3 {
+  margin: 0 0 var(--sp-2);
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.ex__kv {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ex__kv li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ex__kv li:last-child {
+  border-bottom: 0;
+}
+
+.ex__kv span {
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+.ex__kv b {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ex__kv--out b {
+  color: var(--accent);
+}
+
+.doc__table--steps td:first-child,
+.doc__table--steps td:nth-child(2) {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.doc__table--steps td:last-child {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.doc__note-inline {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* ---------- よくある質問 ---------- */
+
+.doc__faq {
+  margin-bottom: var(--sp-4);
+  border-top: 1px solid var(--line);
+}
+
+.doc .qa {
+  border-bottom: 1px solid var(--line);
+}
+
+.doc .qa > summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: var(--sp-2) 28px var(--sp-2) 0;
+  position: relative;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.doc .qa > summary::-webkit-details-marker {
+  display: none;
+}
+
+.doc .qa > summary::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -6px;
+  border-right: 2px solid var(--text-sub);
+  border-bottom: 2px solid var(--text-sub);
+  transform: rotate(45deg);
+}
+
+.doc .qa[open] > summary::after {
+  transform: rotate(-135deg);
+  margin-top: -2px;
+}
+
+.doc .qa__a {
+  padding: 0 0 var(--sp-3);
+}
+
+.doc .qa__a p {
+  margin: 0;
+  color: var(--text-sub);
+}
+
+/* ---------- カテゴリ・一覧ページの説明文 ---------- */
+
+.doc__bullets {
+  margin: 0 0 var(--sp-4);
+  padding-left: 1.3em;
+}
+
+.doc__bullets li {
+  margin-bottom: var(--sp-1);
+}
+
+.doc__seclead {
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* ---------- スマートフォンでの操作性 ----------
+   DIYの用途では現場でスマホから開かれることが多い。
+   指で押す要素が --tap（48px）を大きく下回らないようにし、
+   本文の文字は 16px を保つ（iOS はそれ未満だと自動でズームする）。 */
+
+.doc__toc a,
+.doc__cats a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--sp-3);
+}
+
+.crumb a {
+  display: inline-block;
+  padding: 6px 0;
+}
+
+.doc__more a {
+  display: inline-block;
+  padding: 6px 0;
+}
+
+@media (max-width: 480px) {
+  .doc__main {
+    padding-inline: var(--sp-3);
+  }
+
+  .doc h1 {
+    font-size: 23px;
+  }
+
+  .doc h2 {
+    font-size: 18px;
+    margin-top: 32px;
+  }
+
+  /* 表は画面幅で折り返さず、枠の中だけ横スクロールさせる（.doc__scroll） */
+  .doc__table {
+    font-size: 14px;
+  }
+
+  .doc__table th,
+  .doc__table td {
+    padding: var(--sp-2);
+  }
+}
+
+/* ---------- 図（アプリと同じ描画コードで生成した静的SVG） ----------
+   色や線の太さは components.css の .shape と合わせてある。
+   違うのは「押せない」ことだけ（静的ページなので入力できない）。
+   ここを直すときは components.css 側も見ること。 */
+
+.doc__fig {
+  margin: 0 0 var(--sp-5);
+  padding: var(--sp-2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-m);
+}
+
+.doc__fig figcaption {
+  margin-top: var(--sp-2);
+  padding: 0 var(--sp-2);
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.doc .shape {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* viewBox は 320×220。幅なりに拡縮させる */
+  aspect-ratio: 320 / 220;
+  max-height: 300px;
+}
+
+.doc .shape .body {
+  fill: var(--accent-weak);
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.doc .shape .aux { stroke: var(--line); stroke-width: 1; fill: none; }
+.doc .shape .dimline { stroke: var(--text-sub); stroke-width: 1.2; fill: none; }
+.doc .shape .arrow { fill: var(--text-sub); }
+.doc .shape .arc { stroke: var(--text-sub); stroke-width: 1.2; fill: none; }
+.doc .shape .vertex { fill: var(--text-sub); font-size: 11px; font-weight: 700; }
+/* SVG内の注記は figcaption に書いてあるので隠す（寸法ラベルとも重なる） */
+.doc .shape .note { display: none; }
+
+.doc .shape .dim .pill {
+  fill: var(--surface);
+  fill-opacity: 0.66;
+  stroke: var(--text-sub);
+  stroke-width: 1;
+}
+
+.doc .shape .dim .pill-txt {
+  fill: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* 入力した値・そこから求まった値・未入力を描き分ける（アプリと同じ意味） */
+.doc .shape .dim.is-input .pill { stroke: var(--text); stroke-width: 1.6; }
+.doc .shape .dim.is-derived .pill { stroke: var(--accent); stroke-dasharray: 4 3; }
+.doc .shape .dim.is-derived .pill-txt { fill: var(--accent); }
+/* 静的ページでは点滅させない（アプリの .is-empty は入力を促す点滅がある） */
+.doc .shape .dim.is-empty .pill { stroke: var(--line); stroke-dasharray: 2 3; }
+.doc .shape .dim.is-empty .pill-txt { fill: var(--text-sub); font-weight: 400; }
+.doc .shape .dim.is-readonly .pill { fill: var(--surface-2); fill-opacity: 0.66; stroke: none; }
+.doc .shape .dim.is-readonly .pill-txt { fill: var(--text-sub); font-weight: 400; font-size: 12px; }
+
+.doc .shape .body-sub { fill: var(--surface); stroke: var(--error); stroke-dasharray: 5 3; }
+.doc .shape .liquid { fill: var(--accent); fill-opacity: 0.22; stroke: var(--accent); stroke-width: 1.4; }
+.doc .shape .body-alt { fill: var(--surface-2); stroke: var(--text); stroke-width: 2; stroke-linejoin: round; }
+.doc .shape .body-weld { fill: var(--warn); fill-opacity: 0.35; stroke: var(--warn); stroke-width: 1.6; }
+.doc .shape .body-insul { fill: var(--accent); fill-opacity: 0.18; stroke: var(--text); stroke-width: 2; }
+.doc .shape .body-ghost { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.6; stroke-dasharray: 5 3; }
+.doc .shape .pt-focus { fill: var(--accent); stroke: var(--accent); }
+
+@media (max-width: 480px) {
+  /* 狭い画面では図を枠いっぱいに使う（ラベルが小さくなりすぎないように） */
+  .doc__fig { padding-left: 0; padding-right: 0; }
+  .doc__fig figcaption { padding: 0 var(--sp-3); }
+}

@@ -8,7 +8,7 @@
 // https://<user>.github.io/<リポジトリ名>/ というサブパスで公開しても
 // そのまま動く（絶対パスだと 404 になり cache.addAll() が丸ごと失敗する）。
 
-const CACHE_NAME = 'diycalc-v25';
+const CACHE_NAME = 'diycalc-v26';
 
 const ASSETS = [
   './',
