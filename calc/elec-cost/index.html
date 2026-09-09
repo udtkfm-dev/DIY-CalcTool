@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>電力量・電気料金の概算の計算｜電気｜DIY計算ツール</title>
+<meta name="description" content="電力量・電気料金の概算を無料で計算。消費電力・使用時間・電力量単価から、電力量と概算料金を計算。電力・使用時間・電力量単価を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-cost/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="電力量・電気料金の概算の計算｜電気｜DIY計算ツール">
+<meta property="og:description" content="電力量・電気料金の概算を無料で計算。消費電力・使用時間・電力量単価から、電力量と概算料金を計算。電力・使用時間・電力量単価を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-cost/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "電気",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/elec/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "電力量・電気料金の概算",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-cost/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-cost/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-cost/",
+   "name": "電力量・電気料金の概算の計算",
+   "description": "電力量・電気料金の概算を無料で計算。消費電力・使用時間・電力量単価から、電力量と概算料金を計算。電力・使用時間・電力量単価を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "電力量・電気料金の概算, 電力量・電気料金の概算 計算, 電気料金, 電気料金 計算, 電力量, 電力量 計算, kWh, kWh 計算, 電気代, 電気代 計算, 消費電力, 消費電力 計算, 電気",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "電力量・電気料金の概算は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "電力・使用時間・電力量単価を入力すると電力量・概算料金が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "電力量・電気料金の概算で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "電力は W / kW、電力量は Wh / kWh から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "電力量・電気料金の概算以外の電気の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。電気のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/elec/">電気</a><span class="crumb__sep">›</span><span aria-current="page">電力量・電気料金の概算</span></nav>
+<h1>電力量・電気料金の概算の計算</h1>
+<p class="doc__lead">消費電力・使用時間・電力量単価から、電力量と概算料金を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/elec.cost">この計算をアプリで開く</a></p>
+
+<h2 id="about">電力量・電気料金の概算でできること</h2>
+<p>電力量・電気料金の概算は、電力・使用時間・電力量単価・電力量・概算料金のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：電気料金、電力量、kWh、電気代、消費電力</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">電力</th><td>W / kW</td><td></td></tr>
+<tr><th scope="row">使用時間</th><td>—</td><td>単位は時間(h)</td></tr>
+<tr><th scope="row">電力量単価</th><td>—</td><td>1kWhあたりの料金（円）</td></tr>
+<tr><th scope="row">電力量</th><td>Wh / kWh</td><td></td></tr>
+<tr><th scope="row">概算料金</th><td>円</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>消費電力</strong><span class="doc__unit">W / kW</span></li>
+<li><strong>使用時間</strong></li>
+<li><strong>電力量単価</strong></li>
+<li><strong>電力量</strong><span class="doc__unit">Wh / kWh</span></li>
+<li><strong>概算料金</strong><span class="doc__unit">円</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">電力・使用時間・電力量単価</span><span class="combo__arrow">→</span><span class="combo__out">電力量・概算料金</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>電力量 = 電力 × 時間</h3>
+<p>1000Wの機器を5時間使うと 5kWh。
+これに電力量単価を掛けたものが、おおよその電気代です。
+単価は契約プランの検針票に書かれています。</p>
+
+<h3>実際の請求はこれより複雑</h3>
+<p>実際の電気料金は、基本料金・段階制の従量単価・燃料費調整額・
+再エネ賦課金などが加わります。
+この計算は「その機器を使うと、いくらぶんの電気を使うか」の目安です。</p>
+
+<h3>待機電力も積もる</h3>
+<p>1Wの待機電力でも1年で約8.8kWh。
+機器の消費電力が小さくても、使用時間が長ければ効いてきます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>電力量・電気料金の概算で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>電力量(kWh) = 電力(W) ÷ 1000 × 使用時間</code></li>
+<li><code>料金 = 電力量(kWh) × 単価</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">1000Wの機器を5時間、31円/kWhで使う</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>電力</span><b>1,000 W</b></li>
+      <li><span>使用時間</span><b>5</b></li>
+      <li><span>電力量単価</span><b>31</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>電力量</span><b>5 kWh</b></li>
+      <li><span>概算料金</span><b>155円</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>電力量(kWh) = 電力(W) ÷ 1000 × 使用時間</td><td>1,000 ÷ 1000 × 5</td><td>5 kWh</td></tr>
+<tr><td>料金 = 電力量(kWh) × 単価</td><td>5 × 31</td><td>155円</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 電力量・電気料金の概算 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">電力量・電気料金の概算のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>電力量・電気料金の概算は何が分かれば計算できますか？</summary><div class="qa__a"><p>電力・使用時間・電力量単価を入力すると電力量・概算料金が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>電力量・電気料金の概算で使える単位は何ですか？</summary><div class="qa__a"><p>電力は W / kW、電力量は Wh / kWh から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>電力量・電気料金の概算以外の電気の計算もありますか？</summary><div class="qa__a"><p>あります。電気のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>電気工事は資格が必要な作業を含みます。配線・分電盤に関わる作業は必ず専門家にご確認ください。</li>
+<li>実際の電気料金は基本料金・燃料費調整額・再エネ賦課金などを含みます。ここでは電力量分の概算のみを計算しています。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>電気のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../elec-ohm/"><strong>オームの法則（V・I・R・P）</strong><span>電圧・電流・抵抗・電力のうち2つから残り2つを計算</span></a></li>
+<li><a href="../elec-series/"><strong>直列合成抵抗</strong><span>2〜4個の抵抗（直列）から合成抵抗を計算</span></a></li>
+<li><a href="../elec-parallel/"><strong>並列合成抵抗</strong><span>2〜4個の抵抗（並列）から合成抵抗を計算</span></a></li>
+<li><a href="../elec-volt-drop/"><strong>電圧降下</strong><span>電線の長さ・電流・断面積から電圧降下を計算（断面積の逆算もできます）</span></a></li>
+<li><a href="../elec-three-phase/"><strong>三相電力（P = √3 × V × I × 力率）</strong><span>三相交流の電力・電流・力率を相互に計算</span></a></li>
+<li><a href="../elec-led/"><strong>LEDの電流制限抵抗</strong><span>電源電圧・順電圧・電流から、直列に入れる抵抗と消費電力を計算</span></a></li>
+<li><a href="../elec-load/"><strong>負荷電流の合計</strong><span>機器の消費電力を合計して、流れる電流を計算</span></a></li>
+<li><a href="../elec-battery/"><strong>バッテリーの稼働時間</strong><span>容量と消費電力から、およその使用可能時間を計算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/elec/">電気の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

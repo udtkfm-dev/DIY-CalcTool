@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>部屋の面積（m²・坪・畳）の計算｜面積｜DIY計算ツール</title>
+<meta name="description" content="部屋の面積（m²・坪・畳）を無料で計算。幅・奥行きから面積をm²・坪・畳で同時表示。幅・奥行きを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-room/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="部屋の面積（m²・坪・畳）の計算｜面積｜DIY計算ツール">
+<meta property="og:description" content="部屋の面積（m²・坪・畳）を無料で計算。幅・奥行きから面積をm²・坪・畳で同時表示。幅・奥行きを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-room/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "面積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/area/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "部屋の面積（m²・坪・畳）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-room/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-room/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-room/",
+   "name": "部屋の面積（m²・坪・畳）の計算",
+   "description": "部屋の面積（m²・坪・畳）を無料で計算。幅・奥行きから面積をm²・坪・畳で同時表示。幅・奥行きを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "部屋の面積（m²・坪・畳）, 部屋の面積（m²・坪・畳） 計算, 面積, 面積 計算, 部屋, 部屋 計算, 坪, 坪 計算, 畳, 畳 計算, 平米, 平米 計算, 広さ, 広さ 計算, リフォーム, リフォーム 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "部屋の面積（m²・坪・畳）は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅・奥行きを入力すると面積(m²)・面積(坪)・面積(畳)・対角線・外周が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "部屋の面積（m²・坪・畳）で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "部屋の面積（m²・坪・畳）以外の面積の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。面積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/area/">面積</a><span class="crumb__sep">›</span><span aria-current="page">部屋の面積（m²・坪・畳）</span></nav>
+<h1>部屋の面積（m²・坪・畳）の計算</h1>
+<p class="doc__lead">幅・奥行きから面積をm²・坪・畳で同時表示。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/area.room">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="長方形の図" focusable="false"><g class="layer-body"><polygon class="body" points="70.67,156 233.33,156 233.33,34 70.67,34"/></g><g class="layer-aux"><line class="aux" x1="70.67" y1="156" x2="233.33" y2="34" stroke-dasharray="4 3"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="70.67" y1="160" x2="70.67" y2="180"/><line class="dimline" x1="233.33" y1="160" x2="233.33" y2="180"/><line class="dimline" x1="70.67" y1="176" x2="233.33" y2="176"/><polygon class="arrow" points="70.67,176 76.67,179.4 76.67,172.6"/><polygon class="arrow" points="233.33,176 227.33,172.6 227.33,179.4"/></g><g class="dimgroup"><line class="dimline" x1="237.33" y1="156" x2="255.33" y2="156"/><line class="dimline" x1="237.33" y1="34" x2="255.33" y2="34"/><line class="dimline" x1="251.33" y1="156" x2="251.33" y2="34"/><polygon class="arrow" points="251.33,156 254.73,150 247.93,150"/><polygon class="arrow" points="251.33,34 247.93,40 254.73,40"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="幅 3.64 m"><rect class="pill" rx="8" ry="8" height="48" x="122.4" y="166" width="59.2"/><text class="pill-txt" x="152" y="190">3.64 m</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="奥行き 2.73 m"><rect class="pill" rx="8" ry="8" height="48" x="231.73" y="71" width="59.2"/><text class="pill-txt" x="261.33" y="95">2.73 m</text></g><g class="dim is-readonly" data-key="d" aria-label="対角線 4.55 m（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="81.73" y="108.01" width="59.2"/><text class="pill-txt" x="111.33" y="132.01">4.55 m</text></g><g class="dim is-readonly" data-key="S" aria-label="面積(m²) 9.94 m²（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="118.8" y="50.01" width="66.4"/><text class="pill-txt" x="152" y="74.01">9.94 m²</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">部屋の面積（m²・坪・畳）でできること</h2>
+<p>部屋の面積（m²・坪・畳）は、幅・奥行きのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：面積、部屋、坪、畳、平米、広さ、リフォーム</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">奥行き</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>面積(m²)</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>面積(坪)</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>面積(畳)</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>対角線</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>外周</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">幅・奥行き</span><span class="combo__arrow">→</span><span class="combo__out">面積(m²)・面積(坪)・面積(畳)・対角線・外周</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>m²・坪・畳を一度に見る</h3>
+<p>部屋の広さは、不動産の情報では m²、リフォームの見積もりでは坪、
+床材やカーペットの商品説明では畳と、場面ごとに単位が変わります。
+幅と奥行きを入れれば3つが同時に出るので、換算表を探す手間がありません。</p>
+
+<h3>畳の大きさは地域で違う</h3>
+<p>畳の寸法は一定ではありません。京間・中京間・江戸間（関東間）・団地間で1畳の面積が異なり、
+広いほうから順に並びます。このアプリは中京間（1畳 = 1.653m²）で計算しています。
+物件の実際の畳の寸法とは食い違うことがあるので、床材の発注などは実測した m² で行ってください。</p>
+
+<h3>6畳・8畳の目安寸法</h3>
+<p>中京間の6畳はおよそ 3640×2730mm、8畳はおよそ 3640×3640mm です。
+図面が手元にないときの当たりを付けるのに使えますが、
+壁の仕上げ厚や柱の出っ張りで内寸は変わるため、材料の発注前には必ず実測してください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>部屋の面積（m²・坪・畳）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>S = 幅 × 奥行き</code></li>
+<li><code>対角線 = √(幅² + 奥行き²)</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">6畳（3640×2730mm）の部屋の広さ</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>幅</span><b>3.64 m</b></li>
+      <li><span>奥行き</span><b>2.73 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>面積(m²)</span><b>9.94 m²</b></li>
+      <li><span>面積(坪)</span><b>3.01 坪</b></li>
+      <li><span>面積(畳)</span><b>6.01 畳</b></li>
+      <li><span>対角線</span><b>4.55 m</b></li>
+      <li><span>外周</span><b>12.74 m</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>S = 幅 × 奥行き</td><td>3,640 × 2,730</td><td>9.94 m²</td></tr>
+<tr><td>対角線 = √(幅² + 奥行き²)</td><td>√(3.64² + 2.73²)</td><td>4.55 m</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 部屋の面積（m²・坪・畳） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">部屋の面積（m²・坪・畳）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>部屋の面積（m²・坪・畳）は何が分かれば計算できますか？</summary><div class="qa__a"><p>幅・奥行きを入力すると面積(m²)・面積(坪)・面積(畳)・対角線・外周が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>部屋の面積（m²・坪・畳）で使える単位は何ですか？</summary><div class="qa__a"><p>幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>部屋の面積（m²・坪・畳）以外の面積の計算もありますか？</summary><div class="qa__a"><p>あります。面積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>畳数は中京間（1畳=1.653m²）で計算しています。地域・物件により畳の大きさは異なります。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>面積のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-area/"><strong>面積の単位換算</strong><span>mm²・cm²・m²・坪・畳を相互変換</span></a></li>
+<li><a href="../area-rect/"><strong>長方形の面積</strong><span>幅・高さ・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-square/"><strong>正方形の面積</strong><span>一辺・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-triangle/"><strong>三角形の面積（底辺・高さ）</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-triangle3/"><strong>三角形の面積（3辺から）</strong><span>3辺の長さから面積を計算（ヘロンの公式）</span></a></li>
+<li><a href="../area-trapezoid/"><strong>台形の面積</strong><span>上底・下底・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-parallelogram/"><strong>平行四辺形の面積</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-circle/"><strong>円の面積・円周</strong><span>半径・直径・円周・面積のどれか1つから残りを計算</span></a></li>
+<li><a href="../area-sector/"><strong>扇形の面積・弧長</strong><span>半径・中心角・弧長・面積を相互計算</span></a></li>
+<li><a href="../area-ellipse/"><strong>楕円の面積</strong><span>長半径・短半径・面積を相互計算</span></a></li>
+<li><a href="../area-compound/"><strong>複合図形（面積の合成）</strong><span>長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../room-ceiling/"><strong>天井・床の面積</strong><span>建築・リフォーム｜幅・奥行きから天井や床の面積を計算</span></a></li>
+<li><a href="../room-multi-rect/"><strong>複数長方形の合成面積</strong><span>建築・リフォーム｜L字型など、2つの長方形に分けられる部屋の合計面積を計算</span></a></li>
+<li><a href="../room-volume/"><strong>部屋の体積</strong><span>建築・リフォーム｜幅・奥行き・天井高から部屋の体積（気積）を計算</span></a></li>
+<li><a href="../room-wall/"><strong>壁面積（開口部を除く）</strong><span>建築・リフォーム｜周長・天井高・開口部の合計面積から、塗装や壁紙に必要な壁面積を計算</span></a></li>
+<li><a href="../solid-surface-box/"><strong>直方体の表面積</strong><span>立体・3D｜箱の寸法から、全表面積・側面積・上面積を計算（塗装や板取りの目安に）</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/area/">面積の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

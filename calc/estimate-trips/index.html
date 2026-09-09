@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>運搬回数（積載量から往復数）の計算｜材料・積算｜DIY計算ツール</title>
+<meta name="description" content="運搬回数（積載量から往復数）を無料で計算。運ぶ総量と1回に積める量から、必要な往復回数と所要時間を計算。運ぶ総量・1回に積める量・1往復にかかる時間（分）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/estimate-trips/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="運搬回数（積載量から往復数）の計算｜材料・積算｜DIY計算ツール">
+<meta property="og:description" content="運搬回数（積載量から往復数）を無料で計算。運ぶ総量と1回に積める量から、必要な往復回数と所要時間を計算。運ぶ総量・1回に積める量・1往復にかかる時間（分）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/estimate-trips/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "材料・積算",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/estimate/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "運搬回数（積載量から往復数）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/estimate-trips/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/estimate-trips/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/estimate-trips/",
+   "name": "運搬回数（積載量から往復数）の計算",
+   "description": "運搬回数（積載量から往復数）を無料で計算。運ぶ総量と1回に積める量から、必要な往復回数と所要時間を計算。運ぶ総量・1回に積める量・1往復にかかる時間（分）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "運搬回数（積載量から往復数）, 運搬回数（積載量から往復数） 計算, 運搬, 運搬 計算, 往復, 往復 計算, 積載, 積載 計算, 回数, 回数 計算, 軽トラ, 軽トラ 計算, 残土, 残土 計算, 土のう, 土のう 計算, 運ぶ, 運ぶ 計算, 時間, 時間 計算, 材料・積算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "運搬回数（積載量から往復数）は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "運ぶ総量・1回に積める量・1往復にかかる時間（分）を入力すると往復回数（計算値）・必要な往復回数・最後の1回の量・所要時間（分）・所要時間（時間）が求まります。運ぶ総量・1回に積める量を入力すると往復回数（計算値）・必要な往復回数・最後の1回の量が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば運ぶ総量・1回に積める量を入れると往復回数（計算値）・必要な往復回数・最後の1回の量が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "運搬回数（積載量から往復数）以外の材料・積算の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。材料・積算のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/estimate/">材料・積算</a><span class="crumb__sep">›</span><span aria-current="page">運搬回数（積載量から往復数）</span></nav>
+<h1>運搬回数（積載量から往復数）の計算</h1>
+<p class="doc__lead">運ぶ総量と1回に積める量から、必要な往復回数と所要時間を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/estimate.trips">この計算をアプリで開く</a></p>
+
+<h2 id="about">運搬回数（積載量から往復数）でできること</h2>
+<p>運搬回数（積載量から往復数）は、運ぶ総量・1回に積める量・1往復にかかる時間（分）のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：運搬、往復、積載、回数、軽トラ、残土、土のう、運ぶ</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">運ぶ総量</th><td>—</td><td>重さ(kg)でも個数でも、単位をそろえれば同じように使えます</td></tr>
+<tr><th scope="row">1回に積める量</th><td>—</td><td>同じ単位で入れてください</td></tr>
+<tr><th scope="row">1往復にかかる時間（分）</th><td>—</td><td>積み込み・移動・降ろしの合計</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>必要な往復回数</strong></li>
+<li><strong>所要時間（時間）</strong></li>
+<li><strong>往復回数（計算値）</strong></li>
+<li><strong>最後の1回の量</strong></li>
+<li><strong>所要時間（分）</strong></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">運ぶ総量・1回に積める量・1往復にかかる時間（分）</span><span class="combo__arrow">→</span><span class="combo__out">往復回数（計算値）・必要な往復回数・最後の1回の量・所要時間（分）・所要時間（時間）</span></li>
+<li><span class="combo__in">運ぶ総量・1回に積める量</span><span class="combo__arrow">→</span><span class="combo__out">往復回数（計算値）・必要な往復回数・最後の1回の量</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>何往復かかるかを先に知る</h3>
+<p>残土・砂利・廃材の運搬は、1回に積める量で総量を割った回数になります。
+2.5m³を0.5m³ずつなら5往復。
+1往復の時間を入れれば、作業全体にかかる時間の見当も付きます。</p>
+
+<h3>積載量は重さで決まる</h3>
+<p>軽トラックの最大積載量は350kg程度です。
+土は1m³あたり約1.2〜1.8t（湿り気で変わる）あるので、
+体積では荷台に載っても重量では大きく超えます。
+体積ではなく重さで積載量を確認してください。</p>
+
+<h3>過積載は違反</h3>
+<p>最大積載量を超えた運搬は道路交通法違反です。
+量が多いときは、往復を増やすか、運搬を業者に依頼してください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>運搬回数（積載量から往復数）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>往復回数 = 総量 ÷ 1回の量</code></li>
+<li><code>切り上げ</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">2.5m³を0.5m³ずつ、1往復40分で運ぶ</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>運ぶ総量</span><b>2.5</b></li>
+      <li><span>1回に積める量</span><b>0.5</b></li>
+      <li><span>1往復にかかる時間（分）</span><b>40</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>往復回数（計算値）</span><b>5</b></li>
+      <li><span>必要な往復回数</span><b>5</b></li>
+      <li><span>最後の1回の量</span><b>0.5</b></li>
+      <li><span>所要時間（分）</span><b>200</b></li>
+      <li><span>所要時間（時間）</span><b>3.33</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>往復回数 = 総量 ÷ 1回の量</td><td>2.5 ÷ 0.5</td><td>5 回</td></tr>
+<tr><td>切り上げ</td><td>5 → 切り上げ</td><td>5 回</td></tr>
+<tr><td>最後の1回の量 = 総量 − (回数 − 1) × 1回の量</td><td>2.5 − 4 × 0.5</td><td>0.5</td></tr>
+<tr><td>所要時間 = 回数 × 1往復の時間</td><td>5 × 40 分</td><td>200 分</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 運搬回数（積載量から往復数） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">運搬回数（積載量から往復数）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>運搬回数（積載量から往復数）は何が分かれば計算できますか？</summary><div class="qa__a"><p>運ぶ総量・1回に積める量・1往復にかかる時間（分）を入力すると往復回数（計算値）・必要な往復回数・最後の1回の量・所要時間（分）・所要時間（時間）が求まります。運ぶ総量・1回に積める量を入力すると往復回数（計算値）・必要な往復回数・最後の1回の量が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば運ぶ総量・1回に積める量を入れると往復回数（計算値）・必要な往復回数・最後の1回の量が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>運搬回数（積載量から往復数）以外の材料・積算の計算もありますか？</summary><div class="qa__a"><p>あります。材料・積算のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>必要量は割付や施工方法で変わります。実際の購入前には、割付図や販売店の規格とあわせてご確認ください。</li>
+<li>車の最大積載量は車検証に記載された値を必ず守ってください。本アプリは積載の可否を判断しません。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>材料・積算のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../estimate-lumber/"><strong>木材の材積（㎥・石数）</strong><span>断面寸法・長さ・本数から、体積と石数を計算</span></a></li>
+<li><a href="../estimate-board/"><strong>ボード・合板の必要枚数</strong><span>施工面積と1枚のサイズ・ロス率から、必要な枚数を計算</span></a></li>
+<li><a href="../estimate-screws/"><strong>ビス・釘の本数</strong><span>打つ長さと間隔から、必要な本数を計算</span></a></li>
+<li><a href="../estimate-bag/"><strong>セメント・モルタルの袋数</strong><span>必要な体積と1袋の出来高から、袋数を計算</span></a></li>
+<li><a href="../estimate-cost/"><strong>材料費の概算</strong><span>数量・単価・ロス率から、概算の金額を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../pipe-tank/"><strong>タンクの容量と満水時間</strong><span>配管・排水｜容量と流量から、満水までにかかる時間を計算</span></a></li>
+<li><a href="../solid-diagonal/"><strong>直方体の対角線（3次元）</strong><span>立体・3D｜箱の内寸から、中に入る最長の直線（角から角）を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/estimate/">材料・積算の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

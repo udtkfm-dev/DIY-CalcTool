@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>面積の単位換算の計算｜面積｜DIY計算ツール</title>
+<meta name="description" content="面積の単位換算を無料で計算。mm²・cm²・m²・坪・畳を相互変換。mm²・cm²・m²を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-area/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="面積の単位換算の計算｜面積｜DIY計算ツール">
+<meta property="og:description" content="面積の単位換算を無料で計算。mm²・cm²・m²・坪・畳を相互変換。mm²・cm²・m²を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-area/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "面積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/area/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "面積の単位換算",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-area/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-area/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-area/",
+   "name": "面積の単位換算の計算",
+   "description": "面積の単位換算を無料で計算。mm²・cm²・m²・坪・畳を相互変換。mm²・cm²・m²を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "面積の単位換算, 面積の単位換算 計算, 面積, 面積 計算, 単位, 単位 計算, 換算, 換算 計算, 坪, 坪 計算, 畳, 畳 計算, m2, m2 計算, m², m² 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "面積の単位換算は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "mm²を入力するとcm²・m²・坪・畳が求まります。cm²を入力するとmm²・m²・坪・畳が求まります。m²を入力するとmm²・cm²・坪・畳が求まります。このほか2通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば畳を入れるとmm²・cm²・m²・坪が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "面積の単位換算で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "mm²は mm² / cm² / m² / 坪 / 畳 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "面積の単位換算以外の面積の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。面積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/area/">面積</a><span class="crumb__sep">›</span><span aria-current="page">面積の単位換算</span></nav>
+<h1>面積の単位換算の計算</h1>
+<p class="doc__lead">mm²・cm²・m²・坪・畳を相互変換。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/basic.unit.area">この計算をアプリで開く</a></p>
+
+<h2 id="about">面積の単位換算でできること</h2>
+<p>面積の単位換算は、mm²・cm²・m²・坪・畳のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：面積、単位、換算、坪、畳、m2、m²</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">mm²</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">cm²</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">m²</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">坪</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">畳</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>mm²</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>cm²</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>m²</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>坪</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>畳</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">mm²</span><span class="combo__arrow">→</span><span class="combo__out">cm²・m²・坪・畳</span></li>
+<li><span class="combo__in">cm²</span><span class="combo__arrow">→</span><span class="combo__out">mm²・m²・坪・畳</span></li>
+<li><span class="combo__in">m²</span><span class="combo__arrow">→</span><span class="combo__out">mm²・cm²・坪・畳</span></li>
+<li><span class="combo__in">坪</span><span class="combo__arrow">→</span><span class="combo__out">mm²・cm²・m²・畳</span></li>
+<li><span class="combo__in">畳</span><span class="combo__arrow">→</span><span class="combo__out">mm²・cm²・m²・坪</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>m²・坪・畳を行き来する</h3>
+<p>物件情報は m²、リフォームの見積もりは坪、床材の商品説明は畳と、
+同じ広さが場面ごとに違う単位で書かれます。1つ入れれば全部が同時に出ます。</p>
+
+<h3>1坪・1畳の大きさ</h3>
+<p>1坪 = 約3.306m²（2畳ぶん）。畳は地域や規格で大きさが違い、
+このアプリは中京間（1畳 = 1.653m²）で計算しています。
+実際の部屋の畳とは食い違うことがあるので、材料の発注は実測した m² で行ってください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>面積の単位換算で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>1,000,000 mm² を cm² に換算</code></li>
+<li><code>1,000,000 mm² を m² に換算</code></li>
+<li><code>1,000,000 mm² を 坪 に換算</code></li>
+<li><code>10,000 cm² を mm² に換算</code></li>
+<li><code>10,000 cm² を m² に換算</code></li>
+<li><code>10,000 cm² を 坪 に換算</code></li>
+<li><code>10 m² を mm² に換算</code></li>
+<li><code>10 m² を cm² に換算</code></li>
+<li><code>10 m² を 坪 に換算</code></li>
+<li><code>0.3 坪 を mm² に換算</code></li>
+<li><code>0.3 坪 を cm² に換算</code></li>
+<li><code>0.3 坪 を m² に換算</code></li>
+<li><code>0.6 畳 を mm² に換算</code></li>
+<li><code>0.6 畳 を cm² に換算</code></li>
+<li><code>0.6 畳 を m² に換算</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">10m²を坪・畳に直す</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>m²</span><b>10 m²</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>mm²</span><b>10,000,000 mm²</b></li>
+      <li><span>cm²</span><b>100,000 cm²</b></li>
+      <li><span>坪</span><b>3.02 坪</b></li>
+      <li><span>畳</span><b>6.05 畳</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>10 m² を mm² に換算</td><td>10 m²</td><td>10,000,000 mm²</td></tr>
+<tr><td>10 m² を cm² に換算</td><td>10 m²</td><td>100,000 cm²</td></tr>
+<tr><td>10 m² を 坪 に換算</td><td>10 m²</td><td>3.02 坪</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 面積の単位換算 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">面積の単位換算のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>面積の単位換算は何が分かれば計算できますか？</summary><div class="qa__a"><p>mm²を入力するとcm²・m²・坪・畳が求まります。cm²を入力するとmm²・m²・坪・畳が求まります。m²を入力するとmm²・cm²・坪・畳が求まります。このほか2通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば畳を入れるとmm²・cm²・m²・坪が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>面積の単位換算で使える単位は何ですか？</summary><div class="qa__a"><p>mm²は mm² / cm² / m² / 坪 / 畳 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>面積の単位換算以外の面積の計算もありますか？</summary><div class="qa__a"><p>あります。面積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>面積のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../area-rect/"><strong>長方形の面積</strong><span>幅・高さ・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-square/"><strong>正方形の面積</strong><span>一辺・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-triangle/"><strong>三角形の面積（底辺・高さ）</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-triangle3/"><strong>三角形の面積（3辺から）</strong><span>3辺の長さから面積を計算（ヘロンの公式）</span></a></li>
+<li><a href="../area-trapezoid/"><strong>台形の面積</strong><span>上底・下底・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-parallelogram/"><strong>平行四辺形の面積</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-circle/"><strong>円の面積・円周</strong><span>半径・直径・円周・面積のどれか1つから残りを計算</span></a></li>
+<li><a href="../area-sector/"><strong>扇形の面積・弧長</strong><span>半径・中心角・弧長・面積を相互計算</span></a></li>
+<li><a href="../area-ellipse/"><strong>楕円の面積</strong><span>長半径・短半径・面積を相互計算</span></a></li>
+<li><a href="../area-room/"><strong>部屋の面積（m²・坪・畳）</strong><span>幅・奥行きから面積をm²・坪・畳で同時表示</span></a></li>
+<li><a href="../area-compound/"><strong>複合図形（面積の合成）</strong><span>長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-angle/"><strong>角度の単位換算</strong><span>三角・角度｜度とラジアンを相互変換</span></a></li>
+<li><a href="../basic-unit-length/"><strong>長さの単位換算</strong><span>長さ・単位｜mm・cm・m・インチ・フィート・尺・寸を相互変換</span></a></li>
+<li><a href="../basic-unit-volume/"><strong>体積の単位換算</strong><span>体積｜mm³・cm³・m³・L・mLを相互変換</span></a></li>
+<li><a href="../basic-fraction/"><strong>インチの分数 ⇄ ミリ</strong><span>長さ・単位｜3/8インチ などの分数表記とミリを相互に換算</span></a></li>
+<li><a href="../basic-round/"><strong>切り上げ・切り捨て（キリのいい数）</strong><span>長さ・単位｜基準の単位で、切り上げ・切り捨て・四捨五入した値を同時に表示</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/area/">面積の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

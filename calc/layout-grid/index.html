@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>格子状の割付の計算｜等分・配置｜DIY計算ツール</title>
+<meta name="description" content="格子状の割付を無料で計算。縦横のピッチから、通り芯の本数と交点の数を計算。範囲の幅・範囲の奥行き・横方向のピッチを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/layout-grid/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="格子状の割付の計算｜等分・配置｜DIY計算ツール">
+<meta property="og:description" content="格子状の割付を無料で計算。縦横のピッチから、通り芯の本数と交点の数を計算。範囲の幅・範囲の奥行き・横方向のピッチを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/layout-grid/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "等分・配置",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/layout/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "格子状の割付",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/layout-grid/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/layout-grid/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/layout-grid/",
+   "name": "格子状の割付の計算",
+   "description": "格子状の割付を無料で計算。縦横のピッチから、通り芯の本数と交点の数を計算。範囲の幅・範囲の奥行き・横方向のピッチを入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "格子状の割付, 格子状の割付 計算, 格子, 格子 計算, グリッド, グリッド 計算, 通り芯, 通り芯 計算, 割付, 割付 計算, 束石, 束石 計算, 基礎, 基礎 計算, ピッチ, ピッチ 計算, 交点, 交点 計算, 等分・配置",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "格子状の割付は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "範囲の幅・範囲の奥行き・横方向のピッチ・縦方向のピッチを入力すると範囲の面積・横方向の本数・縦方向の本数・交点の数・横の余り・縦の余りが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "格子状の割付で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "範囲の幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "格子状の割付以外の等分・配置の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。等分・配置のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/layout/">等分・配置</a><span class="crumb__sep">›</span><span aria-current="page">格子状の割付</span></nav>
+<h1>格子状の割付の計算</h1>
+<p class="doc__lead">縦横のピッチから、通り芯の本数と交点の数を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/layout.grid">この計算をアプリで開く</a></p>
+
+<figure class="doc__fig">
+<svg class="shape" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="長方形の図" focusable="false"><g class="layer-body"><polygon class="body" points="60.5,156 243.5,156 243.5,34 60.5,34"/></g><g class="layer-aux"><line class="aux" x1="60.5" y1="156" x2="243.5" y2="34" stroke-dasharray="4 3"/></g><g class="layer-dims"><g class="dimgroup"><line class="dimline" x1="60.5" y1="160" x2="60.5" y2="180"/><line class="dimline" x1="243.5" y1="160" x2="243.5" y2="180"/><line class="dimline" x1="60.5" y1="176" x2="243.5" y2="176"/><polygon class="arrow" points="60.5,176 66.5,179.4 66.5,172.6"/><polygon class="arrow" points="243.5,176 237.5,172.6 237.5,179.4"/></g><g class="dimgroup"><line class="dimline" x1="247.5" y1="156" x2="265.5" y2="156"/><line class="dimline" x1="247.5" y1="34" x2="265.5" y2="34"/><line class="dimline" x1="261.5" y1="156" x2="261.5" y2="34"/><polygon class="arrow" points="261.5,156 264.9,150 258.1,150"/><polygon class="arrow" points="261.5,34 258.1,40 264.9,40"/></g></g><g class="layer-labels"><g class="dim is-input" data-key="w" tabindex="0" aria-label="範囲の幅 5.46 m"><rect class="pill" rx="8" ry="8" height="48" x="122.4" y="163" width="59.2"/><text class="pill-txt" x="152" y="187">5.46 m</text></g><g class="dim is-input" data-key="h" tabindex="0" aria-label="範囲の奥行き 3.64 m"><rect class="pill" rx="8" ry="8" height="48" x="241.9" y="71" width="59.2"/><text class="pill-txt" x="271.5" y="95">3.64 m</text></g><g class="dim is-readonly" data-key="S" aria-label="範囲の面積 19.87 m²（計算結果）"><rect class="pill" rx="8" ry="8" height="48" x="115.2" y="71" width="73.6"/><text class="pill-txt" x="152" y="95">19.87 m²</text></g><text class="note" x="314" y="214" text-anchor="end">※図は実寸比ではありません（形の比率は正確です）</text></g></svg>
+<figcaption>下の「計算例」の値で描いた図です（図は実寸比ではありませんが、形の比率は正確です）。アプリでは図の数字をタップして入れ替えられます。</figcaption>
+</figure>
+
+<h2 id="about">格子状の割付でできること</h2>
+<p>格子状の割付は、範囲の幅・範囲の奥行き・横方向のピッチ・縦方向のピッチのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：格子、グリッド、通り芯、割付、束石、基礎、ピッチ、交点</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">範囲の幅</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">範囲の奥行き</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">横方向のピッチ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+<tr><th scope="row">縦方向のピッチ</th><td>mm / cm / m / inch / ft / 尺 / 寸</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>範囲の面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>横方向の本数</strong></li>
+<li><strong>縦方向の本数</strong></li>
+<li><strong>交点の数</strong></li>
+<li><strong>横の余り</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+<li><strong>縦の余り</strong><span class="doc__unit">mm / cm / m / inch / ft / 尺 / 寸</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">範囲の幅・範囲の奥行き・横方向のピッチ・縦方向のピッチ</span><span class="combo__arrow">→</span><span class="combo__out">範囲の面積・横方向の本数・縦方向の本数・交点の数・横の余り・縦の余り</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>通り芯を格子に割り付ける</h3>
+<p>基礎の配筋、デッキの根太、タイルの目地、庭の敷石など、
+縦横に一定のピッチで並べるときの本数と交点の数を出します。
+範囲を割り切れないときの余りも出るので、端の処理を先に考えられます。</p>
+
+<h3>910mmグリッド</h3>
+<p>日本の木造住宅は910mm（3尺）を基準にした格子で組まれていることがほとんどです。
+壁の下地や根太を探すとき、この間隔を手がかりにすると当たりが付きます。
+合板が910×1820mmなのも同じ理由です。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>格子状の割付で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>横方向の本数 = 幅 ÷ 横ピッチ + 1（切り捨て）</code></li>
+<li><code>縦方向の本数 = 奥行き ÷ 縦ピッチ + 1（切り捨て）</code></li>
+<li><code>交点の数 = 横 × 縦</code></li>
+<li><code>横の余り</code></li>
+<li><code>縦の余り</code></li>
+<li><code>交点 (1, 1)</code></li>
+<li><code>交点 (2, 1)</code></li>
+<li><code>交点 (3, 1)</code></li>
+<li><code>交点 (4, 1)</code></li>
+<li><code>交点 (5, 1)</code></li>
+<li><code>交点 (6, 1)</code></li>
+<li><code>交点 (7, 1)</code></li>
+<li><code>交点 (1, 2)</code></li>
+<li><code>交点 (2, 2)</code></li>
+<li><code>交点 (3, 2)</code></li>
+<li><code>交点 (4, 2)</code></li>
+<li><code>交点 (5, 2)</code></li>
+<li><code>交点 (6, 2)</code></li>
+<li><code>交点 (7, 2)</code></li>
+<li><code>交点 (1, 3)</code></li>
+<li><code>交点 (2, 3)</code></li>
+<li><code>交点 (3, 3)</code></li>
+<li><code>交点 (4, 3)</code></li>
+<li><code>交点 (5, 3)</code></li>
+<li><code>交点 (6, 3)</code></li>
+<li><code>交点 (7, 3)</code></li>
+<li><code>交点 (1, 4)</code></li>
+<li><code>交点 (2, 4)</code></li>
+<li><code>交点 (3, 4)</code></li>
+<li><code>交点 (4, 4)</code></li>
+<li><code>交点 (5, 4)</code></li>
+<li><code>交点 (6, 4)</code></li>
+<li><code>交点 (7, 4)</code></li>
+<li><code>交点 (1, 5)</code></li>
+<li><code>交点 (2, 5)</code></li>
+<li><code>…</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">5460×3640mmの範囲を910mmグリッドで割り付ける</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>範囲の幅</span><b>5.46 m</b></li>
+      <li><span>範囲の奥行き</span><b>3.64 m</b></li>
+      <li><span>横方向のピッチ</span><b>0.91 m</b></li>
+      <li><span>縦方向のピッチ</span><b>0.91 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>範囲の面積</span><b>19.87 m²</b></li>
+      <li><span>横方向の本数</span><b>7</b></li>
+      <li><span>縦方向の本数</span><b>5</b></li>
+      <li><span>交点の数</span><b>35</b></li>
+      <li><span>横の余り</span><b>0 m</b></li>
+      <li><span>縦の余り</span><b>0 m</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>横方向の本数 = 幅 ÷ 横ピッチ + 1（切り捨て）</td><td>5.46 ÷ 0.91 + 1</td><td>7 本</td></tr>
+<tr><td>縦方向の本数 = 奥行き ÷ 縦ピッチ + 1（切り捨て）</td><td>3.64 ÷ 0.91 + 1</td><td>5 本</td></tr>
+<tr><td>交点の数 = 横 × 縦</td><td>7 × 5</td><td>35 点</td></tr>
+<tr><td>横の余り</td><td>5.46 − 0.91 × 6</td><td>0 m</td></tr>
+<tr><td>縦の余り</td><td>3.64 − 0.91 × 4</td><td>0 m</td></tr>
+<tr><td>交点 (1, 1)</td><td>X = 0.91 × 0 / Y = 0.91 × 0</td><td>(0, 0)</td></tr>
+<tr><td>交点 (2, 1)</td><td>X = 0.91 × 1 / Y = 0.91 × 0</td><td>(0.91, 0)</td></tr>
+<tr><td>交点 (3, 1)</td><td>X = 0.91 × 2 / Y = 0.91 × 0</td><td>(1.82, 0)</td></tr>
+<tr><td>交点 (4, 1)</td><td>X = 0.91 × 3 / Y = 0.91 × 0</td><td>(2.73, 0)</td></tr>
+<tr><td>交点 (5, 1)</td><td>X = 0.91 × 4 / Y = 0.91 × 0</td><td>(3.64, 0)</td></tr>
+<tr><td>交点 (6, 1)</td><td>X = 0.91 × 5 / Y = 0.91 × 0</td><td>(4.55, 0)</td></tr>
+<tr><td>交点 (7, 1)</td><td>X = 0.91 × 6 / Y = 0.91 × 0</td><td>(5.46, 0)</td></tr>
+<tr><td>交点 (1, 2)</td><td>X = 0.91 × 0 / Y = 0.91 × 1</td><td>(0, 0.91)</td></tr>
+<tr><td>交点 (2, 2)</td><td>X = 0.91 × 1 / Y = 0.91 × 1</td><td>(0.91, 0.91)</td></tr>
+<tr><td>交点 (3, 2)</td><td>X = 0.91 × 2 / Y = 0.91 × 1</td><td>(1.82, 0.91)</td></tr>
+<tr><td>交点 (4, 2)</td><td>X = 0.91 × 3 / Y = 0.91 × 1</td><td>(2.73, 0.91)</td></tr>
+<tr><td>交点 (5, 2)</td><td>X = 0.91 × 4 / Y = 0.91 × 1</td><td>(3.64, 0.91)</td></tr>
+<tr><td>交点 (6, 2)</td><td>X = 0.91 × 5 / Y = 0.91 × 1</td><td>(4.55, 0.91)</td></tr>
+<tr><td>交点 (7, 2)</td><td>X = 0.91 × 6 / Y = 0.91 × 1</td><td>(5.46, 0.91)</td></tr>
+<tr><td>交点 (1, 3)</td><td>X = 0.91 × 0 / Y = 0.91 × 2</td><td>(0, 1.82)</td></tr>
+<tr><td>交点 (2, 3)</td><td>X = 0.91 × 1 / Y = 0.91 × 2</td><td>(0.91, 1.82)</td></tr>
+<tr><td>交点 (3, 3)</td><td>X = 0.91 × 2 / Y = 0.91 × 2</td><td>(1.82, 1.82)</td></tr>
+<tr><td>交点 (4, 3)</td><td>X = 0.91 × 3 / Y = 0.91 × 2</td><td>(2.73, 1.82)</td></tr>
+<tr><td>交点 (5, 3)</td><td>X = 0.91 × 4 / Y = 0.91 × 2</td><td>(3.64, 1.82)</td></tr>
+<tr><td>交点 (6, 3)</td><td>X = 0.91 × 5 / Y = 0.91 × 2</td><td>(4.55, 1.82)</td></tr>
+<tr><td>交点 (7, 3)</td><td>X = 0.91 × 6 / Y = 0.91 × 2</td><td>(5.46, 1.82)</td></tr>
+<tr><td>交点 (1, 4)</td><td>X = 0.91 × 0 / Y = 0.91 × 3</td><td>(0, 2.73)</td></tr>
+<tr><td>交点 (2, 4)</td><td>X = 0.91 × 1 / Y = 0.91 × 3</td><td>(0.91, 2.73)</td></tr>
+<tr><td>交点 (3, 4)</td><td>X = 0.91 × 2 / Y = 0.91 × 3</td><td>(1.82, 2.73)</td></tr>
+<tr><td>交点 (4, 4)</td><td>X = 0.91 × 3 / Y = 0.91 × 3</td><td>(2.73, 2.73)</td></tr>
+<tr><td>交点 (5, 4)</td><td>X = 0.91 × 4 / Y = 0.91 × 3</td><td>(3.64, 2.73)</td></tr>
+<tr><td>交点 (6, 4)</td><td>X = 0.91 × 5 / Y = 0.91 × 3</td><td>(4.55, 2.73)</td></tr>
+<tr><td>交点 (7, 4)</td><td>X = 0.91 × 6 / Y = 0.91 × 3</td><td>(5.46, 2.73)</td></tr>
+<tr><td>交点 (1, 5)</td><td>X = 0.91 × 0 / Y = 0.91 × 4</td><td>(0, 3.64)</td></tr>
+<tr><td>交点 (2, 5)</td><td>X = 0.91 × 1 / Y = 0.91 × 4</td><td>(0.91, 3.64)</td></tr>
+<tr><td>…</td><td>残り 5 点は省略</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 格子状の割付 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">格子状の割付のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>格子状の割付は何が分かれば計算できますか？</summary><div class="qa__a"><p>範囲の幅・範囲の奥行き・横方向のピッチ・縦方向のピッチを入力すると範囲の面積・横方向の本数・縦方向の本数・交点の数・横の余り・縦の余りが求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>格子状の割付で使える単位は何ですか？</summary><div class="qa__a"><p>範囲の幅は mm / cm / m / inch / ft / 尺 / 寸 から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>格子状の割付以外の等分・配置の計算もありますか？</summary><div class="qa__a"><p>あります。等分・配置のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>等分・配置のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../layout-divide/"><strong>線分の等分</strong><span>全長と分割数から、等間隔の各点の位置を計算</span></a></li>
+<li><a href="../layout-pitch/"><strong>ピッチ配置（間隔・個数）</strong><span>全長・間隔・個数のうち2つから残り1つを計算</span></a></li>
+<li><a href="../layout-center/"><strong>中央配置・左右均等</strong><span>全幅と対象の幅から、左右の余白を計算</span></a></li>
+<li><a href="../layout-holes/"><strong>穴の等間隔配置</strong><span>全長・穴数（・端部余白）から、各穴の位置を計算</span></a></li>
+<li><a href="../layout-circle-divide/"><strong>円周の等分</strong><span>半径と分割数から、弦の長さ・中心角・各点の座標を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../light-spacing/"><strong>照明の配置間隔</strong><span>照明｜器具の台数から、均等に配置する間隔と位置を計算</span></a></li>
+<li><a href="../concrete-formwork/"><strong>型枠の面積・材料</strong><span>コンクリート｜打設する範囲の寸法から、型枠の面積・コンパネの枚数・桟木の長さを計算</span></a></li>
+<li><a href="../concrete-rebar/"><strong>鉄筋の本数・重量</strong><span>コンクリート｜配筋のピッチから、縦横の本数・総延長・重量を計算</span></a></li>
+<li><a href="../concrete-slab/"><strong>土間・基礎の体積（余裕率つき）</strong><span>コンクリート｜幅・奥行き・厚さと余裕率から、生コンの必要量を計算</span></a></li>
+<li><a href="../earth-excavation/"><strong>掘削・盛土の体積</strong><span>土木・外構｜幅・奥行き・深さ（高さ）から、掘削や盛土の体積を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/layout/">等分・配置の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

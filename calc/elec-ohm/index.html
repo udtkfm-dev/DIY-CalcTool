@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>オームの法則（V・I・R・P）の計算｜電気｜DIY計算ツール</title>
+<meta name="description" content="オームの法則（V・I・R・P）を無料で計算。電圧・電流・抵抗・電力のうち2つから残り2つを計算。電圧・電流・抵抗を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-ohm/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="オームの法則（V・I・R・P）の計算｜電気｜DIY計算ツール">
+<meta property="og:description" content="オームの法則（V・I・R・P）を無料で計算。電圧・電流・抵抗・電力のうち2つから残り2つを計算。電圧・電流・抵抗を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-ohm/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "電気",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/elec/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "オームの法則（V・I・R・P）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-ohm/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-ohm/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/elec-ohm/",
+   "name": "オームの法則（V・I・R・P）の計算",
+   "description": "オームの法則（V・I・R・P）を無料で計算。電圧・電流・抵抗・電力のうち2つから残り2つを計算。電圧・電流・抵抗を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "オームの法則（V・I・R・P）, オームの法則（V・I・R・P） 計算, オームの法則, オームの法則 計算, 電圧, 電圧 計算, 電流, 電流 計算, 抵抗, 抵抗 計算, 電力, 電力 計算, V, V 計算, A, A 計算, Ω, Ω 計算, W, W 計算, 電気",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "オームの法則（V・I・R・P）は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "電圧・電流を入力すると抵抗・電力が求まります。電圧・抵抗を入力すると電流・電力が求まります。電圧・電力を入力すると電流・抵抗が求まります。このほか3通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば抵抗・電力を入れると電圧・電流が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "オームの法則（V・I・R・P）で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "電力は W / kW から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "オームの法則（V・I・R・P）以外の電気の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。電気のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/elec/">電気</a><span class="crumb__sep">›</span><span aria-current="page">オームの法則（V・I・R・P）</span></nav>
+<h1>オームの法則（V・I・R・P）の計算</h1>
+<p class="doc__lead">電圧・電流・抵抗・電力のうち2つから残り2つを計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/elec.ohm">この計算をアプリで開く</a></p>
+
+<h2 id="about">オームの法則（V・I・R・P）でできること</h2>
+<p>オームの法則（V・I・R・P）は、電圧・電流・抵抗・電力のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：オームの法則、電圧、電流、抵抗、電力、V、A、Ω</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">電圧</th><td>V</td><td></td></tr>
+<tr><th scope="row">電流</th><td>A</td><td></td></tr>
+<tr><th scope="row">抵抗</th><td>Ω</td><td></td></tr>
+<tr><th scope="row">電力</th><td>W / kW</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>電圧</strong><span class="doc__unit">V</span></li>
+<li><strong>電流</strong><span class="doc__unit">A</span></li>
+<li><strong>抵抗</strong><span class="doc__unit">Ω</span></li>
+<li><strong>電力</strong><span class="doc__unit">W / kW</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">電圧・電流</span><span class="combo__arrow">→</span><span class="combo__out">抵抗・電力</span></li>
+<li><span class="combo__in">電圧・抵抗</span><span class="combo__arrow">→</span><span class="combo__out">電流・電力</span></li>
+<li><span class="combo__in">電圧・電力</span><span class="combo__arrow">→</span><span class="combo__out">電流・抵抗</span></li>
+<li><span class="combo__in">電流・抵抗</span><span class="combo__arrow">→</span><span class="combo__out">電圧・電力</span></li>
+<li><span class="combo__in">電流・電力</span><span class="combo__arrow">→</span><span class="combo__out">電圧・抵抗</span></li>
+<li><span class="combo__in">抵抗・電力</span><span class="combo__arrow">→</span><span class="combo__out">電圧・電流</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>V・I・R・P のうち2つで残りが決まる</h3>
+<p>オームの法則（V = I × R）と電力の式（P = V × I）を組み合わせると、
+電圧・電流・抵抗・電力のどれか2つが分かれば残り2つが決まります。
+どの組み合わせで入れても計算できます。</p>
+
+<h3>DIYで使う場面</h3>
+<p>12Vのバッテリーで何Aのモーターが回せるか、
+抵抗を入れたときに何Wの熱になるか、といった見積もりに使います。
+抵抗の消費電力を見落とすと、部品が焼けます。</p>
+
+<h3>交流では単純に当てはまらない</h3>
+<p>この計算は直流（または力率1の交流）が前提です。
+モーターやトランスを含む交流回路では力率が絡むため、
+P = V × I がそのまま成り立ちません。三相の場合は三相電力の計算を使ってください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>オームの法則（V・I・R・P）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>R = V ÷ I</code></li>
+<li><code>P = V × I</code></li>
+<li><code>I = V ÷ R</code></li>
+<li><code>P = V² ÷ R</code></li>
+<li><code>I = P ÷ V</code></li>
+<li><code>R = V² ÷ P</code></li>
+<li><code>V = I × R</code></li>
+<li><code>P = I² × R</code></li>
+<li><code>V = P ÷ I</code></li>
+<li><code>R = P ÷ I²</code></li>
+<li><code>V = √(P × R)</code></li>
+<li><code>I = √(P ÷ R)</code></li>
+</ul>
+<p class="doc__kw">記号の意味：V = 電圧、I = 電流、R = 抵抗、P = 電力</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">100Vで5A流れるときの抵抗と電力</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>電圧</span><b>100 V</b></li>
+      <li><span>電流</span><b>5 A</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>抵抗</span><b>20 Ω</b></li>
+      <li><span>電力</span><b>500 W</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>R = V ÷ I</td><td>100 ÷ 5</td><td>20 Ω</td></tr>
+<tr><td>P = V × I</td><td>100 × 5</td><td>500 W</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから オームの法則（V・I・R・P） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">オームの法則（V・I・R・P）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>オームの法則（V・I・R・P）は何が分かれば計算できますか？</summary><div class="qa__a"><p>電圧・電流を入力すると抵抗・電力が求まります。電圧・抵抗を入力すると電流・電力が求まります。電圧・電力を入力すると電流・抵抗が求まります。このほか3通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば抵抗・電力を入れると電圧・電流が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>オームの法則（V・I・R・P）で使える単位は何ですか？</summary><div class="qa__a"><p>電力は W / kW から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>オームの法則（V・I・R・P）以外の電気の計算もありますか？</summary><div class="qa__a"><p>あります。電気のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>電気工事は資格が必要な作業を含みます。配線・分電盤に関わる作業は必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>電気のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../elec-cost/"><strong>電力量・電気料金の概算</strong><span>消費電力・使用時間・電力量単価から、電力量と概算料金を計算</span></a></li>
+<li><a href="../elec-series/"><strong>直列合成抵抗</strong><span>2〜4個の抵抗（直列）から合成抵抗を計算</span></a></li>
+<li><a href="../elec-parallel/"><strong>並列合成抵抗</strong><span>2〜4個の抵抗（並列）から合成抵抗を計算</span></a></li>
+<li><a href="../elec-volt-drop/"><strong>電圧降下</strong><span>電線の長さ・電流・断面積から電圧降下を計算（断面積の逆算もできます）</span></a></li>
+<li><a href="../elec-three-phase/"><strong>三相電力（P = √3 × V × I × 力率）</strong><span>三相交流の電力・電流・力率を相互に計算</span></a></li>
+<li><a href="../elec-led/"><strong>LEDの電流制限抵抗</strong><span>電源電圧・順電圧・電流から、直列に入れる抵抗と消費電力を計算</span></a></li>
+<li><a href="../elec-load/"><strong>負荷電流の合計</strong><span>機器の消費電力を合計して、流れる電流を計算</span></a></li>
+<li><a href="../elec-battery/"><strong>バッテリーの稼働時間</strong><span>容量と消費電力から、およその使用可能時間を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../hvac-heat-loss/"><strong>熱損失（U × 面積 × 温度差）</strong><span>空調・断熱｜壁や窓から逃げる熱量を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/elec/">電気の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

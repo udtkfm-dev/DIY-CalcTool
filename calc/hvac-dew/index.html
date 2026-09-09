@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>露点温度（結露するかの目安）の計算｜空調・断熱｜DIY計算ツール</title>
+<meta name="description" content="露点温度（結露するかの目安）を無料で計算。気温と湿度から、結露が始まる温度を計算。気温・相対湿度（%）・露点温度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-dew/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="露点温度（結露するかの目安）の計算｜空調・断熱｜DIY計算ツール">
+<meta property="og:description" content="露点温度（結露するかの目安）を無料で計算。気温と湿度から、結露が始まる温度を計算。気温・相対湿度（%）・露点温度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-dew/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "空調・断熱",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/hvac/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "露点温度（結露するかの目安）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-dew/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-dew/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-dew/",
+   "name": "露点温度（結露するかの目安）の計算",
+   "description": "露点温度（結露するかの目安）を無料で計算。気温と湿度から、結露が始まる温度を計算。気温・相対湿度（%）・露点温度を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "露点温度（結露するかの目安）, 露点温度（結露するかの目安） 計算, 露点, 露点 計算, 結露, 結露 計算, 湿度, 湿度 計算, 相対湿度, 相対湿度 計算, カビ, カビ 計算, windows, windows 計算, 窓, 窓 計算, Magnus, Magnus 計算, 空調・断熱",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "露点温度（結露するかの目安）は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "気温・相対湿度（%）を入力すると露点温度・気温との差・容積絶対湿度（g/m³）が求まります。気温・露点温度を入力すると相対湿度（%）・気温との差が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば気温・露点温度を入れると相対湿度（%）・気温との差が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "露点温度（結露するかの目安）以外の空調・断熱の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。空調・断熱のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/hvac/">空調・断熱</a><span class="crumb__sep">›</span><span aria-current="page">露点温度（結露するかの目安）</span></nav>
+<h1>露点温度（結露するかの目安）の計算</h1>
+<p class="doc__lead">気温と湿度から、結露が始まる温度を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/hvac.dew">この計算をアプリで開く</a></p>
+
+<h2 id="about">露点温度（結露するかの目安）でできること</h2>
+<p>露点温度（結露するかの目安）は、気温・相対湿度（%）・露点温度のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：露点、結露、湿度、相対湿度、カビ、windows、窓、Magnus</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">気温</th><td>℃</td><td>室温。氷点下はマイナスで入力します</td></tr>
+<tr><th scope="row">相対湿度（%）</th><td>—</td><td></td></tr>
+<tr><th scope="row">露点温度</th><td>℃</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>露点温度</strong><span class="doc__unit">℃</span></li>
+<li><strong>相対湿度（%）</strong></li>
+<li><strong>気温との差</strong></li>
+<li><strong>容積絶対湿度（g/m³）</strong></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">気温・相対湿度（%）</span><span class="combo__arrow">→</span><span class="combo__out">露点温度・気温との差・容積絶対湿度（g/m³）</span></li>
+<li><span class="combo__in">気温・露点温度</span><span class="combo__arrow">→</span><span class="combo__out">相対湿度（%）・気温との差</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>結露が始まる温度</h3>
+<p>気温と湿度から、空気中の水分が水滴になり始める温度（露点）を求めます。
+窓ガラスや壁の表面温度がこの露点を下回ると、そこに結露します。</p>
+
+<h3>室温20℃・湿度60%なら約12℃</h3>
+<p>この条件では、表面温度が12℃を下回る場所に結露が出ます。
+冬の単板ガラスは外気に近い温度まで下がるため、まず窓が結露します。
+押し入れの奥や北側の壁の隅など、空気が動かない場所も要注意です。</p>
+
+<h3>結露を止めるには</h3>
+<p>方法は3つ。湿度を下げる（換気・除湿）、表面温度を上げる（断熱・内窓）、
+空気を動かす（サーキュレーター）。
+露点の計算は、どれをどれだけやれば足りるかの見当を付けるのに使えます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>露点温度（結露するかの目安）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>α = ln(湿度 ÷ 100) + (17.62 × 気温) ÷ (243.12 + 気温)</code></li>
+<li><code>露点 = 243.12 × α ÷ (17.62 − α)</code></li>
+<li><code>気温との差</code></li>
+<li><code>容積絶対湿度 = 217 × 水蒸気圧 ÷ (気温 + 273.15)</code></li>
+<li><code>相対湿度 = 露点の飽和水蒸気圧 ÷ 気温の飽和水蒸気圧 × 100</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">気温20℃・湿度60%のときの露点</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>気温</span><b>20 ℃</b></li>
+      <li><span>相対湿度（%）</span><b>60</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>露点温度</span><b>12 ℃</b></li>
+      <li><span>気温との差</span><b>8</b></li>
+      <li><span>容積絶対湿度（g/m³）</span><b>10.36</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>α = ln(湿度 ÷ 100) + (17.62 × 気温) ÷ (243.12 + 気温)</td><td>ln(60 ÷ 100) + (17.62 × 20) ÷ (243.12 + 20)</td><td>0.83</td></tr>
+<tr><td>露点 = 243.12 × α ÷ (17.62 − α)</td><td>243.12 × 0.83 ÷ (17.62 − 0.83)</td><td>12 ℃</td></tr>
+<tr><td>気温との差</td><td>20 − 12</td><td>8 ℃</td></tr>
+<tr><td>容積絶対湿度 = 217 × 水蒸気圧 ÷ (気温 + 273.15)</td><td>217 × 14 ÷ 293.15</td><td>10.36 g/m³</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 露点温度（結露するかの目安） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">露点温度（結露するかの目安）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>露点温度（結露するかの目安）は何が分かれば計算できますか？</summary><div class="qa__a"><p>気温・相対湿度（%）を入力すると露点温度・気温との差・容積絶対湿度（g/m³）が求まります。気温・露点温度を入力すると相対湿度（%）・気温との差が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば気温・露点温度を入れると相対湿度（%）・気温との差が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>露点温度（結露するかの目安）以外の空調・断熱の計算もありますか？</summary><div class="qa__a"><p>あります。空調・断熱のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>断熱・空調の性能は建物の状態・気象条件・使い方で大きく変わります。設計や機器選定は必ず専門家にご確認ください。</li>
+<li>露点は「その空気が結露を始める温度」です。窓や壁の表面温度が露点を下回ると結露します。実際の結露は表面の状態や空気の動きにも左右されます。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>空調・断熱のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../hvac-uvalue/"><strong>熱貫流率（U値）</strong><span>壁や屋根の層構成から、熱の伝わりやすさを計算</span></a></li>
+<li><a href="../hvac-heat-loss/"><strong>熱損失（U × 面積 × 温度差）</strong><span>壁や窓から逃げる熱量を計算</span></a></li>
+<li><a href="../hvac-ventilation/"><strong>必要換気量</strong><span>部屋の容積と換気回数から、1時間あたりの換気量を計算</span></a></li>
+<li><a href="../hvac-aircon/"><strong>冷暖房能力の目安</strong><span>部屋の面積と単位面積あたりの負荷から、必要な能力を概算</span></a></li>
+</ul>
+
+<p class="doc__more"><a href="../../category/hvac/">空調・断熱の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

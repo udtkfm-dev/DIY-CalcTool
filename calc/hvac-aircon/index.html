@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>冷暖房能力の目安の計算｜空調・断熱｜DIY計算ツール</title>
+<meta name="description" content="冷暖房能力の目安を無料で計算。部屋の面積と単位面積あたりの負荷から、必要な能力を概算。部屋の面積・単位面積あたりの負荷・必要能力を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-aircon/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="冷暖房能力の目安の計算｜空調・断熱｜DIY計算ツール">
+<meta property="og:description" content="冷暖房能力の目安を無料で計算。部屋の面積と単位面積あたりの負荷から、必要な能力を概算。部屋の面積・単位面積あたりの負荷・必要能力を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-aircon/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "空調・断熱",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/hvac/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "冷暖房能力の目安",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-aircon/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-aircon/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/hvac-aircon/",
+   "name": "冷暖房能力の目安の計算",
+   "description": "冷暖房能力の目安を無料で計算。部屋の面積と単位面積あたりの負荷から、必要な能力を概算。部屋の面積・単位面積あたりの負荷・必要能力を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "冷暖房能力の目安, 冷暖房能力の目安 計算, エアコン, エアコン 計算, 冷房, 冷房 計算, 暖房, 暖房 計算, 能力, 能力 計算, kW, kW 計算, 畳数, 畳数 計算, 空調, 空調 計算, 空調・断熱",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "冷暖房能力の目安は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "部屋の面積・単位面積あたりの負荷を入力すると必要能力・畳数の目安が求まります。必要能力・単位面積あたりの負荷を入力すると部屋の面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば必要能力・単位面積あたりの負荷を入れると部屋の面積が求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "冷暖房能力の目安で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "部屋の面積は mm² / cm² / m² / 坪 / 畳、必要能力は W / kW から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "冷暖房能力の目安以外の空調・断熱の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。空調・断熱のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/hvac/">空調・断熱</a><span class="crumb__sep">›</span><span aria-current="page">冷暖房能力の目安</span></nav>
+<h1>冷暖房能力の目安の計算</h1>
+<p class="doc__lead">部屋の面積と単位面積あたりの負荷から、必要な能力を概算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/hvac.aircon">この計算をアプリで開く</a></p>
+
+<h2 id="about">冷暖房能力の目安でできること</h2>
+<p>冷暖房能力の目安は、部屋の面積・単位面積あたりの負荷・必要能力のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：エアコン、冷房、暖房、能力、kW、畳数、空調</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">部屋の面積</th><td>mm² / cm² / m² / 坪 / 畳</td><td></td></tr>
+<tr><th scope="row">単位面積あたりの負荷</th><td>—</td><td>1m²あたりの必要能力(W)。木造洋室の冷房で 160〜200、暖房で 200〜250 が一般的な目安</td></tr>
+<tr><th scope="row">必要能力</th><td>W / kW</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>部屋の面積</strong><span class="doc__unit">mm² / cm² / m² / 坪 / 畳</span></li>
+<li><strong>畳数の目安</strong></li>
+<li><strong>必要能力</strong><span class="doc__unit">W / kW</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">部屋の面積・単位面積あたりの負荷</span><span class="combo__arrow">→</span><span class="combo__out">必要能力・畳数の目安</span></li>
+<li><span class="combo__in">必要能力・単位面積あたりの負荷</span><span class="combo__arrow">→</span><span class="combo__out">部屋の面積</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>畳数表示だけで選ばない</h3>
+<p>エアコンの「○畳用」は、断熱の乏しい木造住宅を基準にした古い目安です。
+天井高、窓の大きさ、断熱の程度、方位で必要な能力は大きく変わります。
+面積と単位面積あたりの負荷から計算すると、実態に近い値が出ます。</p>
+
+<h3>単位面積あたりの負荷の目安</h3>
+<p>1m²あたりの必要能力（W）で、木造洋室の冷房は 160〜200、暖房は 200〜250 が
+一般的な目安です。断熱性能が高い住宅ではもっと小さくなります。
+入力欄の値を変えて、幅を見ながら検討してください。</p>
+
+<h3>大きすぎても効率が落ちる</h3>
+<p>能力が過大なエアコンは、短時間で設定温度に達して停止・再始動を繰り返し、
+除湿が効かず電気代も悪くなります。
+「大は小を兼ねる」は当てはまりません。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>冷暖房能力の目安で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>必要能力 = 面積[m²] × 単位面積あたりの負荷</code></li>
+<li><code>畳数の目安 = 面積 ÷ 1.653</code></li>
+<li><code>面積 = 必要能力 ÷ 単位面積あたりの負荷</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">20m²の部屋を単位面積あたり180W/m²で冷暖房する</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>部屋の面積</span><b>20 m²</b></li>
+      <li><span>単位面積あたりの負荷</span><b>180</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>必要能力</span><b>3.6 kW</b></li>
+      <li><span>畳数の目安</span><b>12.1</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>必要能力 = 面積[m²] × 単位面積あたりの負荷</td><td>20 × 180</td><td>3.6 kW</td></tr>
+<tr><td>畳数の目安 = 面積 ÷ 1.653</td><td>20 ÷ 1.653</td><td>12.1 畳</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 冷暖房能力の目安 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">冷暖房能力の目安のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>冷暖房能力の目安は何が分かれば計算できますか？</summary><div class="qa__a"><p>部屋の面積・単位面積あたりの負荷を入力すると必要能力・畳数の目安が求まります。必要能力・単位面積あたりの負荷を入力すると部屋の面積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえば必要能力・単位面積あたりの負荷を入れると部屋の面積が求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>冷暖房能力の目安で使える単位は何ですか？</summary><div class="qa__a"><p>部屋の面積は mm² / cm² / m² / 坪 / 畳、必要能力は W / kW から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>冷暖房能力の目安以外の空調・断熱の計算もありますか？</summary><div class="qa__a"><p>あります。空調・断熱のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>断熱・空調の性能は建物の状態・気象条件・使い方で大きく変わります。設計や機器選定は必ず専門家にご確認ください。</li>
+<li>断熱性能・方位・窓の大きさ・階数・在室人数によって必要な能力は大きく変わります。機器の選定は必ず専門家・メーカーの資料でご確認ください。</li>
+<li>畳数は中京間（1畳 = 1.653 m²）で換算しています。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>空調・断熱のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../hvac-uvalue/"><strong>熱貫流率（U値）</strong><span>壁や屋根の層構成から、熱の伝わりやすさを計算</span></a></li>
+<li><a href="../hvac-heat-loss/"><strong>熱損失（U × 面積 × 温度差）</strong><span>壁や窓から逃げる熱量を計算</span></a></li>
+<li><a href="../hvac-ventilation/"><strong>必要換気量</strong><span>部屋の容積と換気回数から、1時間あたりの換気量を計算</span></a></li>
+<li><a href="../hvac-dew/"><strong>露点温度（結露するかの目安）</strong><span>気温と湿度から、結露が始まる温度を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../room-volume/"><strong>部屋の体積</strong><span>建築・リフォーム｜幅・奥行き・天井高から部屋の体積（気積）を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/hvac/">空調・断熱の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

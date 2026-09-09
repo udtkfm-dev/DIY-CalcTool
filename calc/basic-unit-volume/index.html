@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>体積の単位換算の計算｜体積｜DIY計算ツール</title>
+<meta name="description" content="体積の単位換算を無料で計算。mm³・cm³・m³・L・mLを相互変換。mm³・cm³・m³を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-volume/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="体積の単位換算の計算｜体積｜DIY計算ツール">
+<meta property="og:description" content="体積の単位換算を無料で計算。mm³・cm³・m³・L・mLを相互変換。mm³・cm³・m³を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-volume/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "体積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/volume/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "体積の単位換算",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-volume/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-volume/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/basic-unit-volume/",
+   "name": "体積の単位換算の計算",
+   "description": "体積の単位換算を無料で計算。mm³・cm³・m³・L・mLを相互変換。mm³・cm³・m³を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "体積の単位換算, 体積の単位換算 計算, 体積, 体積 計算, 単位, 単位 計算, 換算, 換算 計算, リットル, リットル 計算, L, L 計算, mL, mL 計算, 容量, 容量 計算",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "体積の単位換算は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "mm³を入力するとcm³・m³・L・mLが求まります。cm³を入力するとmm³・m³・L・mLが求まります。m³を入力するとmm³・cm³・L・mLが求まります。このほか2通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "答えの側から逆算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえばmLを入れるとmm³・cm³・m³・Lが求まります。逆算用の別画面はありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "体積の単位換算で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "mm³は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "体積の単位換算以外の体積の計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。体積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/volume/">体積</a><span class="crumb__sep">›</span><span aria-current="page">体積の単位換算</span></nav>
+<h1>体積の単位換算の計算</h1>
+<p class="doc__lead">mm³・cm³・m³・L・mLを相互変換。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/basic.unit.volume">この計算をアプリで開く</a></p>
+
+<h2 id="about">体積の単位換算でできること</h2>
+<p>体積の単位換算は、mm³・cm³・m³・L・mLのうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：体積、単位、換算、リットル、L、mL、容量</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">mm³</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">cm³</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">m³</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">L</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">mL</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>mm³</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>cm³</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>m³</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>L</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>mL</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">mm³</span><span class="combo__arrow">→</span><span class="combo__out">cm³・m³・L・mL</span></li>
+<li><span class="combo__in">cm³</span><span class="combo__arrow">→</span><span class="combo__out">mm³・m³・L・mL</span></li>
+<li><span class="combo__in">m³</span><span class="combo__arrow">→</span><span class="combo__out">mm³・cm³・L・mL</span></li>
+<li><span class="combo__in">L</span><span class="combo__arrow">→</span><span class="combo__out">mm³・cm³・m³・mL</span></li>
+<li><span class="combo__in">mL</span><span class="combo__arrow">→</span><span class="combo__out">mm³・cm³・m³・L</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>Lとm³の関係</h3>
+<p>1m³ = 1000L、1L = 1000cm³ = 1000mL。
+生コンやまき土は m³、灯油や塗料は L、というように扱う単位が分野で分かれるため、
+発注のときに桁を間違えやすい場所です。</p>
+
+<h3>DIYでよく使う目安</h3>
+<p>ポリタンク1つが約18〜20L、バケツ1杯が約10L。
+0.1m³ = 100L はバケツ10杯ぶんです。
+「m³で言われたけれど、バケツで何杯か」を掴むときに使えます。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>体積の単位換算で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>1,000,000 mm³ を cm³ に換算</code></li>
+<li><code>1,000,000 mm³ を m³ に換算</code></li>
+<li><code>1,000,000 mm³ を L に換算</code></li>
+<li><code>1,000 cm³ を mm³ に換算</code></li>
+<li><code>1,000 cm³ を m³ に換算</code></li>
+<li><code>1,000 cm³ を L に換算</code></li>
+<li><code>0 m³ を mm³ に換算</code></li>
+<li><code>0 m³ を cm³ に換算</code></li>
+<li><code>0 m³ を L に換算</code></li>
+<li><code>20 L を mm³ に換算</code></li>
+<li><code>20 L を cm³ に換算</code></li>
+<li><code>20 L を m³ に換算</code></li>
+<li><code>1,000 mL を mm³ に換算</code></li>
+<li><code>1,000 mL を cm³ に換算</code></li>
+<li><code>1,000 mL を m³ に換算</code></li>
+</ul>
+<p class="doc__kw">記号の意味：L = L、mL = mL</p>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">20Lをm³・cm³で見る</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>L</span><b>20 L</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>mm³</span><b>20,000,000 mm³</b></li>
+      <li><span>cm³</span><b>20,000 cm³</b></li>
+      <li><span>m³</span><b>0.02 m³</b></li>
+      <li><span>mL</span><b>20,000 mL</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>20 L を mm³ に換算</td><td>20 L</td><td>20,000,000 mm³</td></tr>
+<tr><td>20 L を cm³ に換算</td><td>20 L</td><td>20,000 cm³</td></tr>
+<tr><td>20 L を m³ に換算</td><td>20 L</td><td>0.02 m³</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 体積の単位換算 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">体積の単位換算のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>体積の単位換算は何が分かれば計算できますか？</summary><div class="qa__a"><p>mm³を入力するとcm³・m³・L・mLが求まります。cm³を入力するとmm³・m³・L・mLが求まります。m³を入力するとmm³・cm³・L・mLが求まります。このほか2通りの組み合わせに対応しています。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>答えの側から逆算できますか？</summary><div class="qa__a"><p>できます。求めたい値の欄に数字を入れると、逆向きに計算されます。たとえばmLを入れるとmm³・cm³・m³・Lが求まります。逆算用の別画面はありません。</p></div></details>
+<details class="qa"><summary>体積の単位換算で使える単位は何ですか？</summary><div class="qa__a"><p>mm³は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>体積の単位換算以外の体積の計算もありますか？</summary><div class="qa__a"><p>あります。体積のカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>体積のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../vol-box/"><strong>直方体の体積</strong><span>幅・奥行・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-cube/"><strong>立方体の体積</strong><span>一辺・体積を相互計算</span></a></li>
+<li><a href="../vol-cylinder/"><strong>円柱の体積</strong><span>半径・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-cone/"><strong>円錐の体積</strong><span>半径・高さ・体積を相互計算</span></a></li>
+<li><a href="../vol-sphere/"><strong>球の体積</strong><span>半径・体積を相互計算</span></a></li>
+<li><a href="../vol-prism-tri/"><strong>三角柱の体積</strong><span>底辺・高さ・長さ・体積を相互計算</span></a></li>
+<li><a href="../vol-pyramid/"><strong>角錐の体積</strong><span>底面（幅×奥行）と高さから、四角錐の体積を計算</span></a></li>
+<li><a href="../vol-frustum-cone/"><strong>円錐台の体積（バケツ・植木鉢）</strong><span>上下の直径と高さから、すぼまった容器の容量を計算</span></a></li>
+<li><a href="../vol-tank-h/"><strong>横置きタンクの液量</strong><span>横に寝かせた円筒タンクの、液面の深さから残量を計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-angle/"><strong>角度の単位換算</strong><span>三角・角度｜度とラジアンを相互変換</span></a></li>
+<li><a href="../basic-unit-area/"><strong>面積の単位換算</strong><span>面積｜mm²・cm²・m²・坪・畳を相互変換</span></a></li>
+<li><a href="../basic-unit-length/"><strong>長さの単位換算</strong><span>長さ・単位｜mm・cm・m・インチ・フィート・尺・寸を相互変換</span></a></li>
+<li><a href="../basic-fraction/"><strong>インチの分数 ⇄ ミリ</strong><span>長さ・単位｜3/8インチ などの分数表記とミリを相互に換算</span></a></li>
+<li><a href="../basic-round/"><strong>切り上げ・切り捨て（キリのいい数）</strong><span>長さ・単位｜基準の単位で、切り上げ・切り捨て・四捨五入した値を同時に表示</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/volume/">体積の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

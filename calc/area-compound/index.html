@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>複合図形（面積の合成）の計算｜面積｜DIY計算ツール</title>
+<meta name="description" content="複合図形（面積の合成）を無料で計算。長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算。（このIDは専用画面を使用します）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-compound/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="複合図形（面積の合成）の計算｜面積｜DIY計算ツール">
+<meta property="og:description" content="複合図形（面積の合成）を無料で計算。長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算。（このIDは専用画面を使用します）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-compound/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "面積",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/area/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "複合図形（面積の合成）",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-compound/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-compound/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/area-compound/",
+   "name": "複合図形（面積の合成）の計算",
+   "description": "複合図形（面積の合成）を無料で計算。長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算。（このIDは専用画面を使用します）を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "複合図形（面積の合成）, 複合図形（面積の合成） 計算, 複合図形, 複合図形 計算, L字, L字 計算, コの字, コの字 計算, 凹凸, 凹凸 計算, 穴, 穴 計算, 間取り, 間取り 計算, 合成, 合成 計算, 床面積, 床面積 計算, 面積",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "L字型の部屋の面積はどう計算しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "L字を2つの長方形に分け、それぞれの幅と高さを入れて足します。重なりが出ない分け方にすれば、合計がそのまま床面積になります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "柱や階段のように、面積から引きたい部分はどう入れますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "その部分を長方形として追加し、「穴」に切り替えます。穴にした長方形は合計から引かれます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "面積は坪や畳でも見られますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "見られます。面積の単位を切り替えると、m²・坪・畳などで表示されます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/area/">面積</a><span class="crumb__sep">›</span><span aria-current="page">複合図形（面積の合成）</span></nav>
+<h1>複合図形（面積の合成）の計算</h1>
+<p class="doc__lead">長方形を追加・穴として組み合わせ、L字・コの字などの合計面積を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/area.compound">この計算をアプリで開く</a></p>
+
+<h2 id="about">複合図形（面積の合成）でできること</h2>
+<p>複合図形（面積の合成）は、長方形をいくつも足したり、穴として引いたりして、L字・コの字・凹凸のある形の合計面積を求める計算です。入力する長方形の数が決まっていないため、この計算だけは専用の画面で、長方形を追加しながら合計を出します。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：複合図形、L字、コの字、凹凸、穴、間取り、合成、床面積</p>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>複雑な間取りを長方形に分ける</h3>
+<p>L字・コの字・凹凸のある部屋は、そのままでは面積の式がありません。
+いくつかの長方形に切り分けて足し引きするのが確実な方法で、
+この画面はその足し引きを画面上でやるためのものです。</p>
+
+<h3>分け方のコツ</h3>
+<p>重なりが出ない分け方を選ぶこと。壁の内側の線に沿って縦か横にまっすぐ切ると、
+測る寸法が少なく済み、間違いも減ります。
+柱の出っ張りや階段のように「引きたい部分」は、長方形として追加してから穴に切り替えます。</p>
+
+<h3>床材の発注に使うとき</h3>
+<p>合計面積が出たら、そこからロス率を上乗せして枚数を出します。
+L字の部屋は端で切る量が多くなるので、単純な長方形の部屋より
+ロスを多めに見ておくと足りなくなりません。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>複合図形（面積の合成）で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>合計面積 = 足した長方形の面積の合計 − 穴にした長方形の面積の合計</code></li>
+<li><code>長方形1つの面積 = 幅 × 高さ</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">L字の部屋（3640×2730mm ＋ 1820×1820mm）から、910×910mmの柱型を引く</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>長方形1（足す）</span><b>3.64 m × 2.73 m</b></li>
+      <li><span>長方形2（足す）</span><b>1.82 m × 1.82 m</b></li>
+      <li><span>長方形3（穴）</span><b>0.91 m × 0.91 m</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>合計面積</span><b>12.42 m²</b></li>
+      <li><span>坪</span><b>3.76 坪</b></li>
+      <li><span>畳（中京間）</span><b>7.51 畳</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>長方形1 = 幅 × 高さ</td><td>3.64 × 2.73</td><td>9.94 m²</td></tr>
+<tr><td>長方形2 = 幅 × 高さ</td><td>1.82 × 1.82</td><td>3.31 m²</td></tr>
+<tr><td>長方形3（穴） = 幅 × 高さ</td><td>0.91 × 0.91</td><td>0.83 m²</td></tr>
+<tr><td>合計 = 足した面積 − 穴の面積</td><td>9.94 + 3.31 − 0.83</td><td>12.42 m²</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この計算は入力欄の数が決まっていないため、例は手計算で作成しています（表示は小数第2位まで）。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから 複合図形（面積の合成） の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">複合図形（面積の合成）のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>L字型の部屋の面積はどう計算しますか？</summary><div class="qa__a"><p>L字を2つの長方形に分け、それぞれの幅と高さを入れて足します。重なりが出ない分け方にすれば、合計がそのまま床面積になります。</p></div></details>
+<details class="qa"><summary>柱や階段のように、面積から引きたい部分はどう入れますか？</summary><div class="qa__a"><p>その部分を長方形として追加し、「穴」に切り替えます。穴にした長方形は合計から引かれます。</p></div></details>
+<details class="qa"><summary>面積は坪や畳でも見られますか？</summary><div class="qa__a"><p>見られます。面積の単位を切り替えると、m²・坪・畳などで表示されます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>合計面積は各長方形の面積を単純に足し引きしたものです（重なりの自動判定はしません）。図形の位置（X・Y）は見た目の確認用です。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>面積のほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../basic-unit-area/"><strong>面積の単位換算</strong><span>mm²・cm²・m²・坪・畳を相互変換</span></a></li>
+<li><a href="../area-rect/"><strong>長方形の面積</strong><span>幅・高さ・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-square/"><strong>正方形の面積</strong><span>一辺・面積・対角線を相互計算</span></a></li>
+<li><a href="../area-triangle/"><strong>三角形の面積（底辺・高さ）</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-triangle3/"><strong>三角形の面積（3辺から）</strong><span>3辺の長さから面積を計算（ヘロンの公式）</span></a></li>
+<li><a href="../area-trapezoid/"><strong>台形の面積</strong><span>上底・下底・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-parallelogram/"><strong>平行四辺形の面積</strong><span>底辺・高さ・面積を相互計算</span></a></li>
+<li><a href="../area-circle/"><strong>円の面積・円周</strong><span>半径・直径・円周・面積のどれか1つから残りを計算</span></a></li>
+<li><a href="../area-sector/"><strong>扇形の面積・弧長</strong><span>半径・中心角・弧長・面積を相互計算</span></a></li>
+<li><a href="../area-ellipse/"><strong>楕円の面積</strong><span>長半径・短半径・面積を相互計算</span></a></li>
+<li><a href="../area-room/"><strong>部屋の面積（m²・坪・畳）</strong><span>幅・奥行きから面積をm²・坪・畳で同時表示</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../room-multi-rect/"><strong>複数長方形の合成面積</strong><span>建築・リフォーム｜L字型など、2つの長方形に分けられる部屋の合計面積を計算</span></a></li>
+<li><a href="../layout-pitch/"><strong>ピッチ配置（間隔・個数）</strong><span>等分・配置｜全長・間隔・個数のうち2つから残り1つを計算</span></a></li>
+<li><a href="../room-ceiling/"><strong>天井・床の面積</strong><span>建築・リフォーム｜幅・奥行きから天井や床の面積を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/area/">面積の計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>

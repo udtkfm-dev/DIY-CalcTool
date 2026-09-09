@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b6bcb">
+<title>コンクリート・モルタルの配合の計算｜DIY計算ツール</title>
+<meta name="description" content="コンクリート・モルタルの配合を無料で計算。容積比から、セメント・砂・砂利それぞれの必要量を計算。仕上がりの体積・セメントの比・砂の比を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<link rel="canonical" href="https://udtkfm-dev.github.io/DIY-CalcTool/calc/concrete-mix/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DIY計算ツール">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="コンクリート・モルタルの配合の計算｜DIY計算ツール">
+<meta property="og:description" content="コンクリート・モルタルの配合を無料で計算。容積比から、セメント・砂・砂利それぞれの必要量を計算。仕上がりの体積・セメントの比・砂の比を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。">
+<meta property="og:url" content="https://udtkfm-dev.github.io/DIY-CalcTool/calc/concrete-mix/">
+<meta property="og:image" content="https://udtkfm-dev.github.io/DIY-CalcTool/icons/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DIY計算ツール">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app",
+   "name": "DIY計算ツール",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "ja",
+   "description": "DIY・木工・建築・外構の寸法計算が138種類。図の寸法をタップして数字を入れると、残りの値と途中式が自動で出ます。三角形・勾配・面積・体積・階段・屋根・コンクリート・塗装まで、インストール不要・登録不要・無料。",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ホーム",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "コンクリート",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/category/concrete/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "コンクリート・モルタルの配合",
+     "item": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/concrete-mix/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/concrete-mix/",
+   "url": "https://udtkfm-dev.github.io/DIY-CalcTool/calc/concrete-mix/",
+   "name": "コンクリート・モルタルの配合の計算",
+   "description": "コンクリート・モルタルの配合を無料で計算。容積比から、セメント・砂・砂利それぞれの必要量を計算。仕上がりの体積・セメントの比・砂の比を入れると残りの値が自動で出ます。計算式つき・登録不要・スマホ対応。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://udtkfm-dev.github.io/DIY-CalcTool/#app"
+   },
+   "keywords": "コンクリート・モルタルの配合, コンクリート・モルタルの配合 計算, 配合, 配合 計算, 調合, 調合 計算, セメント, セメント 計算, 砂, 砂 計算, 砂利, 砂利 計算, モルタル, モルタル 計算, 容積比, 容積比 計算, 練る, 練る 計算, コンクリート",
+   "dateModified": "2026-09-09"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "コンクリート・モルタルの配合は何が分かれば計算できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "仕上がりの体積・セメントの比・砂の比・砂利の比・割増係数を入力するとセメント・砂・砂利・材料の合計体積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "コンクリート・モルタルの配合で使える単位は何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "仕上がりの体積は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "コンクリート・モルタルの配合以外のコンクリートの計算もありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あります。コンクリートのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="doc">
+<header class="doc__bar">
+  <a class="doc__brand" href="../../">DIY計算ツール</a>
+  <a class="doc__barlink" href="../../calc/">計算一覧</a>
+</header>
+<main class="doc__main">
+<nav class="crumb" aria-label="パンくず"><a href="../../">ホーム</a><span class="crumb__sep">›</span><a href="../../category/concrete/">コンクリート</a><span class="crumb__sep">›</span><span aria-current="page">コンクリート・モルタルの配合</span></nav>
+<h1>コンクリート・モルタルの配合の計算</h1>
+<p class="doc__lead">容積比から、セメント・砂・砂利それぞれの必要量を計算。ブラウザですぐ使える無料の計算ツールです。</p>
+<p class="doc__cta"><a class="doc__btn" href="../../#/c/concrete.mix">この計算をアプリで開く</a></p>
+
+<h2 id="about">コンクリート・モルタルの配合でできること</h2>
+<p>コンクリート・モルタルの配合は、仕上がりの体積・セメントの比・砂の比・砂利の比・割増係数のうち分かっている値を入力すると、残りの値が自動で求まる計算です。数式を覚えていなくても、図の寸法をタップして数字を入れるだけで答えが出ます。途中式も画面に表示されるので、合っているかその場で確かめられます。</p>
+<p class="doc__kw">別の呼び方・関連する言葉：配合、調合、セメント、砂、砂利、モルタル、容積比、練る</p>
+
+<h3 id="input">入力できる値</h3>
+<div class="doc__scroll">
+<table class="doc__table">
+<thead><tr><th scope="col">項目</th><th scope="col">選べる単位</th><th scope="col">説明</th></tr></thead>
+<tbody>
+<tr><th scope="row">仕上がりの体積</th><td>mm³ / cm³ / m³ / L / mL</td><td></td></tr>
+<tr><th scope="row">セメントの比</th><td>—</td><td>容積比の目安: コンクリート（1 : 3 : 6）／モルタル（1 : 3、砂利なし）／強度を出したいとき（1 : 2 : 4）。割増係数は 1.5〜1.7 程度がよく使われます。</td></tr>
+<tr><th scope="row">砂の比</th><td>—</td><td></td></tr>
+<tr><th scope="row">砂利の比</th><td>—</td><td>モルタルの場合は 0</td></tr>
+<tr><th scope="row">割増係数</th><td>—</td><td>練ると体積が減る分の割増。1.5〜1.7 程度</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="output">計算で求まる値</h3>
+<ul class="doc__list">
+<li><strong>セメント</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>砂</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>砂利</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+<li><strong>材料の合計体積</strong><span class="doc__unit">mm³ / cm³ / m³ / L / mL</span></li>
+</ul>
+
+<h3 id="combo">分かっている値から求められる組み合わせ</h3>
+<p>入力できるところまで入れれば、対応する組み合わせが見つかった時点で自動的に計算されます。</p>
+<ul class="doc__combos">
+<li><span class="combo__in">仕上がりの体積・セメントの比・砂の比・砂利の比・割増係数</span><span class="combo__arrow">→</span><span class="combo__out">セメント・砂・砂利・材料の合計体積</span></li>
+</ul>
+
+<h2 id="usecase">DIYでの使いどころ</h2>
+<div class="doc__copy">
+<h3>1:3:6 のような容積比</h3>
+<p>セメント : 砂 : 砂利 の比で配合を指定する方式です。
+モルタルなら砂利なしで 1:3 前後、コンクリートは 1:3:6 や 1:2:4 が使われます。
+仕上がりの体積を入れると、それぞれの必要量が出ます。</p>
+
+<h3>割増係数（材料の合計は仕上がりより多い）</h3>
+<p>砂と砂利のすき間にセメントと水が入るため、
+材料を単純に足した体積より、練り上がりの体積は小さくなります。
+そのぶんを見込むのが割増係数で、1.1〜1.3程度がよく使われます。</p>
+
+<h3>強度が要る部分は既製品を</h3>
+<p>この計算は容積比から材料を分けるだけで、強度を保証するものではありません。
+構造に関わる基礎は、配合設計された生コンや、
+用途を明記した既製の袋詰め製品を使い、必要なら専門家にご確認ください。</p>
+</div>
+
+<h2 id="formula">計算式</h2>
+<p>コンクリート・モルタルの配合で使っている式です。入力した値の組み合わせによって、使われる式が変わります。</p>
+<ul class="doc__formulas">
+<li><code>材料の合計体積 = 仕上がり × 割増係数</code></li>
+<li><code>セメント = 合計 × セメントの比 ÷ 比の合計</code></li>
+<li><code>砂 = 合計 × 砂の比 ÷ 比の合計</code></li>
+<li><code>砂利 = 合計 × 砂利の比 ÷ 比の合計</code></li>
+</ul>
+
+<h2 id="example">計算例</h2>
+<p class="doc__scene">100Lのコンクリートを1:3:6（割増1.2）で配合する</p>
+<div class="doc__example">
+  <div class="ex__col">
+    <h3>入力</h3>
+    <ul class="ex__kv">
+      <li><span>仕上がりの体積</span><b>100 L</b></li>
+      <li><span>セメントの比</span><b>1</b></li>
+      <li><span>砂の比</span><b>3</b></li>
+      <li><span>砂利の比</span><b>6</b></li>
+      <li><span>割増係数</span><b>1.2</b></li>
+    </ul>
+  </div>
+  <div class="ex__col">
+    <h3>結果</h3>
+    <ul class="ex__kv ex__kv--out">
+      <li><span>セメント</span><b>12 L</b></li>
+      <li><span>砂</span><b>36 L</b></li>
+      <li><span>砂利</span><b>72 L</b></li>
+      <li><span>材料の合計体積</span><b>120 L</b></li>
+    </ul>
+  </div>
+</div>
+<h3 id="steps">この例の計算過程</h3>
+<div class="doc__scroll">
+<table class="doc__table doc__table--steps">
+<thead><tr><th scope="col">式</th><th scope="col">数字を入れると</th><th scope="col">答え</th></tr></thead>
+<tbody>
+<tr><td>材料の合計体積 = 仕上がり × 割増係数</td><td>100 × 1.2</td><td>120 L</td></tr>
+<tr><td>セメント = 合計 × セメントの比 ÷ 比の合計</td><td>120 × 1 ÷ 10</td><td>12 L</td></tr>
+<tr><td>砂 = 合計 × 砂の比 ÷ 比の合計</td><td>120 × 3 ÷ 10</td><td>36 L</td></tr>
+<tr><td>砂利 = 合計 × 砂利の比 ÷ 比の合計</td><td>120 × 6 ÷ 10</td><td>72 L</td></tr>
+</tbody>
+</table>
+</div>
+<p class="doc__note-inline">この例の数値は、アプリと同じ計算処理を実行して作成しています。表示桁数は小数第2位までです。</p>
+
+<h2 id="howto">使い方</h2>
+<ol class="doc__steps">
+<li>上のボタンから コンクリート・モルタルの配合 の画面を開きます。</li>
+<li>図または入力欄をタップして、分かっている寸法を入れます。単位はその場で切り替えられます。</li>
+<li>必要な値がそろった時点で、残りの値と途中式が自動的に表示されます。</li>
+</ol>
+<p>入力した値は端末の中だけに保存され、外部へ送信されることはありません。一度開いたあとは通信が切れても計算できます（ホーム画面に追加するとアプリのように起動します）。</p>
+
+<h2 id="faq">コンクリート・モルタルの配合のよくある質問</h2>
+<div class="doc__faq">
+<details class="qa"><summary>コンクリート・モルタルの配合は何が分かれば計算できますか？</summary><div class="qa__a"><p>仕上がりの体積・セメントの比・砂の比・砂利の比・割増係数を入力するとセメント・砂・砂利・材料の合計体積が求まります。足りないときは「あと1つ入力すると計算できます」と画面に出ます。</p></div></details>
+<details class="qa"><summary>コンクリート・モルタルの配合で使える単位は何ですか？</summary><div class="qa__a"><p>仕上がりの体積は mm³ / cm³ / m³ / L / mL から選べます。入力中でも単位を切り替えられ、値は自動で換算されます。</p></div></details>
+<details class="qa"><summary>コンクリート・モルタルの配合以外のコンクリートの計算もありますか？</summary><div class="qa__a"><p>あります。コンクリートのカテゴリページに、この分野の計算をまとめています。ページ下部の関連リンクからたどれます。</p></div></details>
+</div>
+
+<h2 id="note">ご利用にあたっての注意</h2>
+<ul class="doc__list doc__list--note">
+<li>本アプリは寸法・数学の計算を支援するツールです。施工の可否や安全性は判断できません。</li>
+<li>構造や法規に関わる判断は、必ず専門家にご確認ください。</li>
+<li>余裕率は打設時のロス・こぼれを見込むための目安です。実際の必要量は施工条件により異なります。</li>
+<li>容積比の目安: コンクリート（1 : 3 : 6）／モルタル（1 : 3、砂利なし）／強度を出したいとき（1 : 2 : 4）。割増係数は 1.5〜1.7 程度がよく使われます。</li>
+<li>容積比での概算です。強度が求められる場合は、質量での配合設計を専門家にご確認ください。</li>
+</ul>
+
+<h2 id="related">関連する計算ツール</h2>
+<h3>コンクリートのほかの計算</h3>
+<ul class="doc__links">
+<li><a href="../concrete-slab/"><strong>土間・基礎の体積（余裕率つき）</strong><span>幅・奥行き・厚さと余裕率から、生コンの必要量を計算</span></a></li>
+<li><a href="../concrete-pier/"><strong>柱基礎・円柱基礎の体積</strong><span>半径・深さと余裕率から、円柱基礎の生コン必要量を計算</span></a></li>
+<li><a href="../concrete-rebar/"><strong>鉄筋の本数・重量</strong><span>配筋のピッチから、縦横の本数・総延長・重量を計算</span></a></li>
+<li><a href="../concrete-formwork/"><strong>型枠の面積・材料</strong><span>打設する範囲の寸法から、型枠の面積・コンパネの枚数・桟木の長さを計算</span></a></li>
+</ul>
+<h3>ほかの分野の関連する計算</h3>
+<ul class="doc__links">
+<li><a href="../estimate-bag/"><strong>セメント・モルタルの袋数</strong><span>材料・積算｜必要な体積と1袋の出来高から、袋数を計算</span></a></li>
+<li><a href="../garden-material/"><strong>土・砂利・芝の必要量</strong><span>庭・外構｜面積と敷き厚さから、必要な体積と袋数を計算</span></a></li>
+<li><a href="../paint-thinner/"><strong>塗料の希釈</strong><span>塗装・壁紙｜希釈率から、混ぜるうすめ液の量と合計量を計算</span></a></li>
+</ul>
+<p class="doc__more"><a href="../../category/concrete/">コンクリートの計算をすべて見る</a> ・ <a href="../">計算一覧（全138種類）へ</a> ・ <a href="../../">トップページへ</a></p>
+
+</main>
+<footer class="doc__foot">
+  <p><a href="../../">DIY計算ツール を開く</a> ・ <a href="../../calc/">計算一覧</a> ・ <a href="../../#/about">このアプリについて</a></p>
+  <p class="doc__note">本サイトは寸法・数学の計算を支援するツールです。施工の可否や安全性を判断するものではありません。構造・法規に関わる判断は必ず専門家にご確認ください。</p>
+</footer>
+</body>
+</html>
