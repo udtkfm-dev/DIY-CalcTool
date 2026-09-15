@@ -8,7 +8,7 @@
 // https://<user>.github.io/<リポジトリ名>/ というサブパスで公開しても
 // そのまま動く（絶対パスだと 404 になり cache.addAll() が丸ごと失敗する）。
 
-const CACHE_NAME = 'diycalc-v26';
+const CACHE_NAME = 'diycalc-v28';
 
 const ASSETS = [
   './',
@@ -90,8 +90,14 @@ const ASSETS = [
   './js/ui/history.js',
   './js/ui/settings.js',
   './js/ui/about.js',
+  './js/ui/privacy.js',
   './js/ui/disclaimer.js',
-  './icons/icon.svg'
+  './icons/icon.svg',
+  './icons/favicon-16.png',
+  './icons/favicon-32.png',
+  './icons/favicon-48.png',
+  './icons/favicon-180.png',
+  './icons/favicon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -114,6 +120,9 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  // AdSense等の外部リクエストはこのSWでは扱わず、ブラウザの通常処理に任せる
+  // （cache.put()にopaqueレスポンスを溜め込まない。オフライン時に空白になるのは想定どおり）
+  if (new URL(event.request.url).origin !== self.location.origin) return;
   // network-first: オンライン時は常に最新を配信し、取得できたぶんはキャッシュを
   // 更新しておく。オフライン時のみキャッシュへフォールバックする。
   // （旧cache-firstだと、デプロイ後の最初の表示が「新SWが裏で有効化されるまで」
